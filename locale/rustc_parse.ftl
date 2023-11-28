@@ -158,8 +158,8 @@ parse_enum_pattern_instead_of_identifier = expected identifier, found enum patte
 parse_enum_struct_mutually_exclusive = `enum` and `struct` are mutually exclusive
     .suggestion = replace `enum struct` with
 
-parse_eq_field_init = expected `:`, found `=`
-    .suggestion = replace equals symbol with a colon
+parse_eq_field_init = 预期 `:`, 得到 `=`
+    .suggestion = 用冒号替换等号
 
 parse_equals_struct_default = default values on `struct` fields aren't supported
     .suggestion = remove this unsupported default value
@@ -221,13 +221,13 @@ parse_expected_semi_found_doc_comment_str = expected `;`, found doc comment `{$t
 parse_expected_semi_found_keyword_str = expected `;`, found keyword `{$token}`
 parse_expected_semi_found_reserved_identifier_str = expected `;`, found reserved identifier `{$token}`
 parse_expected_semi_found_reserved_keyword_str = expected `;`, found reserved keyword `{$token}`
-parse_expected_semi_found_str = expected `;`, found `{$token}`
+parse_expected_semi_found_str = 预期 `;`, 得到 `{$token}`
 
-parse_expected_statement_after_outer_attr = expected statement after outer attribute
+parse_expected_statement_after_outer_attr = 外部属性后应有语句
 
-parse_expected_struct_field = expected one of `,`, `:`, or `{"}"}`, found `{$token}`
-    .label = expected one of `,`, `:`, or `{"}"}`
-    .ident_label = while parsing this struct field
+parse_expected_struct_field = 预期一个 `,`, `:`, 或 `{"}"}`, 得到 `{$token}`
+    .label = 预期一个 `,`, `:`, 或 `{"}"}`
+    .ident_label = 在解析这个结构体字段时
 
 parse_expected_trait_in_trait_impl_found_type = expected a trait, found type
 
@@ -422,7 +422,7 @@ parse_kw_bad_case = keyword `{$kw}` is written in the wrong case
     .suggestion = write it in the correct case
 
 parse_label_inner_attr_does_not_annotate_this = the inner attribute doesn't annotate this {$item}
-parse_label_unexpected_token = unexpected token
+parse_label_unexpected_token = 意外的词法单元
 
 parse_label_while_parsing_or_pattern_here = while parsing this or-pattern starting here
 
@@ -704,7 +704,7 @@ parse_suffixed_literal_in_attribute = suffixed literals are not allowed in attri
 
 parse_sugg_add_let_for_stmt = you might have meant to introduce a new binding
 
-parse_sugg_add_semi = add `;` here
+parse_sugg_add_semi = 在此处添加`;`
 parse_sugg_change_inner_attr_to_outer = to annotate the {$item}, change the attribute from inner to outer style
 
 parse_sugg_change_this_to_semi = change this to `;`
@@ -870,5 +870,5 @@ parse_where_clause_before_tuple_struct_body = where clauses are not allowed befo
 parse_where_generics = generic parameters on `where` clauses are reserved for future use
     .label = currently unsupported
 
-parse_zero_chars = empty character literal
+parse_zero_chars = 字符字面量为空
     .label = {parse_zero_chars}

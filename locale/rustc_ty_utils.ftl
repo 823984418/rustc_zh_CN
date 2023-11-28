@@ -62,4 +62,4 @@ ty_utils_unexpected_fnptr_associated_item = `FnPtr` trait with unexpected associ
 
 ty_utils_yield_not_supported = coroutine control flow is not allowed in generic constants
 
-ty_utils_zero_length_simd_type = monomorphising SIMD type `{$ty}` of zero length
+ty_utils_zero_length_simd_type = 单态化SIMD类型`{$ty}`的长度为零

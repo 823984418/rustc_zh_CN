@@ -517,8 +517,8 @@ passes_no_link =
     .label = not an `extern crate` item
 
 passes_no_main_function =
-    `main` function not found in crate `{$crate_name}`
-    .here_is_main = here is a function named `main`
+    没有找到`main`函数在`{$crate_name}`箱中
+    .here_is_main = 这是一个叫`main`的函数
     .one_or_more_possible_main = you have one or more functions named `main` not defined at the crate level
     .consider_moving_main = consider moving the `main` function definitions
     .main_must_be_defined_at_crate = the main function must be defined at the crate level{$has_filename ->
@@ -761,23 +761,23 @@ passes_unused_multiple =
 passes_unused_no_lints_note =
     attribute `{$name}` without any lints has no effect
 
-passes_unused_var_assigned_only = variable `{$name}` is assigned to, but never used
-    .note = consider using `_{$name}` instead
+passes_unused_var_assigned_only = 变量 `{$name}` 已经分配只, 但从未使用
+    .note = 考虑使用 `_{$name}` 代替
 
-passes_unused_var_maybe_capture_ref = unused variable: `{$name}`
-    .help = did you mean to capture by reference instead?
+passes_unused_var_maybe_capture_ref = 未使用的变量: `{$name}`
+    .help = 你是想要通过引用捕获吗?
 
-passes_unused_var_remove_field = unused variable: `{$name}`
+passes_unused_var_remove_field = 未使用的变量: `{$name}`
 passes_unused_var_remove_field_suggestion = try removing the field
 
 passes_unused_variable_args_in_macro = `{$name}` is captured in macro and introduced a unused variable
 
-passes_unused_variable_try_ignore = unused variable: `{$name}`
-    .suggestion = try ignoring the field
+passes_unused_variable_try_ignore = 未使用的变量: `{$name}`
+    .suggestion = 尝试忽略此字段
 
-passes_unused_variable_try_prefix = unused variable: `{$name}`
-    .label = unused variable
-    .suggestion = if this is intentional, prefix it with an underscore
+passes_unused_variable_try_prefix = 未使用的变量: `{$name}`
+    .label = 未使用的变量
+    .suggestion = 如果这个是有意的,请在它前面加上下划线
 
 
 passes_used_compiler_linker =

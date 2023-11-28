@@ -62,25 +62,25 @@ attr_invalid_since =
     'since' must be a Rust version number, such as "1.31.0"
 
 attr_missing_feature =
-    missing 'feature'
+    缺少 'feature'
 
 attr_missing_issue =
-    missing 'issue'
+    缺少 'issue'
 
 attr_missing_note =
-    missing 'note'
+    缺少 'note'
 
 attr_missing_since =
-    missing 'since'
+    缺少 'since'
 
 attr_multiple_item =
     multiple '{$item}' items
 
 attr_multiple_stability_levels =
-    multiple stability levels
+    多个稳定级别
 
 attr_non_ident_feature =
-    'feature' is not an identifier
+    'feature' 不是标识符
 
 attr_rustc_allowed_unstable_pairing =
     `rustc_allowed_through_unstable_modules` attribute must be paired with a `stable` attribute
@@ -105,6 +105,6 @@ attr_unsupported_literal_deprecated_kv_pair =
 attr_unsupported_literal_deprecated_string =
     literal in `deprecated` value must be a string
 attr_unsupported_literal_generic =
-    unsupported literal
+    不支持的字面量
 attr_unsupported_literal_suggestion =
     consider removing the prefix

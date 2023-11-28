@@ -1,8 +1,8 @@
 const_eval_address_space_full =
-    there are no more free addresses in the address space
+    地址空间中没有更多可用地址
 
 const_eval_align_offset_invalid_align =
-    `align_offset` called with non-power-of-two align: {$target_align}
+    调用`align_offset`以非二的幂次对齐: {$target_align}
 
 const_eval_alignment_check_failed =
     {$msg ->
@@ -11,14 +11,14 @@ const_eval_alignment_check_failed =
     } with alignment {$has}, but alignment {$required} is required
 
 const_eval_already_reported =
-    an error has already been reported elsewhere (this should not usually be printed)
+    其他地方已经报告了错误 (这通常不应该被打印出来)
 const_eval_assume_false =
     `assume` called with `false`
 
 const_eval_await_non_const =
-    cannot convert `{$ty}` into a future in {const_eval_const_context}s
+    无法将`{$ty}`转换为一个future在 {const_eval_const_context} 中
 const_eval_bounds_check_failed =
-    indexing out of bounds: the len is {$len} but the index is {$index}
+    索引越界: 长度是{$len}但索引是{$index}
 const_eval_call_nonzero_intrinsic =
     `{$name}` called on 0
 

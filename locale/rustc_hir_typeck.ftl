@@ -1,25 +1,25 @@
 hir_typeck_add_missing_parentheses_in_range = you must surround the range in parentheses to call its `{$func_name}` function
 
-hir_typeck_add_return_type_add = try adding a return type
+hir_typeck_add_return_type_add = 尝试添加一个返回类型
 
-hir_typeck_add_return_type_missing_here = a return type might be missing here
+hir_typeck_add_return_type_missing_here = 此处可能缺少返回类型
 
-hir_typeck_address_of_temporary_taken = cannot take address of a temporary
-    .label = temporary value
+hir_typeck_address_of_temporary_taken = 不能获取临时值的地址
+    .label = 临时值
 
-hir_typeck_arg_mismatch_indeterminate = argument type mismatch was detected, but rustc had trouble determining where
-    .note = we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new
+hir_typeck_arg_mismatch_indeterminate = 检测到参数类型不匹配, 但rustc无法确定它的位置
+    .note = 提供错误报告: https://github.com/rust-lang/rust/issues/new
 
-hir_typeck_candidate_trait_note = `{$trait_name}` defines an item `{$item_name}`{$action_or_ty ->
+hir_typeck_candidate_trait_note = `{$trait_name}` 定义了一项 `{$item_name}`{$action_or_ty ->
     [NONE] {""}
-    [implement] , perhaps you need to implement it
-    *[other] , perhaps you need to restrict type parameter `{$action_or_ty}` with it
+    [implement] , 也许您需要实现它
+    *[other] , 也许您需要以`{$action_or_ty}`限制类型参数
 }
 
-hir_typeck_cannot_cast_to_bool = cannot cast `{$expr_ty}` as `bool`
-    .suggestion = compare with zero instead
-    .help = compare with zero instead
-    .label = unsupported cast
+hir_typeck_cannot_cast_to_bool = 无法将类型 `{$expr_ty}` 转换为 `bool`
+    .suggestion = 改为与零比较
+    .help = 改为与零比较
+    .label = 不支持的转换
 
 hir_typeck_cast_enum_drop = cannot cast enum `{$expr_ty}` into integer `{$cast_ty}` because it implements `Drop`
 

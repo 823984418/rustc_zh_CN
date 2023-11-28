@@ -40,11 +40,11 @@ lint_builtin_clashing_extern_diff_name = `{$this}` redeclares `{$orig}` with a d
     .previous_decl_label = `{$orig}` previously declared here
     .mismatch_label = this signature doesn't match the previous declaration
 
-lint_builtin_clashing_extern_same_name = `{$this}` redeclared with a different signature
-    .previous_decl_label = `{$orig}` previously declared here
-    .mismatch_label = this signature doesn't match the previous declaration
-lint_builtin_const_no_mangle = const items should never be `#[no_mangle]`
-    .suggestion = try a static value
+lint_builtin_clashing_extern_same_name = `{$this}` 用不同的签名重新声明
+    .previous_decl_label = `{$orig}` 先前在此声明
+    .mismatch_label = 个签名与以前的声明不匹配
+lint_builtin_const_no_mangle = const项不可以是`#[no_mangle]`的
+    .suggestion = 尝试使用static值
 
 lint_builtin_decl_unsafe_fn = declaration of an `unsafe` function
 lint_builtin_decl_unsafe_method = declaration of an `unsafe` method

@@ -176,7 +176,7 @@ builtin_macros_format_unknown_trait = unknown format trait `{$ty}`
 builtin_macros_format_unused_arg = {$named ->
     [true] named argument
     *[false] argument
-    } never used
+    } 从未使用
 
 builtin_macros_format_unused_args = multiple unused formatting arguments
     .label = multiple missing formatting specifiers
@@ -187,20 +187,20 @@ builtin_macros_global_asm_clobber_abi = `clobber_abi` cannot be used with `globa
 
 builtin_macros_invalid_crate_attribute = invalid crate attribute
 
-builtin_macros_multiple_default_attrs = multiple `#[default]` attributes
-    .note = only one `#[default]` attribute is needed
-    .label = `#[default]` used here
-    .label_again = `#[default]` used again here
-    .help = try removing {$only_one ->
+builtin_macros_multiple_default_attrs = 多次 `#[default]` 属性
+    .note = 只能有一个`#[default]`属性
+    .label = `#[default]`出现在这
+    .label_again = `#[default]`第二次出现在这
+    .help = 尝试移除 {$only_one ->
     [true] this
     *[false] these
     }
 
-builtin_macros_multiple_defaults = multiple declared defaults
-    .label = first default
-    .additional = additional default
-    .note = only one variant can be default
-    .suggestion = make `{$ident}` default
+builtin_macros_multiple_defaults = 多次声明默认值
+    .label = 第一个默认值
+    .additional = 另一个默认值
+    .note = 只能有一个默认变体
+    .suggestion = 使 `{$ident}` 默认
 
 builtin_macros_no_default_variant = no default declared
     .help = make a unit variant default by placing `#[default]` above it

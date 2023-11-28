@@ -11,7 +11,7 @@ borrowck_assign_part_due_to_use_coroutine =
     assign to part occurs due to use in coroutine
 
 borrowck_borrow_due_to_use_closure =
-    borrow occurs due to use in closure
+    因在闭包中使用而发生借用
 
 borrowck_borrow_due_to_use_coroutine =
     borrow occurs due to use in coroutine
@@ -20,18 +20,18 @@ borrowck_calling_operator_moves_lhs =
     calling this operator moves the left-hand side
 
 borrowck_cannot_move_when_borrowed =
-    cannot move out of {$place ->
+    无法移动 {$place ->
         [value] value
         *[other] {$place}
-    } because it is borrowed
-    .label = borrow of {$borrow_place ->
+    } 因为它被借用
+    .label = 借用 {$borrow_place ->
         [value] value
         *[other] {$borrow_place}
-    } occurs here
-    .move_label = move out of {$value_place ->
+    } 发生在这
+    .move_label = 移动 {$value_place ->
         [value] value
         *[other] {$value_place}
-    } occurs here
+    } 发生在这
 
 borrowck_capture_immute =
     capture is immutable because of use here
@@ -228,8 +228,8 @@ borrowck_var_cannot_escape_closure =
     .cannot_escape = ...therefore, they cannot allow references to captured variables to escape
 
 borrowck_var_does_not_need_mut =
-    variable does not need to be mutable
-    .suggestion = remove this `mut`
+    变量不需要是可变的
+    .suggestion = 删除这个`mut`
 
 borrowck_var_first_borrow_by_use_place_in_closure =
     first borrow occurs due to use of {$place} in closure
@@ -237,12 +237,12 @@ borrowck_var_first_borrow_by_use_place_in_closure =
 borrowck_var_first_borrow_by_use_place_in_coroutine =
     first borrow occurs due to use of {$place} in coroutine
 
-borrowck_var_here_captured = variable captured here
+borrowck_var_here_captured = 变量在这里被捕获
 
-borrowck_var_here_defined = variable defined here
+borrowck_var_here_defined = 变量定义在这
 
 borrowck_var_move_by_use_in_closure =
-    move occurs due to use in closure
+    因在闭包中使用而发生移动
 
 borrowck_var_move_by_use_in_coroutine =
     move occurs due to use in coroutine

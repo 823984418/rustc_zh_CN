@@ -201,7 +201,7 @@ infer_oc_fn_lang_correct_type = {$lang_item_name ->
     } function has wrong type
 infer_oc_fn_main_correct_type = `main` function has wrong type
 infer_oc_fn_start_correct_type = `#[start]` function has wrong type
-infer_oc_generic = mismatched types
+infer_oc_generic = 不匹配的类型
 
 infer_oc_if_else_different = `if` and `else` have incompatible types
 infer_oc_intrinsic_correct_type = intrinsic has wrong type

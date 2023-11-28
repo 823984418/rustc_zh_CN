@@ -47,11 +47,11 @@ trait_selection_negative_positive_conflict = found both positive and negative im
     .positive_implementation_here = positive implementation here
     .positive_implementation_in_crate = positive implementation in crate `{$positive_impl_cname}`
 
-trait_selection_no_value_in_rustc_on_unimplemented = this attribute must have a valid value
-    .label = expected value here
-    .note = eg `#[rustc_on_unimplemented(message="foo")]`
+trait_selection_no_value_in_rustc_on_unimplemented = 此属性必须具有一个有效的值
+    .label = 这里预期一个值
+    .note = 例如`#[rustc_on_unimplemented(message="foo")]`
 
-trait_selection_trait_has_no_impls = this trait has no implementations, consider adding one
+trait_selection_trait_has_no_impls = 此特征没有实现, 考虑添加一个
 
 trait_selection_ty_alias_overflow = in case this is a recursive type alias, consider using a struct, enum, or union instead
 trait_selection_unable_to_construct_constant_value = unable to construct a constant value for the unevaluated constant {$unevaluated}

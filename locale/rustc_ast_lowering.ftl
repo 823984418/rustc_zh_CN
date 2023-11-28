@@ -1,29 +1,29 @@
 ast_lowering_abi_specified_multiple_times =
-    `{$prev_name}` ABI specified multiple times
-    .label = previously specified here
-    .note = these ABIs are equivalent on the current target
+    `{$prev_name}` 指定了多次ABI
+    .label = 先前指定在这
+    .note = 这些ABI在当前目标上等价
 
 ast_lowering_arbitrary_expression_in_pattern =
-    arbitrary expressions aren't allowed in patterns
+    在此模式中不应是任何表达式
 
-ast_lowering_argument = argument
+ast_lowering_argument = 参数
 
 ast_lowering_assoc_ty_parentheses =
     parenthesized generic arguments cannot be used in associated type constraints
 
 ast_lowering_async_coroutines_not_supported =
-    `async` coroutines are not yet supported
+    不支持 `async` 协程
 
 ast_lowering_async_non_move_closure_not_supported =
-    `async` non-`move` closures with parameters are not currently supported
-    .help = consider using `let` statements to manually capture variables by reference before entering an `async move` closure
+    当前还不支持非`move`的`async`闭包拥有参数
+    .help = 考虑在`async move`闭包之前以`let`语句通过引用手动捕获变量
 
 ast_lowering_att_syntax_only_x86 =
-    the `att_syntax` option is only supported on x86
+    仅x86支持`att_syntax`选项
 
 ast_lowering_await_only_in_async_fn_and_blocks =
-    `await` is only allowed inside `async` functions and blocks
-    .label = only allowed inside `async` functions and blocks
+    `await`仅允许在`async`函数和块内部使用
+    .label = 仅允许出现在`async`函数和块内部
 
 ast_lowering_bad_return_type_notation_inputs =
     argument types not allowed with return type notation
@@ -34,16 +34,16 @@ ast_lowering_bad_return_type_notation_output =
     .suggestion = remove the return type
 
 ast_lowering_base_expression_double_dot =
-    base expression required after `..`
-    .label = add a base expression here
+    在`..`之后需要一个表示基础值的表达式
+    .label = 在这添加一个基础值的表达式
 
 ast_lowering_clobber_abi_not_supported =
-    `clobber_abi` is not supported on this target
+    此目标不支持`clobber_abi`
 
-ast_lowering_closure_cannot_be_static = closures cannot be static
+ast_lowering_closure_cannot_be_static = 闭包不能是静态的
 
 ast_lowering_coroutine_too_many_parameters =
-    too many parameters for a coroutine (expected 0 or 1 parameters)
+    协程参数过多(预期0个或1个)
 
 ast_lowering_does_not_support_modifiers =
     the `{$class_name}` register class does not support template modifiers
@@ -57,24 +57,24 @@ ast_lowering_functional_record_update_destructuring_assignment =
     .suggestion = consider removing the trailing pattern
 
 ast_lowering_generic_type_with_parentheses =
-    parenthesized type parameters may only be used with a `Fn` trait
-    .label = only `Fn` traits may use parentheses
+    带括号的类型参数只能与`Fn`系列特征一起使用
+    .label = 只有`Fn`系列特征可以使用带括号的参数
 
 ast_lowering_inclusive_range_with_no_end = inclusive range with no end
 
 ast_lowering_inline_asm_unsupported_target =
-    inline assembly is unsupported on this target
+    此目标不支持内联汇编
 
 ast_lowering_invalid_abi =
-    invalid ABI: found `{$abi}`
-    .label = invalid ABI
-    .note = invoke `{$command}` for a full list of supported calling conventions.
+    无效的ABI: 得到`{$abi}`
+    .label = 无效的ABI
+    .note = 通过`{$command}`获取全部支持的调用约定列表
 
 ast_lowering_invalid_abi_clobber_abi =
-    invalid ABI for `clobber_abi`
-    .note = the following ABIs are supported on this target: {$supported_abis}
+    无效的ABI`clobber_abi`
+    .note = 此目标支持以下ABI: {$supported_abis}
 
-ast_lowering_invalid_abi_suggestion = did you mean
+ast_lowering_invalid_abi_suggestion = 你的意思是
 
 ast_lowering_invalid_asm_template_modifier_const =
     asm template modifiers are not allowed for `const` arguments
@@ -123,21 +123,21 @@ ast_lowering_register_conflict =
 ast_lowering_remove_parentheses = remove these parentheses
 
 ast_lowering_sub_tuple_binding =
-    `{$ident_name} @` is not allowed in a {$ctx}
-    .label = this is only allowed in slice patterns
-    .help = remove this and bind each tuple field independently
+    不允许使用`{$ident_name} @`在{$ctx}
+    .label = 这只在切片模式中可用
+    .help = 删除它并独立绑定每个元组字段
 
-ast_lowering_sub_tuple_binding_suggestion = if you don't need to use the contents of {$ident}, discard the tuple's remaining fields
+ast_lowering_sub_tuple_binding_suggestion = 如果你不需要使用{$ident}的内容, 丢弃元组的剩余字段
 
 ast_lowering_support_modifiers =
-    the `{$class_name}` register class supports the following template modifiers: {$modifiers}
+    寄存器类`{$class_name}` 支持以下模板修饰符: {$modifiers}
 
-ast_lowering_template_modifier = template modifier
+ast_lowering_template_modifier = 模板修饰符
 
-ast_lowering_this_not_async = this is not `async`
+ast_lowering_this_not_async = 这不是`async`的
 
 ast_lowering_underscore_expr_lhs_assign =
-    in expressions, `_` can only be used on the left-hand side of an assignment
-    .label = `_` not allowed here
+    在表达式中, `_`只能出现在赋值的左侧
+    .label = 这里不允许使用`_`
 
-ast_lowering_use_angle_brackets = use angle brackets instead
+ast_lowering_use_angle_brackets = 使用尖括号代替

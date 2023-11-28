@@ -63,7 +63,7 @@ resolve_cannot_determine_macro_resolution =
     .note = import resolution is stuck, try simplifying macro imports
 
 resolve_cannot_find_ident_in_this_scope =
-    cannot find {$expected} `{$ident}` in this scope
+    在这个作用域中找不到 {$expected} `{$ident}`
 
 resolve_cannot_glob_import_possible_crates =
     cannot glob-import all possible crates
@@ -175,7 +175,7 @@ resolve_lowercase_self =
     .suggestion = try using `Self`
 
 resolve_macro_expected_found =
-    expected {$expected}, found {$found} `{$macro_path}`
+    预期 {$expected}, 得到 {$found} `{$macro_path}`
 
 resolve_macro_use_extern_crate_self = `#[macro_use]` is not supported on `extern crate self`
 

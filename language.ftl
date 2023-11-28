@@ -1,29 +1,29 @@
 ast_lowering_abi_specified_multiple_times =
-    `{$prev_name}` ABI specified multiple times
-    .label = previously specified here
-    .note = these ABIs are equivalent on the current target
+    `{$prev_name}` 指定了多次ABI
+    .label = 先前指定在这
+    .note = 这些ABI在当前目标上等价
 
 ast_lowering_arbitrary_expression_in_pattern =
-    arbitrary expressions aren't allowed in patterns
+    在此模式中不应是任何表达式
 
-ast_lowering_argument = argument
+ast_lowering_argument = 参数
 
 ast_lowering_assoc_ty_parentheses =
     parenthesized generic arguments cannot be used in associated type constraints
 
 ast_lowering_async_coroutines_not_supported =
-    `async` coroutines are not yet supported
+    不支持 `async` 协程
 
 ast_lowering_async_non_move_closure_not_supported =
-    `async` non-`move` closures with parameters are not currently supported
-    .help = consider using `let` statements to manually capture variables by reference before entering an `async move` closure
+    当前还不支持非`move`的`async`闭包拥有参数
+    .help = 考虑在`async move`闭包之前以`let`语句通过引用手动捕获变量
 
 ast_lowering_att_syntax_only_x86 =
-    the `att_syntax` option is only supported on x86
+    仅x86支持`att_syntax`选项
 
 ast_lowering_await_only_in_async_fn_and_blocks =
-    `await` is only allowed inside `async` functions and blocks
-    .label = only allowed inside `async` functions and blocks
+    `await`仅允许在`async`函数和块内部使用
+    .label = 仅允许出现在`async`函数和块内部
 
 ast_lowering_bad_return_type_notation_inputs =
     argument types not allowed with return type notation
@@ -34,16 +34,16 @@ ast_lowering_bad_return_type_notation_output =
     .suggestion = remove the return type
 
 ast_lowering_base_expression_double_dot =
-    base expression required after `..`
-    .label = add a base expression here
+    在`..`之后需要一个表示基础值的表达式
+    .label = 在这添加一个基础值的表达式
 
 ast_lowering_clobber_abi_not_supported =
-    `clobber_abi` is not supported on this target
+    此目标不支持`clobber_abi`
 
-ast_lowering_closure_cannot_be_static = closures cannot be static
+ast_lowering_closure_cannot_be_static = 闭包不能是静态的
 
 ast_lowering_coroutine_too_many_parameters =
-    too many parameters for a coroutine (expected 0 or 1 parameters)
+    协程参数过多(预期0个或1个)
 
 ast_lowering_does_not_support_modifiers =
     the `{$class_name}` register class does not support template modifiers
@@ -57,24 +57,24 @@ ast_lowering_functional_record_update_destructuring_assignment =
     .suggestion = consider removing the trailing pattern
 
 ast_lowering_generic_type_with_parentheses =
-    parenthesized type parameters may only be used with a `Fn` trait
-    .label = only `Fn` traits may use parentheses
+    带括号的类型参数只能与`Fn`系列特征一起使用
+    .label = 只有`Fn`系列特征可以使用带括号的参数
 
 ast_lowering_inclusive_range_with_no_end = inclusive range with no end
 
 ast_lowering_inline_asm_unsupported_target =
-    inline assembly is unsupported on this target
+    此目标不支持内联汇编
 
 ast_lowering_invalid_abi =
-    invalid ABI: found `{$abi}`
-    .label = invalid ABI
-    .note = invoke `{$command}` for a full list of supported calling conventions.
+    无效的ABI: 得到`{$abi}`
+    .label = 无效的ABI
+    .note = 通过`{$command}`获取全部支持的调用约定列表
 
 ast_lowering_invalid_abi_clobber_abi =
-    invalid ABI for `clobber_abi`
-    .note = the following ABIs are supported on this target: {$supported_abis}
+    无效的ABI`clobber_abi`
+    .note = 此目标支持以下ABI: {$supported_abis}
 
-ast_lowering_invalid_abi_suggestion = did you mean
+ast_lowering_invalid_abi_suggestion = 你的意思是
 
 ast_lowering_invalid_asm_template_modifier_const =
     asm template modifiers are not allowed for `const` arguments
@@ -123,24 +123,24 @@ ast_lowering_register_conflict =
 ast_lowering_remove_parentheses = remove these parentheses
 
 ast_lowering_sub_tuple_binding =
-    `{$ident_name} @` is not allowed in a {$ctx}
-    .label = this is only allowed in slice patterns
-    .help = remove this and bind each tuple field independently
+    不允许使用`{$ident_name} @`在{$ctx}
+    .label = 这只在切片模式中可用
+    .help = 删除它并独立绑定每个元组字段
 
-ast_lowering_sub_tuple_binding_suggestion = if you don't need to use the contents of {$ident}, discard the tuple's remaining fields
+ast_lowering_sub_tuple_binding_suggestion = 如果你不需要使用{$ident}的内容, 丢弃元组的剩余字段
 
 ast_lowering_support_modifiers =
-    the `{$class_name}` register class supports the following template modifiers: {$modifiers}
+    寄存器类`{$class_name}` 支持以下模板修饰符: {$modifiers}
 
-ast_lowering_template_modifier = template modifier
+ast_lowering_template_modifier = 模板修饰符
 
-ast_lowering_this_not_async = this is not `async`
+ast_lowering_this_not_async = 这不是`async`的
 
 ast_lowering_underscore_expr_lhs_assign =
-    in expressions, `_` can only be used on the left-hand side of an assignment
-    .label = `_` not allowed here
+    在表达式中, `_`只能出现在赋值的左侧
+    .label = 这里不允许使用`_`
 
-ast_lowering_use_angle_brackets = use angle brackets instead
+ast_lowering_use_angle_brackets = 使用尖括号代替
 ast_passes_anon_struct_or_union_not_allowed =
     anonymous {$struct_or_union}s are not allowed outside of unnamed struct or union fields
     .label = anonymous {$struct_or_union} declared here
@@ -462,25 +462,25 @@ attr_invalid_since =
     'since' must be a Rust version number, such as "1.31.0"
 
 attr_missing_feature =
-    missing 'feature'
+    缺少 'feature'
 
 attr_missing_issue =
-    missing 'issue'
+    缺少 'issue'
 
 attr_missing_note =
-    missing 'note'
+    缺少 'note'
 
 attr_missing_since =
-    missing 'since'
+    缺少 'since'
 
 attr_multiple_item =
     multiple '{$item}' items
 
 attr_multiple_stability_levels =
-    multiple stability levels
+    多个稳定级别
 
 attr_non_ident_feature =
-    'feature' is not an identifier
+    'feature' 不是标识符
 
 attr_rustc_allowed_unstable_pairing =
     `rustc_allowed_through_unstable_modules` attribute must be paired with a `stable` attribute
@@ -505,7 +505,7 @@ attr_unsupported_literal_deprecated_kv_pair =
 attr_unsupported_literal_deprecated_string =
     literal in `deprecated` value must be a string
 attr_unsupported_literal_generic =
-    unsupported literal
+    不支持的字面量
 attr_unsupported_literal_suggestion =
     consider removing the prefix
 borrowck_assign_due_to_use_closure =
@@ -521,7 +521,7 @@ borrowck_assign_part_due_to_use_coroutine =
     assign to part occurs due to use in coroutine
 
 borrowck_borrow_due_to_use_closure =
-    borrow occurs due to use in closure
+    因在闭包中使用而发生借用
 
 borrowck_borrow_due_to_use_coroutine =
     borrow occurs due to use in coroutine
@@ -530,18 +530,18 @@ borrowck_calling_operator_moves_lhs =
     calling this operator moves the left-hand side
 
 borrowck_cannot_move_when_borrowed =
-    cannot move out of {$place ->
+    无法移动 {$place ->
         [value] value
         *[other] {$place}
-    } because it is borrowed
-    .label = borrow of {$borrow_place ->
+    } 因为它被借用
+    .label = 借用 {$borrow_place ->
         [value] value
         *[other] {$borrow_place}
-    } occurs here
-    .move_label = move out of {$value_place ->
+    } 发生在这
+    .move_label = 移动 {$value_place ->
         [value] value
         *[other] {$value_place}
-    } occurs here
+    } 发生在这
 
 borrowck_capture_immute =
     capture is immutable because of use here
@@ -738,8 +738,8 @@ borrowck_var_cannot_escape_closure =
     .cannot_escape = ...therefore, they cannot allow references to captured variables to escape
 
 borrowck_var_does_not_need_mut =
-    variable does not need to be mutable
-    .suggestion = remove this `mut`
+    变量不需要是可变的
+    .suggestion = 删除这个`mut`
 
 borrowck_var_first_borrow_by_use_place_in_closure =
     first borrow occurs due to use of {$place} in closure
@@ -747,12 +747,12 @@ borrowck_var_first_borrow_by_use_place_in_closure =
 borrowck_var_first_borrow_by_use_place_in_coroutine =
     first borrow occurs due to use of {$place} in coroutine
 
-borrowck_var_here_captured = variable captured here
+borrowck_var_here_captured = 变量在这里被捕获
 
-borrowck_var_here_defined = variable defined here
+borrowck_var_here_defined = 变量定义在这
 
 borrowck_var_move_by_use_in_closure =
-    move occurs due to use in closure
+    因在闭包中使用而发生移动
 
 borrowck_var_move_by_use_in_coroutine =
     move occurs due to use in coroutine
@@ -943,7 +943,7 @@ builtin_macros_format_unknown_trait = unknown format trait `{$ty}`
 builtin_macros_format_unused_arg = {$named ->
     [true] named argument
     *[false] argument
-    } never used
+    } 从未使用
 
 builtin_macros_format_unused_args = multiple unused formatting arguments
     .label = multiple missing formatting specifiers
@@ -954,20 +954,20 @@ builtin_macros_global_asm_clobber_abi = `clobber_abi` cannot be used with `globa
 
 builtin_macros_invalid_crate_attribute = invalid crate attribute
 
-builtin_macros_multiple_default_attrs = multiple `#[default]` attributes
-    .note = only one `#[default]` attribute is needed
-    .label = `#[default]` used here
-    .label_again = `#[default]` used again here
-    .help = try removing {$only_one ->
+builtin_macros_multiple_default_attrs = 多次 `#[default]` 属性
+    .note = 只能有一个`#[default]`属性
+    .label = `#[default]`出现在这
+    .label_again = `#[default]`第二次出现在这
+    .help = 尝试移除 {$only_one ->
     [true] this
     *[false] these
     }
 
-builtin_macros_multiple_defaults = multiple declared defaults
-    .label = first default
-    .additional = additional default
-    .note = only one variant can be default
-    .suggestion = make `{$ident}` default
+builtin_macros_multiple_defaults = 多次声明默认值
+    .label = 第一个默认值
+    .additional = 另一个默认值
+    .note = 只能有一个默认变体
+    .suggestion = 使 `{$ident}` 默认
 
 builtin_macros_no_default_variant = no default declared
     .help = make a unit variant default by placing `#[default]` above it
@@ -1053,7 +1053,7 @@ codegen_gcc_missing_features =
 
 codegen_gcc_target_feature_disable_or_enable =
     the target features {$features} must all be either enabled or disabled together
-codegen_llvm_copy_bitcode = failed to copy bitcode to object file: {$err}
+codegen_llvm_copy_bitcode = 拷贝字节码至对象文件失败: {$err}
 
 codegen_llvm_dlltool_fail_import_library =
     Dlltool could not create import library with {$dlltool_path} {$dlltool_args}:
@@ -1489,10 +1489,10 @@ codegen_ssa_version_script_write_failure = failed to write version script: {$err
 
 codegen_ssa_visual_studio_not_installed = you may need to install Visual Studio build tools with the "C++ build tools" workload
 const_eval_address_space_full =
-    there are no more free addresses in the address space
+    地址空间中没有更多可用地址
 
 const_eval_align_offset_invalid_align =
-    `align_offset` called with non-power-of-two align: {$target_align}
+    调用`align_offset`以非二的幂次对齐: {$target_align}
 
 const_eval_alignment_check_failed =
     {$msg ->
@@ -1501,14 +1501,14 @@ const_eval_alignment_check_failed =
     } with alignment {$has}, but alignment {$required} is required
 
 const_eval_already_reported =
-    an error has already been reported elsewhere (this should not usually be printed)
+    其他地方已经报告了错误 (这通常不应该被打印出来)
 const_eval_assume_false =
     `assume` called with `false`
 
 const_eval_await_non_const =
-    cannot convert `{$ty}` into a future in {const_eval_const_context}s
+    无法将`{$ty}`转换为一个future在 {const_eval_const_context} 中
 const_eval_bounds_check_failed =
-    indexing out of bounds: the len is {$len} but the index is {$index}
+    索引越界: 长度是{$len}但索引是{$index}
 const_eval_call_nonzero_intrinsic =
     `{$name}` called on 0
 
@@ -2462,7 +2462,7 @@ hir_analysis_return_type_notation_illegal_param_type =
     .label = type parameter declared here
 
 hir_analysis_return_type_notation_missing_method =
-    cannot find associated function `{$assoc_name}` for `{$ty_name}`
+    找不到`{$ty_name}`的关联函数`{$assoc_name}`
 
 hir_analysis_return_type_notation_on_non_rpitit =
     return type notation used on function that is not `async` and does not return `impl Trait`
@@ -2591,26 +2591,26 @@ hir_analysis_wrong_number_of_generic_arguments_to_intrinsic =
     }
 hir_typeck_add_missing_parentheses_in_range = you must surround the range in parentheses to call its `{$func_name}` function
 
-hir_typeck_add_return_type_add = try adding a return type
+hir_typeck_add_return_type_add = 尝试添加一个返回类型
 
-hir_typeck_add_return_type_missing_here = a return type might be missing here
+hir_typeck_add_return_type_missing_here = 此处可能缺少返回类型
 
-hir_typeck_address_of_temporary_taken = cannot take address of a temporary
-    .label = temporary value
+hir_typeck_address_of_temporary_taken = 不能获取临时值的地址
+    .label = 临时值
 
-hir_typeck_arg_mismatch_indeterminate = argument type mismatch was detected, but rustc had trouble determining where
-    .note = we would appreciate a bug report: https://github.com/rust-lang/rust/issues/new
+hir_typeck_arg_mismatch_indeterminate = 检测到参数类型不匹配, 但rustc无法确定它的位置
+    .note = 提供错误报告: https://github.com/rust-lang/rust/issues/new
 
-hir_typeck_candidate_trait_note = `{$trait_name}` defines an item `{$item_name}`{$action_or_ty ->
+hir_typeck_candidate_trait_note = `{$trait_name}` 定义了一项 `{$item_name}`{$action_or_ty ->
     [NONE] {""}
-    [implement] , perhaps you need to implement it
-    *[other] , perhaps you need to restrict type parameter `{$action_or_ty}` with it
+    [implement] , 也许您需要实现它
+    *[other] , 也许您需要以`{$action_or_ty}`限制类型参数
 }
 
-hir_typeck_cannot_cast_to_bool = cannot cast `{$expr_ty}` as `bool`
-    .suggestion = compare with zero instead
-    .help = compare with zero instead
-    .label = unsupported cast
+hir_typeck_cannot_cast_to_bool = 无法将类型 `{$expr_ty}` 转换为 `bool`
+    .suggestion = 改为与零比较
+    .help = 改为与零比较
+    .label = 不支持的转换
 
 hir_typeck_cast_enum_drop = cannot cast enum `{$expr_ty}` into integer `{$cast_ty}` because it implements `Drop`
 
@@ -3048,7 +3048,7 @@ infer_oc_fn_lang_correct_type = {$lang_item_name ->
     } function has wrong type
 infer_oc_fn_main_correct_type = `main` function has wrong type
 infer_oc_fn_start_correct_type = `#[start]` function has wrong type
-infer_oc_generic = mismatched types
+infer_oc_generic = 不匹配的类型
 
 infer_oc_if_else_different = `if` and `else` have incompatible types
 infer_oc_intrinsic_correct_type = intrinsic has wrong type
@@ -3333,11 +3333,11 @@ lint_builtin_clashing_extern_diff_name = `{$this}` redeclares `{$orig}` with a d
     .previous_decl_label = `{$orig}` previously declared here
     .mismatch_label = this signature doesn't match the previous declaration
 
-lint_builtin_clashing_extern_same_name = `{$this}` redeclared with a different signature
-    .previous_decl_label = `{$orig}` previously declared here
-    .mismatch_label = this signature doesn't match the previous declaration
-lint_builtin_const_no_mangle = const items should never be `#[no_mangle]`
-    .suggestion = try a static value
+lint_builtin_clashing_extern_same_name = `{$this}` 用不同的签名重新声明
+    .previous_decl_label = `{$orig}` 先前在此声明
+    .mismatch_label = 个签名与以前的声明不匹配
+lint_builtin_const_no_mangle = const项不可以是`#[no_mangle]`的
+    .suggestion = 尝试使用static值
 
 lint_builtin_decl_unsafe_fn = declaration of an `unsafe` function
 lint_builtin_decl_unsafe_method = declaration of an `unsafe` method
@@ -4920,8 +4920,8 @@ parse_enum_pattern_instead_of_identifier = expected identifier, found enum patte
 parse_enum_struct_mutually_exclusive = `enum` and `struct` are mutually exclusive
     .suggestion = replace `enum struct` with
 
-parse_eq_field_init = expected `:`, found `=`
-    .suggestion = replace equals symbol with a colon
+parse_eq_field_init = 预期 `:`, 得到 `=`
+    .suggestion = 用冒号替换等号
 
 parse_equals_struct_default = default values on `struct` fields aren't supported
     .suggestion = remove this unsupported default value
@@ -4983,13 +4983,13 @@ parse_expected_semi_found_doc_comment_str = expected `;`, found doc comment `{$t
 parse_expected_semi_found_keyword_str = expected `;`, found keyword `{$token}`
 parse_expected_semi_found_reserved_identifier_str = expected `;`, found reserved identifier `{$token}`
 parse_expected_semi_found_reserved_keyword_str = expected `;`, found reserved keyword `{$token}`
-parse_expected_semi_found_str = expected `;`, found `{$token}`
+parse_expected_semi_found_str = 预期 `;`, 得到 `{$token}`
 
-parse_expected_statement_after_outer_attr = expected statement after outer attribute
+parse_expected_statement_after_outer_attr = 外部属性后应有语句
 
-parse_expected_struct_field = expected one of `,`, `:`, or `{"}"}`, found `{$token}`
-    .label = expected one of `,`, `:`, or `{"}"}`
-    .ident_label = while parsing this struct field
+parse_expected_struct_field = 预期一个 `,`, `:`, 或 `{"}"}`, 得到 `{$token}`
+    .label = 预期一个 `,`, `:`, 或 `{"}"}`
+    .ident_label = 在解析这个结构体字段时
 
 parse_expected_trait_in_trait_impl_found_type = expected a trait, found type
 
@@ -5184,7 +5184,7 @@ parse_kw_bad_case = keyword `{$kw}` is written in the wrong case
     .suggestion = write it in the correct case
 
 parse_label_inner_attr_does_not_annotate_this = the inner attribute doesn't annotate this {$item}
-parse_label_unexpected_token = unexpected token
+parse_label_unexpected_token = 意外的词法单元
 
 parse_label_while_parsing_or_pattern_here = while parsing this or-pattern starting here
 
@@ -5466,7 +5466,7 @@ parse_suffixed_literal_in_attribute = suffixed literals are not allowed in attri
 
 parse_sugg_add_let_for_stmt = you might have meant to introduce a new binding
 
-parse_sugg_add_semi = add `;` here
+parse_sugg_add_semi = 在此处添加`;`
 parse_sugg_change_inner_attr_to_outer = to annotate the {$item}, change the attribute from inner to outer style
 
 parse_sugg_change_this_to_semi = change this to `;`
@@ -5632,7 +5632,7 @@ parse_where_clause_before_tuple_struct_body = where clauses are not allowed befo
 parse_where_generics = generic parameters on `where` clauses are reserved for future use
     .label = currently unsupported
 
-parse_zero_chars = empty character literal
+parse_zero_chars = 字符字面量为空
     .label = {parse_zero_chars}
 -passes_previously_accepted =
     this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
@@ -6153,8 +6153,8 @@ passes_no_link =
     .label = not an `extern crate` item
 
 passes_no_main_function =
-    `main` function not found in crate `{$crate_name}`
-    .here_is_main = here is a function named `main`
+    没有找到`main`函数在`{$crate_name}`箱中
+    .here_is_main = 这是一个叫`main`的函数
     .one_or_more_possible_main = you have one or more functions named `main` not defined at the crate level
     .consider_moving_main = consider moving the `main` function definitions
     .main_must_be_defined_at_crate = the main function must be defined at the crate level{$has_filename ->
@@ -6397,23 +6397,23 @@ passes_unused_multiple =
 passes_unused_no_lints_note =
     attribute `{$name}` without any lints has no effect
 
-passes_unused_var_assigned_only = variable `{$name}` is assigned to, but never used
-    .note = consider using `_{$name}` instead
+passes_unused_var_assigned_only = 变量 `{$name}` 已经分配只, 但从未使用
+    .note = 考虑使用 `_{$name}` 代替
 
-passes_unused_var_maybe_capture_ref = unused variable: `{$name}`
-    .help = did you mean to capture by reference instead?
+passes_unused_var_maybe_capture_ref = 未使用的变量: `{$name}`
+    .help = 你是想要通过引用捕获吗?
 
-passes_unused_var_remove_field = unused variable: `{$name}`
+passes_unused_var_remove_field = 未使用的变量: `{$name}`
 passes_unused_var_remove_field_suggestion = try removing the field
 
 passes_unused_variable_args_in_macro = `{$name}` is captured in macro and introduced a unused variable
 
-passes_unused_variable_try_ignore = unused variable: `{$name}`
-    .suggestion = try ignoring the field
+passes_unused_variable_try_ignore = 未使用的变量: `{$name}`
+    .suggestion = 尝试忽略此字段
 
-passes_unused_variable_try_prefix = unused variable: `{$name}`
-    .label = unused variable
-    .suggestion = if this is intentional, prefix it with an underscore
+passes_unused_variable_try_prefix = 未使用的变量: `{$name}`
+    .label = 未使用的变量
+    .suggestion = 如果这个是有意的,请在它前面加上下划线
 
 
 passes_used_compiler_linker =
@@ -6551,7 +6551,7 @@ resolve_cannot_determine_macro_resolution =
     .note = import resolution is stuck, try simplifying macro imports
 
 resolve_cannot_find_ident_in_this_scope =
-    cannot find {$expected} `{$ident}` in this scope
+    在这个作用域中找不到 {$expected} `{$ident}`
 
 resolve_cannot_glob_import_possible_crates =
     cannot glob-import all possible crates
@@ -6663,7 +6663,7 @@ resolve_lowercase_self =
     .suggestion = try using `Self`
 
 resolve_macro_expected_found =
-    expected {$expected}, found {$found} `{$macro_path}`
+    预期 {$expected}, 得到 {$found} `{$macro_path}`
 
 resolve_macro_use_extern_crate_self = `#[macro_use]` is not supported on `extern crate self`
 
@@ -6950,11 +6950,11 @@ trait_selection_negative_positive_conflict = found both positive and negative im
     .positive_implementation_here = positive implementation here
     .positive_implementation_in_crate = positive implementation in crate `{$positive_impl_cname}`
 
-trait_selection_no_value_in_rustc_on_unimplemented = this attribute must have a valid value
-    .label = expected value here
-    .note = eg `#[rustc_on_unimplemented(message="foo")]`
+trait_selection_no_value_in_rustc_on_unimplemented = 此属性必须具有一个有效的值
+    .label = 这里预期一个值
+    .note = 例如`#[rustc_on_unimplemented(message="foo")]`
 
-trait_selection_trait_has_no_impls = this trait has no implementations, consider adding one
+trait_selection_trait_has_no_impls = 此特征没有实现, 考虑添加一个
 
 trait_selection_ty_alias_overflow = in case this is a recursive type alias, consider using a struct, enum, or union instead
 trait_selection_unable_to_construct_constant_value = unable to construct a constant value for the unevaluated constant {$unevaluated}
@@ -7022,4 +7022,4 @@ ty_utils_unexpected_fnptr_associated_item = `FnPtr` trait with unexpected associ
 
 ty_utils_yield_not_supported = coroutine control flow is not allowed in generic constants
 
-ty_utils_zero_length_simd_type = monomorphising SIMD type `{$ty}` of zero length
+ty_utils_zero_length_simd_type = 单态化SIMD类型`{$ty}`的长度为零

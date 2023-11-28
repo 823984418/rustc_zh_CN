@@ -295,7 +295,7 @@ hir_analysis_return_type_notation_illegal_param_type =
     .label = type parameter declared here
 
 hir_analysis_return_type_notation_missing_method =
-    cannot find associated function `{$assoc_name}` for `{$ty_name}`
+    找不到`{$ty_name}`的关联函数`{$assoc_name}`
 
 hir_analysis_return_type_notation_on_non_rpitit =
     return type notation used on function that is not `async` and does not return `impl Trait`
