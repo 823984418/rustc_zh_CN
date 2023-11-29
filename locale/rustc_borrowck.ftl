@@ -1,23 +1,23 @@
 borrowck_assign_due_to_use_closure =
-    assignment occurs due to use in closure
+    因在闭包中使用而发生赋值
 
 borrowck_assign_due_to_use_coroutine =
-    assign occurs due to use in coroutine
+    因在协程中使用而发生赋值
 
 borrowck_assign_part_due_to_use_closure =
-    assignment to part occurs due to use in closure
+    因在闭包中使用而发生部分赋值
 
 borrowck_assign_part_due_to_use_coroutine =
-    assign to part occurs due to use in coroutine
+    因在协程中使用而发生部分赋值
 
 borrowck_borrow_due_to_use_closure =
     因在闭包中使用而发生借用
 
 borrowck_borrow_due_to_use_coroutine =
-    borrow occurs due to use in coroutine
+    因在协程中使用而发生借用
 
 borrowck_calling_operator_moves_lhs =
-    calling this operator moves the left-hand side
+    调用此操作会移动左侧
 
 borrowck_cannot_move_when_borrowed =
     无法移动 {$place ->
@@ -34,15 +34,15 @@ borrowck_cannot_move_when_borrowed =
     } 发生在这
 
 borrowck_capture_immute =
-    capture is immutable because of use here
+    捕获不可变因为这个使用
 
 borrowck_capture_move =
-    capture is moved because of use here
+    捕获无法移动因为这个使用
 
 borrowck_capture_mut =
     capture is mutable because of use here
 
-borrowck_closure_inferred_mut = inferred to be a `FnMut` closure
+borrowck_closure_inferred_mut = 推断为 `FnMut` 闭包
 
 borrowck_closure_invoked_twice =
     closure cannot be invoked more than once because it moves the variable `{$place_name}` out of its environment
@@ -63,16 +63,16 @@ borrowck_func_take_self_moved_place =
     `{$func}` takes ownership of the receiver `self`, which moves {$place_name}
 
 borrowck_generic_does_not_live_long_enough =
-    `{$kind}` does not live long enough
+    `{$kind}` 活得不够久
 
 borrowck_higher_ranked_lifetime_error =
-    higher-ranked lifetime error
+    高阶生命周期错误
 
 borrowck_higher_ranked_subtype_error =
-    higher-ranked subtype error
+    高阶子类型错误
 
 borrowck_lifetime_constraints_error =
-    lifetime may not live long enough
+    生命周期也许活得不够久
 
 borrowck_move_out_place_here =
     {$place} is moved here
@@ -161,7 +161,7 @@ borrowck_returned_lifetime_wrong =
     {$mir_def_name} was supposed to return data with lifetime `{$outlived_fr_name}` but it is returning data with lifetime `{$fr_name}`
 
 borrowck_returned_ref_escaped =
-    returns a reference to a captured variable which escapes the closure body
+    返回对捕获变量的引用会逃逸出闭包体
 
 borrowck_simd_shuffle_last_const = last argument of `simd_shuffle` is required to be a `const` item
 
@@ -211,31 +211,32 @@ borrowck_var_borrow_by_use_in_coroutine =
     borrow occurs due to use in coroutine
 
 borrowck_var_borrow_by_use_place_in_closure =
-    {$is_single_var ->
-        *[true] borrow occurs
-        [false] borrows occur
-    } due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生了{$is_single_var ->
+    *[true] 借用
+    [false] 些借用
+    }
 
 borrowck_var_borrow_by_use_place_in_coroutine =
-    {$is_single_var ->
-        *[true] borrow occurs
-        [false] borrows occur
-    } due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生了{$is_single_var ->
+    *[true] 借用
+    [false] 些借用
+    }
+
 
 borrowck_var_cannot_escape_closure =
-    captured variable cannot escape `FnMut` closure body
-    .note = `FnMut` closures only have access to their captured variables while they are executing...
-    .cannot_escape = ...therefore, they cannot allow references to captured variables to escape
+    捕获变量不能逃逸出 `FnMut` 闭包体
+    .note = `FnMut` 闭包仅在执行期间可以访问捕获的变量...
+    .cannot_escape = ...因此, 不能允许捕获变量的引用逃逸
 
 borrowck_var_does_not_need_mut =
     变量不需要是可变的
     .suggestion = 删除这个`mut`
 
 borrowck_var_first_borrow_by_use_place_in_closure =
-    first borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生第一次借用
 
 borrowck_var_first_borrow_by_use_place_in_coroutine =
-    first borrow occurs due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生第一次借用
 
 borrowck_var_here_captured = 变量在这里被捕获
 
@@ -245,13 +246,13 @@ borrowck_var_move_by_use_in_closure =
     因在闭包中使用而发生移动
 
 borrowck_var_move_by_use_in_coroutine =
-    move occurs due to use in coroutine
+    因在协程中使用而发生移动
 
 borrowck_var_mutable_borrow_by_use_place_in_closure =
-    mutable borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生可变借用
 
 borrowck_var_second_borrow_by_use_place_in_closure =
-    second borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生第二次可变借用
 
 borrowck_var_second_borrow_by_use_place_in_coroutine =
-    second borrow occurs due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生第二次可变借用

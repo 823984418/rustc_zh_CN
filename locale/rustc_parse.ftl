@@ -1,4 +1,4 @@
-parse_add_paren = try adding parentheses
+parse_add_paren = 尝试添加括号
 
 parse_ambiguous_missing_keyword_for_item_definition = missing `fn` or `struct` for function or struct definition
     .suggestion = if you meant to call a macro, try

@@ -9,7 +9,7 @@ ast_lowering_arbitrary_expression_in_pattern =
 ast_lowering_argument = 参数
 
 ast_lowering_assoc_ty_parentheses =
-    parenthesized generic arguments cannot be used in associated type constraints
+    带括号的泛型参数不能用于约束关联类型
 
 ast_lowering_async_coroutines_not_supported =
     不支持 `async` 协程
@@ -26,12 +26,12 @@ ast_lowering_await_only_in_async_fn_and_blocks =
     .label = 仅允许出现在`async`函数和块内部
 
 ast_lowering_bad_return_type_notation_inputs =
-    argument types not allowed with return type notation
-    .suggestion = remove the input types
+    参数类型不允许使用返回类型表示法
+    .suggestion = 删除输入类型
 
 ast_lowering_bad_return_type_notation_output =
-    return type not allowed with return type notation
-    .suggestion = remove the return type
+    返回类型不允许使用返回类型表示法
+    .suggestion = 删除返回类型
 
 ast_lowering_base_expression_double_dot =
     在`..`之后需要一个表示基础值的表达式
@@ -46,11 +46,11 @@ ast_lowering_coroutine_too_many_parameters =
     协程参数过多(预期0个或1个)
 
 ast_lowering_does_not_support_modifiers =
-    the `{$class_name}` register class does not support template modifiers
+    `{$class_name}`寄存器类不支持模板修饰符
 
 ast_lowering_extra_double_dot =
-    `..` can only be used once per {$ctx} pattern
-    .label = can only be used once per {$ctx} pattern
+    每个 {$ctx} 模式仅能使用一次`..`
+    .label = 每个 {$ctx} 模式仅能使用一次
 
 ast_lowering_functional_record_update_destructuring_assignment =
     functional record updates are not allowed in destructuring assignments
@@ -60,7 +60,7 @@ ast_lowering_generic_type_with_parentheses =
     带括号的类型参数只能与`Fn`系列特征一起使用
     .label = 只有`Fn`系列特征可以使用带括号的参数
 
-ast_lowering_inclusive_range_with_no_end = inclusive range with no end
+ast_lowering_inclusive_range_with_no_end = 包含范围没有结尾
 
 ast_lowering_inline_asm_unsupported_target =
     此目标不支持内联汇编
@@ -77,48 +77,48 @@ ast_lowering_invalid_abi_clobber_abi =
 ast_lowering_invalid_abi_suggestion = 你的意思是
 
 ast_lowering_invalid_asm_template_modifier_const =
-    asm template modifiers are not allowed for `const` arguments
+    asm 模板修饰符不允许使用`const` 参数
 
 ast_lowering_invalid_asm_template_modifier_reg_class =
-    invalid asm template modifier for this register class
+    此寄存器类的asm模板修饰符无效
 
 ast_lowering_invalid_asm_template_modifier_sym =
-    asm template modifiers are not allowed for `sym` arguments
+    asm 模板修饰符不允许使用 `sym` 参数
 
 ast_lowering_invalid_register =
-    invalid register `{$reg}`: {$error}
+    无效的寄存器 `{$reg}`: {$error}
 
 ast_lowering_invalid_register_class =
-    invalid register class `{$reg_class}`: {$error}
+    无效的寄存器类 `{$reg_class}`: {$error}
 
 ast_lowering_misplaced_assoc_ty_binding =
-    associated type bounds are only allowed in where clauses and function signatures, not in {$position}
+    关联类型边界只允许在where子句和函数签名中使用, 不能用于 {$position}
 
 ast_lowering_misplaced_double_dot =
-    `..` patterns are not allowed here
-    .note = only allowed in tuple, tuple struct, and slice patterns
+    此处不允许使用 `..` 模式
+    .note = 仅允许用于元组, 元组结构体和切片模式中
 
 ast_lowering_misplaced_impl_trait =
-    `impl Trait` only allowed in function and inherent method argument and return types, not in {$position}
+    `impl Trait` 仅允许用于函数和固有方法的参数和返回值, 不能用于 {$position}
 
 ast_lowering_misplaced_relax_trait_bound =
-    `?Trait` bounds are only permitted at the point where a type parameter is declared
+    `?Trait` 边界仅允许用于声明类型参数边界
 
 ast_lowering_not_supported_for_lifetime_binder_async_closure =
-    `for<...>` binders on `async` closures are not currently supported
+    还不支持在 `async` 闭包上使用 `for<...>` 绑定
 
-ast_lowering_previously_used_here = previously used here
+ast_lowering_previously_used_here = 之前在这里使用
 
-ast_lowering_register1 = register `{$reg1_name}`
+ast_lowering_register1 = 寄存器 `{$reg1_name}`
 
-ast_lowering_register2 = register `{$reg2_name}`
+ast_lowering_register2 = 寄存器 `{$reg2_name}`
 
 ast_lowering_register_class_only_clobber =
-    register class `{$reg_class_name}` can only be used as a clobber, not as an input or output
+    寄存器类 `{$reg_class_name}` 只能作为 clobber, 不能作为输入输出
 
 ast_lowering_register_conflict =
-    register `{$reg1_name}` conflicts with register `{$reg2_name}`
-    .help = use `lateout` instead of `out` to avoid conflict
+    寄存器 `{$reg1_name}` 与寄存器 `{$reg2_name}` 冲突
+    .help = 使用 `lateout` 代替 `out` 来避免冲突
 
 ast_lowering_remove_parentheses = remove these parentheses
 

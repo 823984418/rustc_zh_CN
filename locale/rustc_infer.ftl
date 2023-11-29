@@ -1,20 +1,23 @@
-infer_actual_impl_expl_but_actually_implemented_for_ty = ...but `{$trait_path}` is actually implemented for the type `{$ty}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+infer_actual_impl_expl_but_actually_implemented_for_ty = ...但实际上类型`{$ty}`仅{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
-infer_actual_impl_expl_but_actually_implements_trait = ...but it actually implements `{$trait_path}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+}实现`{$trait_path}`
+
+infer_actual_impl_expl_but_actually_implements_trait = ...但实际上仅{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
-infer_actual_impl_expl_but_actually_ty_implements = ...but `{$ty}` actually implements `{$trait_path}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+}实现`{$trait_path}`
+
+infer_actual_impl_expl_but_actually_ty_implements = ...但类型`{$ty}`实际上{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
+}实现`{$trait_path}`
 
 infer_actual_impl_expl_expected_other_any = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for any lifetime `'{$lifetime_1}`...
+
 infer_actual_impl_expl_expected_other_nothing = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
@@ -24,14 +27,17 @@ infer_actual_impl_expl_expected_other_some = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for some specific lifetime `'{$lifetime_1}`...
+
 infer_actual_impl_expl_expected_other_two = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for any two lifetimes `'{$lifetime_1}` and `'{$lifetime_2}`...
-infer_actual_impl_expl_expected_passive_any = {$leading_ellipsis ->
+
+infer_actual_impl_expl_expected_passive_any = 类型`{$ty_or_sig}`需要对任意的生命周期`'{$lifetime_1}`都实现{$leading_ellipsis ->
     [true] ...
     *[false] {""}
-}`{$trait_path}` would have to be implemented for the type `{$ty_or_sig}`, for any lifetime `'{$lifetime_1}`...
+}`{$trait_path}`...
+
 infer_actual_impl_expl_expected_passive_nothing = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
@@ -158,8 +164,8 @@ infer_label_bad = {$bad_kind ->
     }
 }
 
-infer_lf_bound_not_satisfied = lifetime bound not satisfied
-infer_lifetime_mismatch = lifetime mismatch
+infer_lf_bound_not_satisfied = 不满足生命周期边界
+infer_lifetime_mismatch = 生命周期不匹配
 
 infer_lifetime_param_suggestion = consider introducing a named lifetime parameter{$is_impl ->
     [true] {" "}and update trait if needed
@@ -371,10 +377,10 @@ infer_trait_impl_diff = `impl` item signature doesn't match `trait` item signatu
     .expected_found = expected signature `{$expected}`
                {"   "}found signature `{$found}`
 
-infer_trait_placeholder_mismatch = implementation of `{$trait_def_id}` is not general enough
-    .label_satisfy = doesn't satisfy where-clause
-    .label_where = due to a where-clause on `{$def_id}`...
-    .label_dup = implementation of `{$trait_def_id}` is not general enough
+infer_trait_placeholder_mismatch = 对`{$trait_def_id}`的实现不够通用
+    .label_satisfy = 不满足where子句
+    .label_where = 由于`{$def_id}`上的where子句...
+    .label_dup = 对`{$trait_def_id}`的实现不够通用
 
 infer_try_cannot_convert = `?` operator cannot convert from `{$found}` to `{$expected}`
 

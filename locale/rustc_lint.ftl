@@ -565,11 +565,11 @@ lint_unused_delim = unnecessary {$delim} around {$item}
 
 lint_unused_import_braces = braces around {$node} is unnecessary
 
-lint_unused_op = unused {$op} that must be used
-    .label = the {$op} produces a value
-    .suggestion = use `let _ = ...` to ignore the resulting value
+lint_unused_op = 未使用的 {$op} 是必须使用的
+    .label = 此 {$op} 产生一个值
+    .suggestion = 使用 `let _ = ...` 忽略结果值
 
-lint_unused_result = unused result of type `{$ty}`
+lint_unused_result = 未使用 `{$ty}` 类型的结果
 
 lint_variant_size_differences =
-    enum variant is more than three times larger ({$largest} bytes) than the next largest
+    枚举变体比第二大的三倍以上({$largest} 字节)

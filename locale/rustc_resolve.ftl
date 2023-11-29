@@ -2,96 +2,96 @@ resolve_accessible_unsure = not sure whether the path is accessible or not
     .note = the type may have associated items, but we are currently not checking them
 
 resolve_add_as_non_derive =
-    add as non-Derive macro
+    添加为非派生宏
     `#[{$macro_path}]`
 
 resolve_added_macro_use =
-    have you added the `#[macro_use]` on the module/import?
+    在模块或导入中添加`#[macro_use]`了吗?
 
 resolve_ampersand_used_without_explicit_lifetime_name =
-    `&` without an explicit lifetime name cannot be used here
-    .note = explicit lifetime name needed here
+    这里不允许`&`没有明确的生命周期名称
+    .note = 此处需要显式生命周期名称
 
 resolve_ancestor_only =
-    visibilities can only be restricted to ancestor modules
+    可见性只能限于祖先模块
 
 resolve_associated_const_with_similar_name_exists =
-    there is an associated constant with a similar name
+    有一个名称相似的关联常量
 
 resolve_associated_fn_with_similar_name_exists =
-    there is an associated function with a similar name
+    有一个名称相似的关联函数
 
 resolve_associated_type_with_similar_name_exists =
-    there is an associated type with a similar name
+    有一个名称相似的关联类型
 
 resolve_attempt_to_use_non_constant_value_in_constant =
-    attempt to use a non-constant value in a constant
+    尝试在常量中使用非常量值
 
 resolve_attempt_to_use_non_constant_value_in_constant_label_with_suggestion =
-    non-constant value
+    非常量值
 
 resolve_attempt_to_use_non_constant_value_in_constant_with_suggestion =
-    consider using `{$suggestion}` instead of `{$current}`
+    尝试使用 `{$suggestion}` 替代 `{$current}`
 
 resolve_attempt_to_use_non_constant_value_in_constant_without_suggestion =
-    this would need to be a `{$suggestion}`
+    这里需要一个 `{$suggestion}`
 
 resolve_binding_shadows_something_unacceptable =
-    {$shadowing_binding}s cannot shadow {$shadowed_binding}s
-    .label = cannot be named the same as {$article} {$shadowed_binding}
-    .label_shadowed_binding = the {$shadowed_binding} `{$name}` is {$participle} here
+    {$shadowing_binding} 不能遮盖 {$shadowed_binding}
+    .label = 不能与 {$article} {$shadowed_binding} 命名相同
+    .label_shadowed_binding = 此 {$shadowed_binding} `{$name}` 在 {$participle}
 
 resolve_binding_shadows_something_unacceptable_suggestion =
-    try specify the pattern arguments
+    尝试指定模式参数
 
 resolve_cannot_be_reexported_crate_public =
-    `{$ident}` is only public within the crate, and cannot be re-exported outside
+    `{$ident}` 仅在箱中公开, 不能重新导出到外部
 
 resolve_cannot_be_reexported_private =
-    `{$ident}` is private, and cannot be re-exported
+    `{$ident}` 是私有的, 不能被重新导出
 
 resolve_cannot_capture_dynamic_environment_in_fn_item =
-    can't capture dynamic environment in a fn item
-    .help = use the `|| {"{"} ... {"}"}` closure form instead
+    在 fn 项中不能捕获动态环境
+    .help = 使用 `|| {"{"} ... {"}"}` 闭包替代
 
 resolve_cannot_determine_import_resolution =
-    cannot determine resolution for the import
-    .note = import resolution is stuck, try simplifying other imports
+    无法确定导入决议
+    .note = 导入决议中止, 尝试简化其他导入
 
 resolve_cannot_determine_macro_resolution =
-    cannot determine resolution for the {$kind} `{$path}`
-    .note = import resolution is stuck, try simplifying macro imports
+    无法确定 {$kind} `{$path}` 的决议
+    .note = 导入决议中止, 尝试简化宏导入
 
 resolve_cannot_find_ident_in_this_scope =
     在这个作用域中找不到 {$expected} `{$ident}`
 
 resolve_cannot_glob_import_possible_crates =
-    cannot glob-import all possible crates
+    无法全局导入所以可能的箱
 
 resolve_change_import_binding =
-    you can use `as` to change the binding name of the import
+    你可以使用`as`更改导入的绑定名称
 
 resolve_consider_adding_a_derive =
-    consider adding a derive
+    考虑添加一个派生
 
 resolve_consider_adding_macro_export =
-    consider adding a `#[macro_export]` to the macro in the imported module
+    考虑项导入模块的宏上添加`#[macro_export]`
 
 resolve_consider_declaring_with_pub =
-    consider declaring type or module `{$ident}` with `pub`
+    考虑用`pub`声明类型或者模块`{$ident}`
 
 resolve_consider_marking_as_pub =
-    consider marking `{$ident}` as `pub` in the imported module
+    考虑在导入模块`{$ident}`时标记为`pub`
 
 resolve_const_not_member_of_trait =
-    const `{$const_}` is not a member of trait `{$trait_}`
-    .label = not a member of trait `{$trait_}`
+    常量`{$const_}`并非特征`{$trait_}`的成员
+    .label = 不是特征`{$trait_}`的成员
 
 resolve_const_param_in_enum_discriminant =
-    const parameters may not be used in enum discriminant values
+    常量参数不能用于枚举判别值
 
 resolve_const_param_in_non_trivial_anon_const =
-    const parameters may only be used as standalone arguments, i.e. `{$name}`
+    常量参数只能用作独立参数, 例如 `{$name}`
 
 resolve_const_param_in_ty_of_const_param =
     const parameters may not be used in the type of const parameters
@@ -171,8 +171,8 @@ resolve_lifetime_param_in_ty_of_const_param =
     lifetime parameters may not be used in the type of const parameters
 
 resolve_lowercase_self =
-    attempt to use a non-constant value in a constant
-    .suggestion = try using `Self`
+    尝试在常量中使用非常量值
+    .suggestion = 尝试使用 `Self`
 
 resolve_macro_expected_found =
     预期 {$expected}, 得到 {$found} `{$macro_path}`

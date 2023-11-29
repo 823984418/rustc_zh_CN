@@ -8,9 +8,9 @@ session_cannot_mix_and_match_sanitizers = `-Zsanitizer={$first}` is incompatible
 session_cli_feature_diagnostic_help =
     add `-Zcrate-attr="feature({$feature})"` to the command-line options to enable
 
-session_crate_name_does_not_match = `--crate-name` and `#[crate_name]` are required to match, but `{$s}` != `{$name}`
+session_crate_name_does_not_match = `--crate-name` 和 `#[crate_name]` 需要匹配, 但 `{$s}` != `{$name}`
 
-session_crate_name_empty = crate name must not be empty
+session_crate_name_empty = 箱名不能为空
 
 session_crate_name_invalid = crate names cannot start with a `-`, but `{$s}` has a leading hyphen
 

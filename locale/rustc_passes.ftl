@@ -605,32 +605,26 @@ passes_rustc_dirty_clean =
     attribute requires -Z query-dep-graph to be enabled
 
 passes_rustc_layout_scalar_valid_range_arg =
-    expected exactly one integer literal argument
+    预期恰好一个整数字面量参数
 
 passes_rustc_layout_scalar_valid_range_not_struct =
-    attribute should be applied to a struct
-    .label = not a struct
+    属性应当用于一个结构体
+    .label = 不是结构体
 
 passes_rustc_legacy_const_generics_index =
-    #[rustc_legacy_const_generics] must have one index for each generic parameter
-    .label = generic parameters
+    #[rustc_legacy_const_generics] 每个泛型参数必须有一个索引
+    .label = 泛型参数
 
 passes_rustc_legacy_const_generics_index_exceed =
-    index exceeds number of arguments
-    .label = there {$arg_count ->
-        [one] is
-        *[other] are
-    } only {$arg_count} {$arg_count ->
-        [one] argument
-        *[other] arguments
-    }
+    索引超过了参数数
+    .label = 只有{$arg_count}个参数
 
 passes_rustc_legacy_const_generics_index_negative =
-    arguments should be non-negative integers
+    参数应为非负整数
 
 passes_rustc_legacy_const_generics_only =
-    #[rustc_legacy_const_generics] functions must only have const generics
-    .label = non-const generic parameter
+    #[rustc_legacy_const_generics] 函数必须只有常量泛型
+    .label = 非常量泛型参数
 
 passes_rustc_lint_opt_deny_field_access =
     `#[rustc_lint_opt_deny_field_access]` should be applied to a field

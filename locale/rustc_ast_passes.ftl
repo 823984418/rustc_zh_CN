@@ -1,6 +1,12 @@
 ast_passes_anon_struct_or_union_not_allowed =
-    anonymous {$struct_or_union}s are not allowed outside of unnamed struct or union fields
-    .label = anonymous {$struct_or_union} declared here
+    不允许在未命名结构体或联合体字段外使用匿名{$struct_or_union ->
+    *[struct] 结构体
+    [union] 元组
+    }
+    .label = 这里声明了匿名{$struct_or_union ->
+     *[struct] 结构体
+     [union] 元组
+     }
 
 ast_passes_assoc_const_without_body =
     associated constant in `impl` without body
@@ -248,10 +254,10 @@ ast_passes_visibility_not_permitted =
     .individual_impl_items = place qualifiers on individual impl items instead
     .individual_foreign_items = place qualifiers on individual foreign items instead
 
-ast_passes_where_clause_after_type_alias = where clauses are not allowed after the type for type aliases
-    .note = see issue #112792 <https://github.com/rust-lang/rust/issues/112792> for more information
-    .help = add `#![feature(lazy_type_alias)]` to the crate attributes to enable
+ast_passes_where_clause_after_type_alias = 类型别名的类型后面不允许有where子句
+    .note = 查看问题 #112792 <https://github.com/rust-lang/rust/issues/112792> 获取更多信息
+    .help = 添加 `#![feature(lazy_type_alias)]` 到箱属性以强制启用
 
-ast_passes_where_clause_before_type_alias = where clauses are not allowed before the type for type aliases
-    .note = see issue #89122 <https://github.com/rust-lang/rust/issues/89122> for more information
-    .suggestion = move it to the end of the type declaration
+ast_passes_where_clause_before_type_alias = 类型别名的类型之前不允许有where子句
+    .note = 查看问题 #89122 <https://github.com/rust-lang/rust/issues/89122> 获取更多信息
+    .suggestion = 将其移动到类型声明的末尾

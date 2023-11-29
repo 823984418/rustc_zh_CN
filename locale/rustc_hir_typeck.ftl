@@ -1,4 +1,4 @@
-hir_typeck_add_missing_parentheses_in_range = you must surround the range in parentheses to call its `{$func_name}` function
+hir_typeck_add_missing_parentheses_in_range = 必须用圆括号包裹才能调用它的`{$func_name}`函数
 
 hir_typeck_add_return_type_add = 尝试添加一个返回类型
 
@@ -21,34 +21,34 @@ hir_typeck_cannot_cast_to_bool = 无法将类型 `{$expr_ty}` 转换为 `bool`
     .help = 改为与零比较
     .label = 不支持的转换
 
-hir_typeck_cast_enum_drop = cannot cast enum `{$expr_ty}` into integer `{$cast_ty}` because it implements `Drop`
+hir_typeck_cast_enum_drop = 无法将枚举`{$expr_ty}`转换为整数类型`{$cast_ty}`因为它实现了`Drop`
 
-hir_typeck_cast_unknown_pointer = cannot cast {$to ->
-    [true] to
-    *[false] from
-    } a pointer of an unknown kind
-    .label_to = needs more type information
-    .note = the type information given here is insufficient to check whether the pointer cast is valid
-    .label_from = the type information given here is insufficient to check whether the pointer cast is valid
+hir_typeck_cast_unknown_pointer = 无法转换{$to ->
+    [true] 到
+    *[false] 从
+    }一个未知类型的指针
+    .label_to = 需要更多类型信息
+    .note = 此处提供的类型信息不足以检查指针强制转换是否有效
+    .label_from = 此处提供的类型信息不足以检查指针强制转换是否有效
 
-hir_typeck_const_select_must_be_const = this argument must be a `const fn`
-    .help = consult the documentation on `const_eval_select` for more information
+hir_typeck_const_select_must_be_const = 此参数必须是`const fn`
+    .help = 参阅`const_eval_select`文档以获取更多详细信息
 
-hir_typeck_const_select_must_be_fn = this argument must be a function item
-    .note = expected a function item, found {$ty}
-    .help = consult the documentation on `const_eval_select` for more information
+hir_typeck_const_select_must_be_fn = 此参数必须是函数
+    .note = 预期一个函数, 得到{$ty}
+    .help = 参阅`const_eval_select`文档以获取更多详细信息
 
-hir_typeck_convert_to_str = try converting the passed type into a `&str`
+hir_typeck_convert_to_str = 尝试将传递的类型转换为`&str`
 
-hir_typeck_convert_using_method = try using `{$sugg}` to convert `{$found}` to `{$expected}`
+hir_typeck_convert_using_method = 尝试用`{$sugg}`将`{$found}`转换为`{$expected}`
 
-hir_typeck_ctor_is_private = tuple struct constructor `{$def}` is private
+hir_typeck_ctor_is_private = 元组结构体的构造函数`{$def}`是私有的
 
 hir_typeck_deref_is_empty = this expression `Deref`s to `{$deref_ty}` which implements `is_empty`
 
-hir_typeck_expected_default_return_type = expected `()` because of default return type
+hir_typeck_expected_default_return_type = 预期是默认的返回类型`()`
 
-hir_typeck_expected_return_type = expected `{$expected}` because of return type
+hir_typeck_expected_return_type = 预期是默认的返回类型`{$expected}`
 
 hir_typeck_explicit_destructor = explicit use of destructor method
     .label = explicit destructor calls not allowed
@@ -133,7 +133,7 @@ hir_typeck_struct_expr_non_exhaustive =
 
 hir_typeck_suggest_boxing_note = for more on the distinction between the stack and the heap, read https://doc.rust-lang.org/book/ch15-01-box.html, https://doc.rust-lang.org/rust-by-example/std/box.html, and https://doc.rust-lang.org/std/boxed/index.html
 
-hir_typeck_suggest_boxing_when_appropriate = store this in the heap by calling `Box::new`
+hir_typeck_suggest_boxing_when_appropriate = 通过调用`Box::new`将其存储在堆上
 
 hir_typeck_suggest_ptr_null_mut = consider using `core::ptr::null_mut` instead
 
@@ -143,12 +143,12 @@ hir_typeck_trivial_cast = trivial {$numeric ->
     }: `{$expr_ty}` as `{$cast_ty}`
     .help = cast can be replaced by coercion; this might require a temporary variable
 
-hir_typeck_union_pat_dotdot = `..` cannot be used in union patterns
+hir_typeck_union_pat_dotdot = `..`不能在联合体模式中使用
 
-hir_typeck_union_pat_multiple_fields = union patterns should have exactly one field
+hir_typeck_union_pat_multiple_fields = 联合体模式中只能有一个字段
 
 hir_typeck_use_is_empty =
-    consider using the `is_empty` method on `{$expr_ty}` to determine if it contains anything
+    考虑在`{$expr_ty}`上使用`is_empty`来确定的是否包含内容
 
 hir_typeck_yield_expr_outside_of_coroutine =
-    yield expression outside of coroutine literal
+    yield表达式出现在协程字面量之外

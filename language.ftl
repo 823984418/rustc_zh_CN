@@ -9,7 +9,7 @@ ast_lowering_arbitrary_expression_in_pattern =
 ast_lowering_argument = 参数
 
 ast_lowering_assoc_ty_parentheses =
-    parenthesized generic arguments cannot be used in associated type constraints
+    带括号的泛型参数不能用于约束关联类型
 
 ast_lowering_async_coroutines_not_supported =
     不支持 `async` 协程
@@ -26,12 +26,12 @@ ast_lowering_await_only_in_async_fn_and_blocks =
     .label = 仅允许出现在`async`函数和块内部
 
 ast_lowering_bad_return_type_notation_inputs =
-    argument types not allowed with return type notation
-    .suggestion = remove the input types
+    参数类型不允许使用返回类型表示法
+    .suggestion = 删除输入类型
 
 ast_lowering_bad_return_type_notation_output =
-    return type not allowed with return type notation
-    .suggestion = remove the return type
+    返回类型不允许使用返回类型表示法
+    .suggestion = 删除返回类型
 
 ast_lowering_base_expression_double_dot =
     在`..`之后需要一个表示基础值的表达式
@@ -46,11 +46,11 @@ ast_lowering_coroutine_too_many_parameters =
     协程参数过多(预期0个或1个)
 
 ast_lowering_does_not_support_modifiers =
-    the `{$class_name}` register class does not support template modifiers
+    `{$class_name}`寄存器类不支持模板修饰符
 
 ast_lowering_extra_double_dot =
-    `..` can only be used once per {$ctx} pattern
-    .label = can only be used once per {$ctx} pattern
+    每个 {$ctx} 模式仅能使用一次`..`
+    .label = 每个 {$ctx} 模式仅能使用一次
 
 ast_lowering_functional_record_update_destructuring_assignment =
     functional record updates are not allowed in destructuring assignments
@@ -60,7 +60,7 @@ ast_lowering_generic_type_with_parentheses =
     带括号的类型参数只能与`Fn`系列特征一起使用
     .label = 只有`Fn`系列特征可以使用带括号的参数
 
-ast_lowering_inclusive_range_with_no_end = inclusive range with no end
+ast_lowering_inclusive_range_with_no_end = 包含范围没有结尾
 
 ast_lowering_inline_asm_unsupported_target =
     此目标不支持内联汇编
@@ -77,48 +77,48 @@ ast_lowering_invalid_abi_clobber_abi =
 ast_lowering_invalid_abi_suggestion = 你的意思是
 
 ast_lowering_invalid_asm_template_modifier_const =
-    asm template modifiers are not allowed for `const` arguments
+    asm 模板修饰符不允许使用`const` 参数
 
 ast_lowering_invalid_asm_template_modifier_reg_class =
-    invalid asm template modifier for this register class
+    此寄存器类的asm模板修饰符无效
 
 ast_lowering_invalid_asm_template_modifier_sym =
-    asm template modifiers are not allowed for `sym` arguments
+    asm 模板修饰符不允许使用 `sym` 参数
 
 ast_lowering_invalid_register =
-    invalid register `{$reg}`: {$error}
+    无效的寄存器 `{$reg}`: {$error}
 
 ast_lowering_invalid_register_class =
-    invalid register class `{$reg_class}`: {$error}
+    无效的寄存器类 `{$reg_class}`: {$error}
 
 ast_lowering_misplaced_assoc_ty_binding =
-    associated type bounds are only allowed in where clauses and function signatures, not in {$position}
+    关联类型边界只允许在where子句和函数签名中使用, 不能用于 {$position}
 
 ast_lowering_misplaced_double_dot =
-    `..` patterns are not allowed here
-    .note = only allowed in tuple, tuple struct, and slice patterns
+    此处不允许使用 `..` 模式
+    .note = 仅允许用于元组, 元组结构体和切片模式中
 
 ast_lowering_misplaced_impl_trait =
-    `impl Trait` only allowed in function and inherent method argument and return types, not in {$position}
+    `impl Trait` 仅允许用于函数和固有方法的参数和返回值, 不能用于 {$position}
 
 ast_lowering_misplaced_relax_trait_bound =
-    `?Trait` bounds are only permitted at the point where a type parameter is declared
+    `?Trait` 边界仅允许用于声明类型参数边界
 
 ast_lowering_not_supported_for_lifetime_binder_async_closure =
-    `for<...>` binders on `async` closures are not currently supported
+    还不支持在 `async` 闭包上使用 `for<...>` 绑定
 
-ast_lowering_previously_used_here = previously used here
+ast_lowering_previously_used_here = 之前在这里使用
 
-ast_lowering_register1 = register `{$reg1_name}`
+ast_lowering_register1 = 寄存器 `{$reg1_name}`
 
-ast_lowering_register2 = register `{$reg2_name}`
+ast_lowering_register2 = 寄存器 `{$reg2_name}`
 
 ast_lowering_register_class_only_clobber =
-    register class `{$reg_class_name}` can only be used as a clobber, not as an input or output
+    寄存器类 `{$reg_class_name}` 只能作为 clobber, 不能作为输入输出
 
 ast_lowering_register_conflict =
-    register `{$reg1_name}` conflicts with register `{$reg2_name}`
-    .help = use `lateout` instead of `out` to avoid conflict
+    寄存器 `{$reg1_name}` 与寄存器 `{$reg2_name}` 冲突
+    .help = 使用 `lateout` 代替 `out` 来避免冲突
 
 ast_lowering_remove_parentheses = remove these parentheses
 
@@ -142,8 +142,14 @@ ast_lowering_underscore_expr_lhs_assign =
 
 ast_lowering_use_angle_brackets = 使用尖括号代替
 ast_passes_anon_struct_or_union_not_allowed =
-    anonymous {$struct_or_union}s are not allowed outside of unnamed struct or union fields
-    .label = anonymous {$struct_or_union} declared here
+    不允许在未命名结构体或联合体字段外使用匿名{$struct_or_union ->
+    *[struct] 结构体
+    [union] 元组
+    }
+    .label = 这里声明了匿名{$struct_or_union ->
+     *[struct] 结构体
+     [union] 元组
+     }
 
 ast_passes_assoc_const_without_body =
     associated constant in `impl` without body
@@ -391,13 +397,13 @@ ast_passes_visibility_not_permitted =
     .individual_impl_items = place qualifiers on individual impl items instead
     .individual_foreign_items = place qualifiers on individual foreign items instead
 
-ast_passes_where_clause_after_type_alias = where clauses are not allowed after the type for type aliases
-    .note = see issue #112792 <https://github.com/rust-lang/rust/issues/112792> for more information
-    .help = add `#![feature(lazy_type_alias)]` to the crate attributes to enable
+ast_passes_where_clause_after_type_alias = 类型别名的类型后面不允许有where子句
+    .note = 查看问题 #112792 <https://github.com/rust-lang/rust/issues/112792> 获取更多信息
+    .help = 添加 `#![feature(lazy_type_alias)]` 到箱属性以强制启用
 
-ast_passes_where_clause_before_type_alias = where clauses are not allowed before the type for type aliases
-    .note = see issue #89122 <https://github.com/rust-lang/rust/issues/89122> for more information
-    .suggestion = move it to the end of the type declaration
+ast_passes_where_clause_before_type_alias = 类型别名的类型之前不允许有where子句
+    .note = 查看问题 #89122 <https://github.com/rust-lang/rust/issues/89122> 获取更多信息
+    .suggestion = 将其移动到类型声明的末尾
 attr_cfg_predicate_identifier =
     `cfg` predicate key must be an identifier
 
@@ -509,25 +515,25 @@ attr_unsupported_literal_generic =
 attr_unsupported_literal_suggestion =
     consider removing the prefix
 borrowck_assign_due_to_use_closure =
-    assignment occurs due to use in closure
+    因在闭包中使用而发生赋值
 
 borrowck_assign_due_to_use_coroutine =
-    assign occurs due to use in coroutine
+    因在协程中使用而发生赋值
 
 borrowck_assign_part_due_to_use_closure =
-    assignment to part occurs due to use in closure
+    因在闭包中使用而发生部分赋值
 
 borrowck_assign_part_due_to_use_coroutine =
-    assign to part occurs due to use in coroutine
+    因在协程中使用而发生部分赋值
 
 borrowck_borrow_due_to_use_closure =
     因在闭包中使用而发生借用
 
 borrowck_borrow_due_to_use_coroutine =
-    borrow occurs due to use in coroutine
+    因在协程中使用而发生借用
 
 borrowck_calling_operator_moves_lhs =
-    calling this operator moves the left-hand side
+    调用此操作会移动左侧
 
 borrowck_cannot_move_when_borrowed =
     无法移动 {$place ->
@@ -544,15 +550,15 @@ borrowck_cannot_move_when_borrowed =
     } 发生在这
 
 borrowck_capture_immute =
-    capture is immutable because of use here
+    捕获不可变因为这个使用
 
 borrowck_capture_move =
-    capture is moved because of use here
+    捕获无法移动因为这个使用
 
 borrowck_capture_mut =
     capture is mutable because of use here
 
-borrowck_closure_inferred_mut = inferred to be a `FnMut` closure
+borrowck_closure_inferred_mut = 推断为 `FnMut` 闭包
 
 borrowck_closure_invoked_twice =
     closure cannot be invoked more than once because it moves the variable `{$place_name}` out of its environment
@@ -573,16 +579,16 @@ borrowck_func_take_self_moved_place =
     `{$func}` takes ownership of the receiver `self`, which moves {$place_name}
 
 borrowck_generic_does_not_live_long_enough =
-    `{$kind}` does not live long enough
+    `{$kind}` 活得不够久
 
 borrowck_higher_ranked_lifetime_error =
-    higher-ranked lifetime error
+    高阶生命周期错误
 
 borrowck_higher_ranked_subtype_error =
-    higher-ranked subtype error
+    高阶子类型错误
 
 borrowck_lifetime_constraints_error =
-    lifetime may not live long enough
+    生命周期也许活得不够久
 
 borrowck_move_out_place_here =
     {$place} is moved here
@@ -671,7 +677,7 @@ borrowck_returned_lifetime_wrong =
     {$mir_def_name} was supposed to return data with lifetime `{$outlived_fr_name}` but it is returning data with lifetime `{$fr_name}`
 
 borrowck_returned_ref_escaped =
-    returns a reference to a captured variable which escapes the closure body
+    返回对捕获变量的引用会逃逸出闭包体
 
 borrowck_simd_shuffle_last_const = last argument of `simd_shuffle` is required to be a `const` item
 
@@ -721,31 +727,32 @@ borrowck_var_borrow_by_use_in_coroutine =
     borrow occurs due to use in coroutine
 
 borrowck_var_borrow_by_use_place_in_closure =
-    {$is_single_var ->
-        *[true] borrow occurs
-        [false] borrows occur
-    } due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生了{$is_single_var ->
+    *[true] 借用
+    [false] 些借用
+    }
 
 borrowck_var_borrow_by_use_place_in_coroutine =
-    {$is_single_var ->
-        *[true] borrow occurs
-        [false] borrows occur
-    } due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生了{$is_single_var ->
+    *[true] 借用
+    [false] 些借用
+    }
+
 
 borrowck_var_cannot_escape_closure =
-    captured variable cannot escape `FnMut` closure body
-    .note = `FnMut` closures only have access to their captured variables while they are executing...
-    .cannot_escape = ...therefore, they cannot allow references to captured variables to escape
+    捕获变量不能逃逸出 `FnMut` 闭包体
+    .note = `FnMut` 闭包仅在执行期间可以访问捕获的变量...
+    .cannot_escape = ...因此, 不能允许捕获变量的引用逃逸
 
 borrowck_var_does_not_need_mut =
     变量不需要是可变的
     .suggestion = 删除这个`mut`
 
 borrowck_var_first_borrow_by_use_place_in_closure =
-    first borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生第一次借用
 
 borrowck_var_first_borrow_by_use_place_in_coroutine =
-    first borrow occurs due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生第一次借用
 
 borrowck_var_here_captured = 变量在这里被捕获
 
@@ -755,16 +762,16 @@ borrowck_var_move_by_use_in_closure =
     因在闭包中使用而发生移动
 
 borrowck_var_move_by_use_in_coroutine =
-    move occurs due to use in coroutine
+    因在协程中使用而发生移动
 
 borrowck_var_mutable_borrow_by_use_place_in_closure =
-    mutable borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生可变借用
 
 borrowck_var_second_borrow_by_use_place_in_closure =
-    second borrow occurs due to use of {$place} in closure
+    因在闭包的此处 {$place} 使用而发生第二次可变借用
 
 borrowck_var_second_borrow_by_use_place_in_coroutine =
-    second borrow occurs due to use of {$place} in coroutine
+    因在协程的此处 {$place} 使用而发生第二次可变借用
 builtin_macros_alloc_error_must_be_fn = alloc_error_handler must be a function
 builtin_macros_alloc_must_statics = allocators must be statics
 
@@ -2589,7 +2596,7 @@ hir_analysis_wrong_number_of_generic_arguments_to_intrinsic =
         [one] parameter
         *[other] parameters
     }
-hir_typeck_add_missing_parentheses_in_range = you must surround the range in parentheses to call its `{$func_name}` function
+hir_typeck_add_missing_parentheses_in_range = 必须用圆括号包裹才能调用它的`{$func_name}`函数
 
 hir_typeck_add_return_type_add = 尝试添加一个返回类型
 
@@ -2612,34 +2619,34 @@ hir_typeck_cannot_cast_to_bool = 无法将类型 `{$expr_ty}` 转换为 `bool`
     .help = 改为与零比较
     .label = 不支持的转换
 
-hir_typeck_cast_enum_drop = cannot cast enum `{$expr_ty}` into integer `{$cast_ty}` because it implements `Drop`
+hir_typeck_cast_enum_drop = 无法将枚举`{$expr_ty}`转换为整数类型`{$cast_ty}`因为它实现了`Drop`
 
-hir_typeck_cast_unknown_pointer = cannot cast {$to ->
-    [true] to
-    *[false] from
-    } a pointer of an unknown kind
-    .label_to = needs more type information
-    .note = the type information given here is insufficient to check whether the pointer cast is valid
-    .label_from = the type information given here is insufficient to check whether the pointer cast is valid
+hir_typeck_cast_unknown_pointer = 无法转换{$to ->
+    [true] 到
+    *[false] 从
+    }一个未知类型的指针
+    .label_to = 需要更多类型信息
+    .note = 此处提供的类型信息不足以检查指针强制转换是否有效
+    .label_from = 此处提供的类型信息不足以检查指针强制转换是否有效
 
-hir_typeck_const_select_must_be_const = this argument must be a `const fn`
-    .help = consult the documentation on `const_eval_select` for more information
+hir_typeck_const_select_must_be_const = 此参数必须是`const fn`
+    .help = 参阅`const_eval_select`文档以获取更多详细信息
 
-hir_typeck_const_select_must_be_fn = this argument must be a function item
-    .note = expected a function item, found {$ty}
-    .help = consult the documentation on `const_eval_select` for more information
+hir_typeck_const_select_must_be_fn = 此参数必须是函数
+    .note = 预期一个函数, 得到{$ty}
+    .help = 参阅`const_eval_select`文档以获取更多详细信息
 
-hir_typeck_convert_to_str = try converting the passed type into a `&str`
+hir_typeck_convert_to_str = 尝试将传递的类型转换为`&str`
 
-hir_typeck_convert_using_method = try using `{$sugg}` to convert `{$found}` to `{$expected}`
+hir_typeck_convert_using_method = 尝试用`{$sugg}`将`{$found}`转换为`{$expected}`
 
-hir_typeck_ctor_is_private = tuple struct constructor `{$def}` is private
+hir_typeck_ctor_is_private = 元组结构体的构造函数`{$def}`是私有的
 
 hir_typeck_deref_is_empty = this expression `Deref`s to `{$deref_ty}` which implements `is_empty`
 
-hir_typeck_expected_default_return_type = expected `()` because of default return type
+hir_typeck_expected_default_return_type = 预期是默认的返回类型`()`
 
-hir_typeck_expected_return_type = expected `{$expected}` because of return type
+hir_typeck_expected_return_type = 预期是默认的返回类型`{$expected}`
 
 hir_typeck_explicit_destructor = explicit use of destructor method
     .label = explicit destructor calls not allowed
@@ -2724,7 +2731,7 @@ hir_typeck_struct_expr_non_exhaustive =
 
 hir_typeck_suggest_boxing_note = for more on the distinction between the stack and the heap, read https://doc.rust-lang.org/book/ch15-01-box.html, https://doc.rust-lang.org/rust-by-example/std/box.html, and https://doc.rust-lang.org/std/boxed/index.html
 
-hir_typeck_suggest_boxing_when_appropriate = store this in the heap by calling `Box::new`
+hir_typeck_suggest_boxing_when_appropriate = 通过调用`Box::new`将其存储在堆上
 
 hir_typeck_suggest_ptr_null_mut = consider using `core::ptr::null_mut` instead
 
@@ -2734,15 +2741,15 @@ hir_typeck_trivial_cast = trivial {$numeric ->
     }: `{$expr_ty}` as `{$cast_ty}`
     .help = cast can be replaced by coercion; this might require a temporary variable
 
-hir_typeck_union_pat_dotdot = `..` cannot be used in union patterns
+hir_typeck_union_pat_dotdot = `..`不能在联合体模式中使用
 
-hir_typeck_union_pat_multiple_fields = union patterns should have exactly one field
+hir_typeck_union_pat_multiple_fields = 联合体模式中只能有一个字段
 
 hir_typeck_use_is_empty =
-    consider using the `is_empty` method on `{$expr_ty}` to determine if it contains anything
+    考虑在`{$expr_ty}`上使用`is_empty`来确定的是否包含内容
 
 hir_typeck_yield_expr_outside_of_coroutine =
-    yield expression outside of coroutine literal
+    yield表达式出现在协程字面量之外
 incremental_assert_loaded =
     we asserted that an existing incremental cache directory should be successfully loaded, but it was not
 
@@ -2845,23 +2852,26 @@ incremental_unrecognized_depnode_label = dep-node label `{$label}` not recognize
 incremental_write_dep_graph = failed to write dependency graph to `{$path}`: {$err}
 
 incremental_write_new = failed to write {$name} to `{$path}`: {$err}
-infer_actual_impl_expl_but_actually_implemented_for_ty = ...but `{$trait_path}` is actually implemented for the type `{$ty}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+infer_actual_impl_expl_but_actually_implemented_for_ty = ...但实际上类型`{$ty}`仅{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
-infer_actual_impl_expl_but_actually_implements_trait = ...but it actually implements `{$trait_path}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+}实现`{$trait_path}`
+
+infer_actual_impl_expl_but_actually_implements_trait = ...但实际上仅{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
-infer_actual_impl_expl_but_actually_ty_implements = ...but `{$ty}` actually implements `{$trait_path}`{$has_lifetime ->
-    [true] , for some specific lifetime `'{$lifetime}`
+}实现`{$trait_path}`
+
+infer_actual_impl_expl_but_actually_ty_implements = ...但类型`{$ty}`实际上{$has_lifetime ->
+    [true] 为生命周期`'{$lifetime}`
     *[false] {""}
-}
+}实现`{$trait_path}`
 
 infer_actual_impl_expl_expected_other_any = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for any lifetime `'{$lifetime_1}`...
+
 infer_actual_impl_expl_expected_other_nothing = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
@@ -2871,14 +2881,17 @@ infer_actual_impl_expl_expected_other_some = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for some specific lifetime `'{$lifetime_1}`...
+
 infer_actual_impl_expl_expected_other_two = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
 }`{$ty_or_sig}` must implement `{$trait_path}`, for any two lifetimes `'{$lifetime_1}` and `'{$lifetime_2}`...
-infer_actual_impl_expl_expected_passive_any = {$leading_ellipsis ->
+
+infer_actual_impl_expl_expected_passive_any = 类型`{$ty_or_sig}`需要对任意的生命周期`'{$lifetime_1}`都实现{$leading_ellipsis ->
     [true] ...
     *[false] {""}
-}`{$trait_path}` would have to be implemented for the type `{$ty_or_sig}`, for any lifetime `'{$lifetime_1}`...
+}`{$trait_path}`...
+
 infer_actual_impl_expl_expected_passive_nothing = {$leading_ellipsis ->
     [true] ...
     *[false] {""}
@@ -3005,8 +3018,8 @@ infer_label_bad = {$bad_kind ->
     }
 }
 
-infer_lf_bound_not_satisfied = lifetime bound not satisfied
-infer_lifetime_mismatch = lifetime mismatch
+infer_lf_bound_not_satisfied = 不满足生命周期边界
+infer_lifetime_mismatch = 生命周期不匹配
 
 infer_lifetime_param_suggestion = consider introducing a named lifetime parameter{$is_impl ->
     [true] {" "}and update trait if needed
@@ -3218,10 +3231,10 @@ infer_trait_impl_diff = `impl` item signature doesn't match `trait` item signatu
     .expected_found = expected signature `{$expected}`
                {"   "}found signature `{$found}`
 
-infer_trait_placeholder_mismatch = implementation of `{$trait_def_id}` is not general enough
-    .label_satisfy = doesn't satisfy where-clause
-    .label_where = due to a where-clause on `{$def_id}`...
-    .label_dup = implementation of `{$trait_def_id}` is not general enough
+infer_trait_placeholder_mismatch = 对`{$trait_def_id}`的实现不够通用
+    .label_satisfy = 不满足where子句
+    .label_where = 由于`{$def_id}`上的where子句...
+    .label_dup = 对`{$trait_def_id}`的实现不够通用
 
 infer_try_cannot_convert = `?` operator cannot convert from `{$found}` to `{$expected}`
 
@@ -3858,14 +3871,14 @@ lint_unused_delim = unnecessary {$delim} around {$item}
 
 lint_unused_import_braces = braces around {$node} is unnecessary
 
-lint_unused_op = unused {$op} that must be used
-    .label = the {$op} produces a value
-    .suggestion = use `let _ = ...` to ignore the resulting value
+lint_unused_op = 未使用的 {$op} 是必须使用的
+    .label = 此 {$op} 产生一个值
+    .suggestion = 使用 `let _ = ...` 忽略结果值
 
-lint_unused_result = unused result of type `{$ty}`
+lint_unused_result = 未使用 `{$ty}` 类型的结果
 
 lint_variant_size_differences =
-    enum variant is more than three times larger ({$largest} bytes) than the next largest
+    枚举变体比第二大的三倍以上({$largest} 字节)
 metadata_as_needed_compatibility =
     linking modifier `as-needed` is only compatible with `dylib` and `framework` linking kinds
 
@@ -4760,7 +4773,7 @@ monomorphize_unknown_cgu_collection_mode =
 monomorphize_unused_generic_params = item has unused generic parameters
 
 monomorphize_written_to_path = the full type name has been written to '{$path}'
-parse_add_paren = try adding parentheses
+parse_add_paren = 尝试添加括号
 
 parse_ambiguous_missing_keyword_for_item_definition = missing `fn` or `struct` for function or struct definition
     .suggestion = if you meant to call a macro, try
@@ -6241,32 +6254,26 @@ passes_rustc_dirty_clean =
     attribute requires -Z query-dep-graph to be enabled
 
 passes_rustc_layout_scalar_valid_range_arg =
-    expected exactly one integer literal argument
+    预期恰好一个整数字面量参数
 
 passes_rustc_layout_scalar_valid_range_not_struct =
-    attribute should be applied to a struct
-    .label = not a struct
+    属性应当用于一个结构体
+    .label = 不是结构体
 
 passes_rustc_legacy_const_generics_index =
-    #[rustc_legacy_const_generics] must have one index for each generic parameter
-    .label = generic parameters
+    #[rustc_legacy_const_generics] 每个泛型参数必须有一个索引
+    .label = 泛型参数
 
 passes_rustc_legacy_const_generics_index_exceed =
-    index exceeds number of arguments
-    .label = there {$arg_count ->
-        [one] is
-        *[other] are
-    } only {$arg_count} {$arg_count ->
-        [one] argument
-        *[other] arguments
-    }
+    索引超过了参数数
+    .label = 只有{$arg_count}个参数
 
 passes_rustc_legacy_const_generics_index_negative =
-    arguments should be non-negative integers
+    参数应为非负整数
 
 passes_rustc_legacy_const_generics_only =
-    #[rustc_legacy_const_generics] functions must only have const generics
-    .label = non-const generic parameter
+    #[rustc_legacy_const_generics] 函数必须只有常量泛型
+    .label = 非常量泛型参数
 
 passes_rustc_lint_opt_deny_field_access =
     `#[rustc_lint_opt_deny_field_access]` should be applied to a field
@@ -6490,96 +6497,96 @@ resolve_accessible_unsure = not sure whether the path is accessible or not
     .note = the type may have associated items, but we are currently not checking them
 
 resolve_add_as_non_derive =
-    add as non-Derive macro
+    添加为非派生宏
     `#[{$macro_path}]`
 
 resolve_added_macro_use =
-    have you added the `#[macro_use]` on the module/import?
+    在模块或导入中添加`#[macro_use]`了吗?
 
 resolve_ampersand_used_without_explicit_lifetime_name =
-    `&` without an explicit lifetime name cannot be used here
-    .note = explicit lifetime name needed here
+    这里不允许`&`没有明确的生命周期名称
+    .note = 此处需要显式生命周期名称
 
 resolve_ancestor_only =
-    visibilities can only be restricted to ancestor modules
+    可见性只能限于祖先模块
 
 resolve_associated_const_with_similar_name_exists =
-    there is an associated constant with a similar name
+    有一个名称相似的关联常量
 
 resolve_associated_fn_with_similar_name_exists =
-    there is an associated function with a similar name
+    有一个名称相似的关联函数
 
 resolve_associated_type_with_similar_name_exists =
-    there is an associated type with a similar name
+    有一个名称相似的关联类型
 
 resolve_attempt_to_use_non_constant_value_in_constant =
-    attempt to use a non-constant value in a constant
+    尝试在常量中使用非常量值
 
 resolve_attempt_to_use_non_constant_value_in_constant_label_with_suggestion =
-    non-constant value
+    非常量值
 
 resolve_attempt_to_use_non_constant_value_in_constant_with_suggestion =
-    consider using `{$suggestion}` instead of `{$current}`
+    尝试使用 `{$suggestion}` 替代 `{$current}`
 
 resolve_attempt_to_use_non_constant_value_in_constant_without_suggestion =
-    this would need to be a `{$suggestion}`
+    这里需要一个 `{$suggestion}`
 
 resolve_binding_shadows_something_unacceptable =
-    {$shadowing_binding}s cannot shadow {$shadowed_binding}s
-    .label = cannot be named the same as {$article} {$shadowed_binding}
-    .label_shadowed_binding = the {$shadowed_binding} `{$name}` is {$participle} here
+    {$shadowing_binding} 不能遮盖 {$shadowed_binding}
+    .label = 不能与 {$article} {$shadowed_binding} 命名相同
+    .label_shadowed_binding = 此 {$shadowed_binding} `{$name}` 在 {$participle}
 
 resolve_binding_shadows_something_unacceptable_suggestion =
-    try specify the pattern arguments
+    尝试指定模式参数
 
 resolve_cannot_be_reexported_crate_public =
-    `{$ident}` is only public within the crate, and cannot be re-exported outside
+    `{$ident}` 仅在箱中公开, 不能重新导出到外部
 
 resolve_cannot_be_reexported_private =
-    `{$ident}` is private, and cannot be re-exported
+    `{$ident}` 是私有的, 不能被重新导出
 
 resolve_cannot_capture_dynamic_environment_in_fn_item =
-    can't capture dynamic environment in a fn item
-    .help = use the `|| {"{"} ... {"}"}` closure form instead
+    在 fn 项中不能捕获动态环境
+    .help = 使用 `|| {"{"} ... {"}"}` 闭包替代
 
 resolve_cannot_determine_import_resolution =
-    cannot determine resolution for the import
-    .note = import resolution is stuck, try simplifying other imports
+    无法确定导入决议
+    .note = 导入决议中止, 尝试简化其他导入
 
 resolve_cannot_determine_macro_resolution =
-    cannot determine resolution for the {$kind} `{$path}`
-    .note = import resolution is stuck, try simplifying macro imports
+    无法确定 {$kind} `{$path}` 的决议
+    .note = 导入决议中止, 尝试简化宏导入
 
 resolve_cannot_find_ident_in_this_scope =
     在这个作用域中找不到 {$expected} `{$ident}`
 
 resolve_cannot_glob_import_possible_crates =
-    cannot glob-import all possible crates
+    无法全局导入所以可能的箱
 
 resolve_change_import_binding =
-    you can use `as` to change the binding name of the import
+    你可以使用`as`更改导入的绑定名称
 
 resolve_consider_adding_a_derive =
-    consider adding a derive
+    考虑添加一个派生
 
 resolve_consider_adding_macro_export =
-    consider adding a `#[macro_export]` to the macro in the imported module
+    考虑项导入模块的宏上添加`#[macro_export]`
 
 resolve_consider_declaring_with_pub =
-    consider declaring type or module `{$ident}` with `pub`
+    考虑用`pub`声明类型或者模块`{$ident}`
 
 resolve_consider_marking_as_pub =
-    consider marking `{$ident}` as `pub` in the imported module
+    考虑在导入模块`{$ident}`时标记为`pub`
 
 resolve_const_not_member_of_trait =
-    const `{$const_}` is not a member of trait `{$trait_}`
-    .label = not a member of trait `{$trait_}`
+    常量`{$const_}`并非特征`{$trait_}`的成员
+    .label = 不是特征`{$trait_}`的成员
 
 resolve_const_param_in_enum_discriminant =
-    const parameters may not be used in enum discriminant values
+    常量参数不能用于枚举判别值
 
 resolve_const_param_in_non_trivial_anon_const =
-    const parameters may only be used as standalone arguments, i.e. `{$name}`
+    常量参数只能用作独立参数, 例如 `{$name}`
 
 resolve_const_param_in_ty_of_const_param =
     const parameters may not be used in the type of const parameters
@@ -6659,8 +6666,8 @@ resolve_lifetime_param_in_ty_of_const_param =
     lifetime parameters may not be used in the type of const parameters
 
 resolve_lowercase_self =
-    attempt to use a non-constant value in a constant
-    .suggestion = try using `Self`
+    尝试在常量中使用非常量值
+    .suggestion = 尝试使用 `Self`
 
 resolve_macro_expected_found =
     预期 {$expected}, 得到 {$found} `{$macro_path}`
@@ -6805,9 +6812,9 @@ session_cannot_mix_and_match_sanitizers = `-Zsanitizer={$first}` is incompatible
 session_cli_feature_diagnostic_help =
     add `-Zcrate-attr="feature({$feature})"` to the command-line options to enable
 
-session_crate_name_does_not_match = `--crate-name` and `#[crate_name]` are required to match, but `{$s}` != `{$name}`
+session_crate_name_does_not_match = `--crate-name` 和 `#[crate_name]` 需要匹配, 但 `{$s}` != `{$name}`
 
-session_crate_name_empty = crate name must not be empty
+session_crate_name_empty = 箱名不能为空
 
 session_crate_name_invalid = crate names cannot start with a `-`, but `{$s}` has a leading hyphen
 
