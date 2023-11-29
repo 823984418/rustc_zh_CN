@@ -9,30 +9,30 @@ ast_passes_anon_struct_or_union_not_allowed =
      }
 
 ast_passes_assoc_const_without_body =
-    associated constant in `impl` without body
-    .suggestion = provide a definition for the constant
+    `impl`中的关联常量没有内容
+    .suggestion = 提供常量的定义
 
 ast_passes_assoc_fn_without_body =
-    associated function in `impl` without body
-    .suggestion = provide a definition for the function
+    `impl`中的关联函数没有内容
+    .suggestion = 提供函数的定义
 
 ast_passes_assoc_type_without_body =
-    associated type in `impl` without body
-    .suggestion = provide a definition for the type
+    `impl`中的关联类型没有内容
+    .suggestion = 提供类型的定义
 
-ast_passes_at_least_one_trait = at least one trait must be specified
+ast_passes_at_least_one_trait = 必须至少指定一个特征
 
-ast_passes_auto_generic = auto traits cannot have generic parameters
-    .label = auto trait cannot have generic parameters
-    .suggestion = remove the parameters
+ast_passes_auto_generic = 自动特征不能具有泛型参数
+    .label = 自动特征不能具有泛型参数
+    .suggestion = 删除参数
 
-ast_passes_auto_items = auto traits cannot have associated items
+ast_passes_auto_items = 自动特征不能具有关联项
     .label = {ast_passes_auto_items}
-    .suggestion = remove these associated items
+    .suggestion = 删除这些关联项
 
-ast_passes_auto_super_lifetime = auto traits cannot have super traits or lifetime bounds
+ast_passes_auto_super_lifetime = 自动特征不能有超特征或生命周期边界
     .label = {ast_passes_auto_super_lifetime}
-    .suggestion = remove the super traits or lifetime bounds
+    .suggestion = 删除超特征或生命周期边界
 
 ast_passes_bad_c_variadic = only foreign or `unsafe extern "C"` functions may be C-variadic
 

@@ -351,11 +351,14 @@ lint_non_binding_let_on_sync_lock =
     non-binding let on a synchronization lock
 
 lint_non_binding_let_suggestion =
-    consider binding to an unused variable to avoid immediately dropping the value
+    考虑绑定到一个未使用的变量, 以避免立即销毁该值
 
-lint_non_camel_case_type = {$sort} `{$name}` should have an upper camel case name
-    .suggestion = convert the identifier to upper camel case
-    .label = should have an UpperCamelCase name
+lint_non_camel_case_type = {$sort ->
+        [trait] 特征
+        *[other] {$sort}
+    } `{$name}` 应该有一个大驼峰的名字
+    .suggestion = 将标识符转换为大驼峰
+    .label = 应该有一个大驼峰(UpperCamelCase)的名字
 
 lint_non_existent_doc_keyword = found non-existing keyword `{$keyword}` used in `#[doc(keyword = "...")]`
     .help = only existing keywords are allowed in core/std
@@ -565,9 +568,15 @@ lint_unused_delim = unnecessary {$delim} around {$item}
 
 lint_unused_import_braces = braces around {$node} is unnecessary
 
-lint_unused_op = 未使用的 {$op} 是必须使用的
-    .label = 此 {$op} 产生一个值
-    .suggestion = 使用 `let _ = ...` 忽略结果值
+lint_unused_op = 未使用的{$op ->
+    [borrow] 借用
+    *[other] {$op}
+    }是必须使用的
+    .label = 此{$op ->
+    [borrow] 借用
+    *[other] {$op}
+    }产生一个值
+    .suggestion = 使用`let _ = ...`忽略结果值
 
 lint_unused_result = 未使用 `{$ty}` 类型的结果
 

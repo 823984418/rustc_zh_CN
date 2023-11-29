@@ -107,4 +107,4 @@ attr_unsupported_literal_deprecated_string =
 attr_unsupported_literal_generic =
     不支持的字面量
 attr_unsupported_literal_suggestion =
-    consider removing the prefix
+    考虑删除前缀

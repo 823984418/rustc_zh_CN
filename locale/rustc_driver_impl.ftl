@@ -1,22 +1,23 @@
-driver_impl_ice = the compiler unexpectedly panicked. this is a bug.
-driver_impl_ice_bug_report = we would appreciate a bug report: {$bug_report_url}
-driver_impl_ice_bug_report_internal_feature = using internal features is not supported and expected to cause internal compiler errors when used incorrectly
-driver_impl_ice_exclude_cargo_defaults = some of the compiler flags provided by cargo are hidden
+driver_impl_ice = 编译去意外恐慌. 这是一个错误.
+driver_impl_ice_bug_report = 我们希望一份错误报告: {$bug_report_url}
+driver_impl_ice_bug_report_internal_feature =
+    不支持使用内部特性，如果使用不正确，将会导致内部编译器错误(ICE)
+driver_impl_ice_exclude_cargo_defaults = 一些通过cargo提供的编译器标志是隐藏的
 
-driver_impl_ice_flags = compiler flags: {$flags}
-driver_impl_ice_path = please attach the file at `{$path}` to your bug report
-driver_impl_ice_path_error = the ICE couldn't be written to `{$path}`: {$error}
-driver_impl_ice_path_error_env = the environment variable `RUSTC_ICE` is set to `{$env_var}`
-driver_impl_ice_version = rustc {$version} running on {$triple}
+driver_impl_ice_flags = 编译器标志: {$flags}
+driver_impl_ice_path = 请将位于`{$path}`的文件添加到错误报告中
+driver_impl_ice_path_error = 无法将内部编译器错误(ICE)写入到`{$path}`: {$error}
+driver_impl_ice_path_error_env = 环境变量`RUSTC_ICE`被设置为`{$env_var}`
+driver_impl_ice_version = rustc {$version} 运行于 {$triple}
 
-driver_impl_rlink_empty_version_number = The input does not contain version number
+driver_impl_rlink_empty_version_number = 输入不包含版本号
 
-driver_impl_rlink_encoding_version_mismatch = .rlink file was produced with encoding version `{$version_array}`, but the current version is `{$rlink_version}`
+driver_impl_rlink_encoding_version_mismatch = .rlink 文件使用`{$version_array}`的版本编码, 但当前版本是`{$rlink_version}`
 
-driver_impl_rlink_no_a_file = rlink must be a file
+driver_impl_rlink_no_a_file = rlink 必须是一个文件
 
-driver_impl_rlink_rustc_version_mismatch = .rlink file was produced by rustc version `{$rustc_version}`, but the current version is `{$current_version}`
+driver_impl_rlink_rustc_version_mismatch = .rlink 文件是 rustc 版本`{$rustc_version}`生成的, 但当前版本是 `{$current_version}`
 
-driver_impl_rlink_unable_to_read = failed to read rlink file: `{$err}`
+driver_impl_rlink_unable_to_read = 读取 rlink 文件失败: `{$err}`
 
-driver_impl_rlink_wrong_file_type = The input does not look like a .rlink file
+driver_impl_rlink_wrong_file_type = 输入看起来不像是 .rlink 文件

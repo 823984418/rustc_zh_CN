@@ -1,7 +1,7 @@
-mir_transform_arithmetic_overflow = this arithmetic operation will overflow
-mir_transform_call_to_unsafe_label = call to unsafe function
+mir_transform_arithmetic_overflow = 这个算术运算会溢出
+mir_transform_call_to_unsafe_label = 调用不安全函数
 mir_transform_call_to_unsafe_note = consult the function's documentation for information on how to avoid undefined behavior
-mir_transform_const_defined_here = `const` item defined here
+mir_transform_const_defined_here = `const`项定义在这
 
 mir_transform_const_modify = attempting to modify a `const` item
     .note = each usage of a `const` item creates a new temporary; the original `const` item will not be modified

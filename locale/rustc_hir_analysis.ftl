@@ -1,14 +1,15 @@
 hir_analysis_ambiguous_lifetime_bound =
-    ambiguous lifetime bound, explicit lifetime bound required
+    生命周期边界模糊, 需要显示提供生命周期边界
 
-hir_analysis_assoc_bound_on_const = expected associated type, found {$descr}
-    .note = trait bounds not allowed on {$descr}
+hir_analysis_assoc_bound_on_const = 预期是关联类型, 得到了 {$descr}
+    .note = 在{$descr}上不允许有特征边界
 
 hir_analysis_assoc_type_binding_not_allowed =
-    associated type bindings are not allowed here
-    .label = associated type not allowed here
+    此处不允许关联类型绑定
+    .label = 此处不允许关联类型
 
-hir_analysis_associated_type_trait_uninferred_generic_params = cannot use the associated type of a trait with uninferred generic parameters
+hir_analysis_associated_type_trait_uninferred_generic_params =
+    cannot use the associated type of a trait with uninferred generic parameters
     .suggestion = use a fully qualified path with inferred lifetimes
 
 hir_analysis_associated_type_trait_uninferred_generic_params_multipart_suggestion = use a fully qualified path with explicit lifetimes

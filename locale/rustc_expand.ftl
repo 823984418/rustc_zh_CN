@@ -1,30 +1,30 @@
 expand_arg_not_attributes =
-    second argument must be `attributes`
+    第二个参数必须是`attributes`
 
 expand_attr_no_arguments =
-    attribute must have either one or two arguments
+    属性必须有一个或两个参数
 
 expand_attribute_meta_item =
     attribute must be a meta item, not a literal
 
 expand_attribute_single_word =
-    attribute must only be a single word
+    属性只能是一个单词
 
 expand_attributes_wrong_form =
-    attribute must be of form: `attributes(foo, bar)`
+    属性的形式必须是: `attributes(foo, bar)`
 
 expand_cannot_be_name_of_macro =
-    `{$trait_ident}` cannot be a name of {$macro_type} macro
+    `{$trait_ident}`不能是{$macro_type}宏的名称
 
 expand_count_repetition_misplaced =
-    `count` can not be placed inside the inner-most repetition
+    `count`不能被放在重复的最内部
 
-expand_duplicate_matcher_binding = duplicate matcher binding
-    .label = duplicate binding
-    .label2 = previous binding
+expand_duplicate_matcher_binding = 绑定重复匹配
+    .label = 重复绑定
+    .label2 = 先前的绑定
 
 expand_expected_comma_in_list =
-    expected token: `,`
+    预期是: `,`
 
 expand_explain_doc_comment_inner =
     inner doc comments expand to `#![doc = "..."]`, which is what this macro attempted to match

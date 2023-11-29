@@ -152,30 +152,30 @@ ast_passes_anon_struct_or_union_not_allowed =
      }
 
 ast_passes_assoc_const_without_body =
-    associated constant in `impl` without body
-    .suggestion = provide a definition for the constant
+    `impl`中的关联常量没有内容
+    .suggestion = 提供常量的定义
 
 ast_passes_assoc_fn_without_body =
-    associated function in `impl` without body
-    .suggestion = provide a definition for the function
+    `impl`中的关联函数没有内容
+    .suggestion = 提供函数的定义
 
 ast_passes_assoc_type_without_body =
-    associated type in `impl` without body
-    .suggestion = provide a definition for the type
+    `impl`中的关联类型没有内容
+    .suggestion = 提供类型的定义
 
-ast_passes_at_least_one_trait = at least one trait must be specified
+ast_passes_at_least_one_trait = 必须至少指定一个特征
 
-ast_passes_auto_generic = auto traits cannot have generic parameters
-    .label = auto trait cannot have generic parameters
-    .suggestion = remove the parameters
+ast_passes_auto_generic = 自动特征不能具有泛型参数
+    .label = 自动特征不能具有泛型参数
+    .suggestion = 删除参数
 
-ast_passes_auto_items = auto traits cannot have associated items
+ast_passes_auto_items = 自动特征不能具有关联项
     .label = {ast_passes_auto_items}
-    .suggestion = remove these associated items
+    .suggestion = 删除这些关联项
 
-ast_passes_auto_super_lifetime = auto traits cannot have super traits or lifetime bounds
+ast_passes_auto_super_lifetime = 自动特征不能有超特征或生命周期边界
     .label = {ast_passes_auto_super_lifetime}
-    .suggestion = remove the super traits or lifetime bounds
+    .suggestion = 删除超特征或生命周期边界
 
 ast_passes_bad_c_variadic = only foreign or `unsafe extern "C"` functions may be C-variadic
 
@@ -513,7 +513,7 @@ attr_unsupported_literal_deprecated_string =
 attr_unsupported_literal_generic =
     不支持的字面量
 attr_unsupported_literal_suggestion =
-    consider removing the prefix
+    考虑删除前缀
 borrowck_assign_due_to_use_closure =
     因在闭包中使用而发生赋值
 
@@ -1020,46 +1020,46 @@ builtin_macros_unexpected_lit = expected path to a trait, found literal
 
 builtin_macros_unnameable_test_items = cannot test inner items
 codegen_gcc_unknown_ctarget_feature_prefix =
-    unknown feature specified for `-Ctarget-feature`: `{$feature}`
-    .note = features must begin with a `+` to enable or `-` to disable it
+    通过`-Ctarget-feature`指定了未知的特性: `{$feature}`
+    .note = 特性必须用`+`启用或用`-`禁用
 
 codegen_gcc_invalid_minimum_alignment =
-    invalid minimum global alignment: {$err}
+    无效的最小全局对齐: {$err}
 
 codegen_gcc_lto_not_supported =
-    LTO is not supported. You may get a linker error.
+    不支持链接时优化. 你可能会得到一个链接器错误.
 
-codegen_gcc_tied_target_features = the target features {$features} must all be either enabled or disabled together
-    .help = add the missing features in a `target_feature` attribute
+codegen_gcc_tied_target_features = 目标特性{$features}必须同时启用或禁用
+    .help = 在`target_feature`属性中添加缺少的特性
 
 codegen_gcc_unwinding_inline_asm =
-    GCC backend does not support unwinding from inline asm
+    GCC后端不支持从内联汇编展开
 
-codegen_gcc_copy_bitcode = failed to copy bitcode to object file: {$err}
+codegen_gcc_copy_bitcode = 无法将字节码码复制到对象文件: {$err}
 
 codegen_gcc_dynamic_linking_with_lto =
-    cannot prefer dynamic linking when performing LTO
-    .note = only 'staticlib', 'bin', and 'cdylib' outputs are supported with LTO
+    执行连接时优化时不能首选动态链接
+    .note = 仅'staticlib', 'bin', 和 'cdylib' 输出可以使用链接时优化
 
-codegen_gcc_load_bitcode = failed to load bitcode of module "{$name}"
+codegen_gcc_load_bitcode = 加载"{$name}"模块的字节码失败
 
-codegen_gcc_lto_disallowed = lto can only be run for executables, cdylibs and static library outputs
+codegen_gcc_lto_disallowed = 链接时优化仅针对可执行文件, C动态库和静态库输出
 
-codegen_gcc_lto_dylib = lto cannot be used for `dylib` crate type without `-Zdylib-lto`
+codegen_gcc_lto_dylib = 链接时优化不能用于没有`-Zdylib-lto`的`dylib`箱类型
 
-codegen_gcc_lto_bitcode_from_rlib = failed to get bitcode from object file for LTO ({$gcc_err})
+codegen_gcc_lto_bitcode_from_rlib = 无法从连接时优化的对象文件({$gcc_err})中获取字节码
 
 codegen_gcc_unknown_ctarget_feature =
-    unknown feature specified for `-Ctarget-feature`: `{$feature}`
-    .note = it is still passed through to the codegen backend
-    .possible_feature = you might have meant: `{$rust_feature}`
-    .consider_filing_feature_request = consider filing a feature request
+    在`-Ctarget-feature`中指定了未知的特性: `{$feature}`
+    .note = 这依然会传递到代码生成后端
+    .possible_feature = 你的意思或许是: `{$rust_feature}`
+    .consider_filing_feature_request = 考虑提交一份特性请求
 
 codegen_gcc_missing_features =
-    add the missing features in a `target_feature` attribute
+    在`target_feature`属性中添加缺少的特性
 
 codegen_gcc_target_feature_disable_or_enable =
-    the target features {$features} must all be either enabled or disabled together
+    目标特性{$features}必须同时启用或禁用
 codegen_llvm_copy_bitcode = 拷贝字节码至对象文件失败: {$err}
 
 codegen_llvm_dlltool_fail_import_library =
@@ -1962,28 +1962,29 @@ const_eval_write_to_read_only =
     writing to {$allocation} which is read-only
 const_eval_zst_pointer_out_of_bounds =
     {$bad_pointer_message}: {$alloc_id} has size {$alloc_size}, so pointer at offset {$ptr_offset} is out-of-bounds
-driver_impl_ice = the compiler unexpectedly panicked. this is a bug.
-driver_impl_ice_bug_report = we would appreciate a bug report: {$bug_report_url}
-driver_impl_ice_bug_report_internal_feature = using internal features is not supported and expected to cause internal compiler errors when used incorrectly
-driver_impl_ice_exclude_cargo_defaults = some of the compiler flags provided by cargo are hidden
+driver_impl_ice = 编译去意外恐慌. 这是一个错误.
+driver_impl_ice_bug_report = 我们希望一份错误报告: {$bug_report_url}
+driver_impl_ice_bug_report_internal_feature =
+    不支持使用内部特性，如果使用不正确，将会导致内部编译器错误(ICE)
+driver_impl_ice_exclude_cargo_defaults = 一些通过cargo提供的编译器标志是隐藏的
 
-driver_impl_ice_flags = compiler flags: {$flags}
-driver_impl_ice_path = please attach the file at `{$path}` to your bug report
-driver_impl_ice_path_error = the ICE couldn't be written to `{$path}`: {$error}
-driver_impl_ice_path_error_env = the environment variable `RUSTC_ICE` is set to `{$env_var}`
-driver_impl_ice_version = rustc {$version} running on {$triple}
+driver_impl_ice_flags = 编译器标志: {$flags}
+driver_impl_ice_path = 请将位于`{$path}`的文件添加到错误报告中
+driver_impl_ice_path_error = 无法将内部编译器错误(ICE)写入到`{$path}`: {$error}
+driver_impl_ice_path_error_env = 环境变量`RUSTC_ICE`被设置为`{$env_var}`
+driver_impl_ice_version = rustc {$version} 运行于 {$triple}
 
-driver_impl_rlink_empty_version_number = The input does not contain version number
+driver_impl_rlink_empty_version_number = 输入不包含版本号
 
-driver_impl_rlink_encoding_version_mismatch = .rlink file was produced with encoding version `{$version_array}`, but the current version is `{$rlink_version}`
+driver_impl_rlink_encoding_version_mismatch = .rlink 文件使用`{$version_array}`的版本编码, 但当前版本是`{$rlink_version}`
 
-driver_impl_rlink_no_a_file = rlink must be a file
+driver_impl_rlink_no_a_file = rlink 必须是一个文件
 
-driver_impl_rlink_rustc_version_mismatch = .rlink file was produced by rustc version `{$rustc_version}`, but the current version is `{$current_version}`
+driver_impl_rlink_rustc_version_mismatch = .rlink 文件是 rustc 版本`{$rustc_version}`生成的, 但当前版本是 `{$current_version}`
 
-driver_impl_rlink_unable_to_read = failed to read rlink file: `{$err}`
+driver_impl_rlink_unable_to_read = 读取 rlink 文件失败: `{$err}`
 
-driver_impl_rlink_wrong_file_type = The input does not look like a .rlink file
+driver_impl_rlink_wrong_file_type = 输入看起来不像是 .rlink 文件
 errors_delayed_at_with_newline =
     delayed at {$emitted_at}
     {$note}
@@ -2030,32 +2031,32 @@ errors_target_invalid_bits_size = {$err}
 errors_target_missing_alignment =
     missing alignment for `{$cause}` in "data-layout"
 expand_arg_not_attributes =
-    second argument must be `attributes`
+    第二个参数必须是`attributes`
 
 expand_attr_no_arguments =
-    attribute must have either one or two arguments
+    属性必须有一个或两个参数
 
 expand_attribute_meta_item =
     attribute must be a meta item, not a literal
 
 expand_attribute_single_word =
-    attribute must only be a single word
+    属性只能是一个单词
 
 expand_attributes_wrong_form =
-    attribute must be of form: `attributes(foo, bar)`
+    属性的形式必须是: `attributes(foo, bar)`
 
 expand_cannot_be_name_of_macro =
-    `{$trait_ident}` cannot be a name of {$macro_type} macro
+    `{$trait_ident}`不能是{$macro_type}宏的名称
 
 expand_count_repetition_misplaced =
-    `count` can not be placed inside the inner-most repetition
+    `count`不能被放在重复的最内部
 
-expand_duplicate_matcher_binding = duplicate matcher binding
-    .label = duplicate binding
-    .label2 = previous binding
+expand_duplicate_matcher_binding = 绑定重复匹配
+    .label = 重复绑定
+    .label2 = 先前的绑定
 
 expand_expected_comma_in_list =
-    expected token: `,`
+    预期是: `,`
 
 expand_explain_doc_comment_inner =
     inner doc comments expand to `#![doc = "..."]`, which is what this macro attempted to match
@@ -2173,16 +2174,17 @@ expand_var_still_repeating =
 expand_wrong_fragment_kind =
     non-{$kind} macro in {$kind} position: {$name}
 hir_analysis_ambiguous_lifetime_bound =
-    ambiguous lifetime bound, explicit lifetime bound required
+    生命周期边界模糊, 需要显示提供生命周期边界
 
-hir_analysis_assoc_bound_on_const = expected associated type, found {$descr}
-    .note = trait bounds not allowed on {$descr}
+hir_analysis_assoc_bound_on_const = 预期是关联类型, 得到了 {$descr}
+    .note = 在{$descr}上不允许有特征边界
 
 hir_analysis_assoc_type_binding_not_allowed =
-    associated type bindings are not allowed here
-    .label = associated type not allowed here
+    此处不允许关联类型绑定
+    .label = 此处不允许关联类型
 
-hir_analysis_associated_type_trait_uninferred_generic_params = cannot use the associated type of a trait with uninferred generic parameters
+hir_analysis_associated_type_trait_uninferred_generic_params =
+    cannot use the associated type of a trait with uninferred generic parameters
     .suggestion = use a fully qualified path with inferred lifetimes
 
 hir_analysis_associated_type_trait_uninferred_generic_params_multipart_suggestion = use a fully qualified path with explicit lifetimes
@@ -3657,11 +3659,14 @@ lint_non_binding_let_on_sync_lock =
     non-binding let on a synchronization lock
 
 lint_non_binding_let_suggestion =
-    consider binding to an unused variable to avoid immediately dropping the value
+    考虑绑定到一个未使用的变量, 以避免立即销毁该值
 
-lint_non_camel_case_type = {$sort} `{$name}` should have an upper camel case name
-    .suggestion = convert the identifier to upper camel case
-    .label = should have an UpperCamelCase name
+lint_non_camel_case_type = {$sort ->
+        [trait] 特征
+        *[other] {$sort}
+    } `{$name}` 应该有一个大驼峰的名字
+    .suggestion = 将标识符转换为大驼峰
+    .label = 应该有一个大驼峰(UpperCamelCase)的名字
 
 lint_non_existent_doc_keyword = found non-existing keyword `{$keyword}` used in `#[doc(keyword = "...")]`
     .help = only existing keywords are allowed in core/std
@@ -3871,9 +3876,15 @@ lint_unused_delim = unnecessary {$delim} around {$item}
 
 lint_unused_import_braces = braces around {$node} is unnecessary
 
-lint_unused_op = 未使用的 {$op} 是必须使用的
-    .label = 此 {$op} 产生一个值
-    .suggestion = 使用 `let _ = ...` 忽略结果值
+lint_unused_op = 未使用的{$op ->
+    [borrow] 借用
+    *[other] {$op}
+    }是必须使用的
+    .label = 此{$op ->
+    [borrow] 借用
+    *[other] {$op}
+    }产生一个值
+    .suggestion = 使用`let _ = ...`忽略结果值
 
 lint_unused_result = 未使用 `{$ty}` 类型的结果
 
@@ -4646,38 +4657,38 @@ mir_build_variant_defined_here = not covered
 
 mir_build_wrap_suggestion = consider wrapping the function body in an unsafe block
 mir_dataflow_duplicate_values_for =
-    duplicate values for `{$name}`
+    重复的值: `{$name}`
 
 mir_dataflow_path_must_end_in_filename =
-    path must end in a filename
+    路径必须以文件名结尾
 
 mir_dataflow_peek_argument_not_a_local =
-    rustc_peek: argument was not a local
+    rustc_peek: 参数不是局部的
 
 mir_dataflow_peek_argument_untracked =
-    rustc_peek: argument untracked
+    rustc_peek: 参数没有跟踪
 
 mir_dataflow_peek_bit_not_set =
-    rustc_peek: bit not set
+    rustc_peek: 位没有设置
 
 mir_dataflow_peek_must_be_not_temporary =
-    dataflow::sanity_check cannot feed a non-temp to rustc_peek
+    dataflow::sanity_check 无法将非临时数据提供给 rustc_peek
 
 mir_dataflow_peek_must_be_place_or_ref_place =
-    rustc_peek: argument expression must be either `place` or `&place`
+    rustc_peek: 参数表达式必须是`place`或者`&place`
 
 mir_dataflow_requires_an_argument =
-    `{$name}` requires an argument
+    `{$name}`需要一个参数
 
 mir_dataflow_stop_after_dataflow_ended_compilation =
-    stop_after_dataflow ended compilation
+    stop_after_dataflow 结束编译
 
 mir_dataflow_unknown_formatter =
-    unknown formatter
-mir_transform_arithmetic_overflow = this arithmetic operation will overflow
-mir_transform_call_to_unsafe_label = call to unsafe function
+    未知格式化程序
+mir_transform_arithmetic_overflow = 这个算术运算会溢出
+mir_transform_call_to_unsafe_label = 调用不安全函数
 mir_transform_call_to_unsafe_note = consult the function's documentation for information on how to avoid undefined behavior
-mir_transform_const_defined_here = `const` item defined here
+mir_transform_const_defined_here = `const`项定义在这
 
 mir_transform_const_modify = attempting to modify a `const` item
     .note = each usage of a `const` item creates a new temporary; the original `const` item will not be modified
@@ -4742,37 +4753,37 @@ mir_transform_use_of_extern_static_note = extern statics are not controlled by t
 mir_transform_use_of_static_mut_label = use of mutable static
 mir_transform_use_of_static_mut_note = mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
 monomorphize_consider_type_length_limit =
-    consider adding a `#![type_length_limit="{$type_length}"]` attribute to your crate
+    考虑在你的箱中添加`#![type_length_limit="{$type_length}"]`属性
 
 monomorphize_couldnt_dump_mono_stats =
-    unexpected error occurred while dumping monomorphization stats: {$error}
+    转储单态化状态时发生意外错误: {$error}
 
 monomorphize_encountered_error_while_instantiating =
-    the above error was encountered while instantiating `{$formatted_item}`
+    实例化`{$formatted_item}`时遇到上述错误
 
 monomorphize_large_assignments =
-    moving {$size} bytes
-    .label = value moved from here
-    .note = The current maximum size is {$limit}, but it can be customized with the move_size_limit attribute: `#![move_size_limit = "..."]`
+    移动了{$size}字节
+    .label = 从此处移动的值
+    .note = 当前最大大小为{$limit},但可以使用 move_size_limit 属性自定义: `#![move_size_limit = "..."]`
 
 monomorphize_no_optimized_mir =
-    missing optimized MIR for an item in the crate `{$crate_name}`
-    .note = missing optimized MIR for this item (was the crate `{$crate_name}` compiled with `--emit=metadata`?)
+    项缺少优化的MIR, 在`{$crate_name}`箱中
+    .note = 缺少此项的优化(箱`{$crate_name}`是否以`--emit=metadata`编译?)
 
 monomorphize_recursion_limit =
-    reached the recursion limit while instantiating `{$shrunk}`
-    .note = `{$def_path_str}` defined here
+    实例化`{$shrunk}`时到达递归限制
+    .note = `{$def_path_str}`定义在这
 
-monomorphize_symbol_already_defined = symbol `{$symbol}` is already defined
+monomorphize_symbol_already_defined = 符号`{$symbol}`已经定义
 
-monomorphize_type_length_limit = reached the type-length limit while instantiating `{$shrunk}`
+monomorphize_type_length_limit = 实例化`{$shrunk}`时到达了类型长度限制
 
 monomorphize_unknown_cgu_collection_mode =
-    unknown codegen-item collection mode '{$mode}', falling back to 'lazy' mode
+    未知代码生成项的收集模式'{$mode}', 回退到惰性('lazy')模式
 
-monomorphize_unused_generic_params = item has unused generic parameters
+monomorphize_unused_generic_params = 项具有未使用的泛型参数
 
-monomorphize_written_to_path = the full type name has been written to '{$path}'
+monomorphize_written_to_path = 完整的类型名称已写入'{$path}'
 parse_add_paren = 尝试添加括号
 
 parse_ambiguous_missing_keyword_for_item_definition = missing `fn` or `struct` for function or struct definition
@@ -4979,24 +4990,24 @@ parse_expected_fn_path_found_fn_keyword = expected identifier, found keyword `fn
 
 parse_expected_identifier = expected identifier
 
-parse_expected_identifier_found_doc_comment = expected identifier, found doc comment
-parse_expected_identifier_found_doc_comment_str = expected identifier, found doc comment `{$token}`
-parse_expected_identifier_found_keyword = expected identifier, found keyword
-parse_expected_identifier_found_keyword_str = expected identifier, found keyword `{$token}`
-parse_expected_identifier_found_reserved_identifier = expected identifier, found reserved identifier
-parse_expected_identifier_found_reserved_identifier_str = expected identifier, found reserved identifier `{$token}`
-parse_expected_identifier_found_reserved_keyword = expected identifier, found reserved keyword
-parse_expected_identifier_found_reserved_keyword_str = expected identifier, found reserved keyword `{$token}`
-parse_expected_identifier_found_str = expected identifier, found `{$token}`
+parse_expected_identifier_found_doc_comment = 预期是标识符, 得到了文档注释
+parse_expected_identifier_found_doc_comment_str = 预期是标识符, 得到了文档注释 `{$token}`
+parse_expected_identifier_found_keyword = 预期是标识符, 得到了关键字
+parse_expected_identifier_found_keyword_str = 预期是标识符, 得到了关键字`{$token}`
+parse_expected_identifier_found_reserved_identifier = 预期是标识符, 得到了保留标识符
+parse_expected_identifier_found_reserved_identifier_str = 预期是标识符, 得到了保留标识符 `{$token}`
+parse_expected_identifier_found_reserved_keyword = 预期是标识符, 得到了保留关键字
+parse_expected_identifier_found_reserved_keyword_str = 预期是标识符, 得到了保留关键字 `{$token}`
+parse_expected_identifier_found_str = 预期是标识符, 得到了 `{$token}`
 
-parse_expected_mut_or_const_in_raw_pointer_type = expected `mut` or `const` keyword in raw pointer type
-    .suggestion = add `mut` or `const` here
+parse_expected_mut_or_const_in_raw_pointer_type = 原始指针内预期是`mut`或者`const`关键字
+    .suggestion = 在这添加`mut`或者`const`
 
-parse_expected_semi_found_doc_comment_str = expected `;`, found doc comment `{$token}`
-parse_expected_semi_found_keyword_str = expected `;`, found keyword `{$token}`
-parse_expected_semi_found_reserved_identifier_str = expected `;`, found reserved identifier `{$token}`
-parse_expected_semi_found_reserved_keyword_str = expected `;`, found reserved keyword `{$token}`
-parse_expected_semi_found_str = 预期 `;`, 得到 `{$token}`
+parse_expected_semi_found_doc_comment_str = 预期是 `;`, 得到了文档注释 `{$token}`
+parse_expected_semi_found_keyword_str = 预期是 `;`, 得到了关键字 `{$token}`
+parse_expected_semi_found_reserved_identifier_str = 预期是 `;`, 得到了保留标识符 `{$token}`
+parse_expected_semi_found_reserved_keyword_str = 预期是 `;`, 得到了保留关键字 `{$token}`
+parse_expected_semi_found_str = 预期是 `;`, 得到来 `{$token}`
 
 parse_expected_statement_after_outer_attr = 外部属性后应有语句
 
@@ -5004,27 +5015,27 @@ parse_expected_struct_field = 预期一个 `,`, `:`, 或 `{"}"}`, 得到 `{$toke
     .label = 预期一个 `,`, `:`, 或 `{"}"}`
     .ident_label = 在解析这个结构体字段时
 
-parse_expected_trait_in_trait_impl_found_type = expected a trait, found type
+parse_expected_trait_in_trait_impl_found_type = 预期是一个特征, 得到了一个类型
 
-parse_extern_crate_name_with_dashes = crate name using dashes are not valid in `extern crate` statements
-    .label = dash-separated idents are not valid
-    .suggestion = if the original crate name uses dashes you need to use underscores in the code
+parse_extern_crate_name_with_dashes = 使用`-`的箱名在`extern crate`语句中无效
+    .label = 以`-`分隔的标识无效
+    .suggestion = 如果原始机箱名称使用`-`, 则需要在代码中使用`_`
 
-parse_extern_item_cannot_be_const = extern items cannot be `const`
-    .suggestion = try using a static value
-    .note = for more information, visit https://doc.rust-lang.org/std/keyword.extern.html
+parse_extern_item_cannot_be_const = 外部项不能是`const`
+    .suggestion = 尝试使用静态值
+    .note = 对于更多信息, 查看 <https://doc.rust-lang.org/std/keyword.extern.html>
 
-parse_extra_if_in_let_else = remove the `if` if you meant to write a `let...else` statement
+parse_extra_if_in_let_else = 你想要使用的可能是`let...else`语句, 考虑删除这个`if`
 
-parse_extra_impl_keyword_in_trait_impl = unexpected `impl` keyword
-    .suggestion = remove the extra `impl`
-    .note = this is parsed as an `impl Trait` type, but a trait is expected at this position
+parse_extra_impl_keyword_in_trait_impl = 意外的`impl`关键字
+    .suggestion = 删除这个多余的`impl`
+    .note = 这被解析为`impl Trait`类型, 这里需要一个特征
 
 
-parse_field_expression_with_generic = field expressions cannot have generic arguments
+parse_field_expression_with_generic = 字段表达式不能具有泛型参数
 
-parse_float_literal_requires_integer_part = float literals must have an integer part
-    .suggestion = must have an integer part
+parse_float_literal_requires_integer_part = 浮点字面量必须有一个整数部分
+    .suggestion = 必须有一个整数部分
 
 parse_float_literal_unsupported_base = {$base} float literal is not supported
 
@@ -5607,12 +5618,12 @@ parse_unmatched_angle = unmatched angle {$plural ->
 
 parse_unmatched_angle_brackets = {$num_extra_brackets ->
         [one] unmatched angle bracket
-       *[other] unmatched angle brackets
+        *[other] unmatched angle brackets
     }
     .suggestion = {$num_extra_brackets ->
-            [one] remove extra angle bracket
-           *[other] remove extra angle brackets
-        }
+        [one] remove extra angle bracket
+        *[other] remove extra angle brackets
+    }
 
 parse_unskipped_whitespace = whitespace symbol '{$ch}' is not skipped
     .label = {parse_unskipped_whitespace}
@@ -5636,14 +5647,14 @@ parse_where_clause_before_const_body = where clauses are not allowed before cons
     .body_label = the item body
     .suggestion = move the body before the where clause
 
-parse_where_clause_before_tuple_struct_body = where clauses are not allowed before tuple struct bodies
-    .label = unexpected where clause
-    .name_label = while parsing this tuple struct
-    .body_label = the struct body
-    .suggestion = move the body before the where clause
+parse_where_clause_before_tuple_struct_body = 元组结构内容之前不允许有where子句
+    .label = 意外的where子句
+    .name_label = 分析此元组结构体时
+    .body_label = 这个内容
+    .suggestion = 将内容移到where子句之前
 
-parse_where_generics = generic parameters on `where` clauses are reserved for future use
-    .label = currently unsupported
+parse_where_generics = 在`where`子句中的泛型参数保留备用
+    .label = 目前不支持
 
 parse_zero_chars = 字符字面量为空
     .label = {parse_zero_chars}
@@ -6908,54 +6919,48 @@ session_unleashed_feature_help_unnamed = skipping check that does not even have 
 session_unstable_virtual_function_elimination = `-Zvirtual-function-elimination` requires `-Clto`
 
 session_unsupported_dwarf_version = requested DWARF version {$dwarf_version} is greater than 5
-trait_selection_adjust_signature_borrow = consider adjusting the signature so it borrows its {$len ->
-        [one] argument
-        *[other] arguments
-    }
+trait_selection_adjust_signature_borrow = 考虑调整签名, 使其借用它的参数
 
-trait_selection_adjust_signature_remove_borrow = consider adjusting the signature so it does not borrow its {$len ->
-        [one] argument
-        *[other] arguments
-    }
+trait_selection_adjust_signature_remove_borrow = 考虑调整签名, 使其不会借用它的参数
 
-trait_selection_closure_fn_mut_label = closure is `FnMut` because it mutates the variable `{$place}` here
+trait_selection_closure_fn_mut_label = 闭包是`FnMut`的因其修改了这里的变量`{$place}`
 
-trait_selection_closure_fn_once_label = closure is `FnOnce` because it moves the variable `{$place}` out of its environment
+trait_selection_closure_fn_once_label = 闭包是`FnOnce`的因其将这里的变量`{$place}`移出环境
 
-trait_selection_closure_kind_mismatch = expected a closure that implements the `{$expected}` trait, but this closure only implements `{$found}`
-    .label = this closure implements `{$found}`, not `{$expected}`
+trait_selection_closure_kind_mismatch = 预期一个实现了`{$expected}`特征的闭包, 但此闭包仅实现`{$found}`
+    .label = 此闭包实现了`{$found}`, 而非`{$expected}`
 
-trait_selection_closure_kind_requirement = the requirement to implement `{$expected}` derives from here
+trait_selection_closure_kind_requirement = 实现`{$expected}`的要求派生自此处
 
-trait_selection_dump_vtable_entries = vtable entries for `{$trait_ref}`: {$entries}
+trait_selection_dump_vtable_entries = 虚表`{$trait_ref}`的条目: {$entries}
 
-trait_selection_empty_on_clause_in_rustc_on_unimplemented = empty `on`-clause in `#[rustc_on_unimplemented]`
-    .label = empty on-clause here
+trait_selection_empty_on_clause_in_rustc_on_unimplemented = 空的`on`子句在`#[rustc_on_unimplemented]`
+    .label = 此处空的on子句
 
-trait_selection_ignored_diagnostic_option = `{$option_name}` is ignored due to previous definition of `{$option_name}`
-    .other_label = `{$option_name}` is first declared here
-    .label = `{$option_name}` is already declared here
+trait_selection_ignored_diagnostic_option = `{$option_name}`由于以前的定义而被忽略
+    .other_label = `{$option_name}` 首先在这里声明
+    .label = `{$option_name}`已经在这里声明
 
-trait_selection_inherent_projection_normalization_overflow = overflow evaluating associated type `{$ty}`
+trait_selection_inherent_projection_normalization_overflow = 评估关联类型`{$ty}`时溢出
 
-trait_selection_invalid_on_clause_in_rustc_on_unimplemented = invalid `on`-clause in `#[rustc_on_unimplemented]`
-    .label = invalid on-clause here
+trait_selection_invalid_on_clause_in_rustc_on_unimplemented = 无效的`on`子句在`#[rustc_on_unimplemented]`
+    .label = 此处无效的on子句
 
-trait_selection_malformed_on_unimplemented_attr = malformed `on_unimplemented` attribute
-    .help = only `message`, `note` and `label` are allowed as options
-    .label = invalid option found here
+trait_selection_malformed_on_unimplemented_attr = 不正确的`on_unimplemented`属性
+    .help = 仅`message`,`note`和`label`可用做选项
+    .label = 这里得到无效的选项
 
-trait_selection_missing_options_for_on_unimplemented_attr = missing options for `on_unimplemented` attribute
-    .help = at least one of the `message`, `note` and `label` options are expected
+trait_selection_missing_options_for_on_unimplemented_attr = 缺少`on_unimplemented`属性的选项
+    .help = 需要`message`,`note`和`label`选项中的至少一个
 
-trait_selection_negative_positive_conflict = found both positive and negative implementation of trait `{$trait_desc}`{$self_desc ->
-        [none] {""}
-       *[default] {" "}for type `{$self_desc}`
-    }:
-    .negative_implementation_here = negative implementation here
-    .negative_implementation_in_crate = negative implementation in crate `{$negative_impl_cname}`
-    .positive_implementation_here = positive implementation here
-    .positive_implementation_in_crate = positive implementation in crate `{$positive_impl_cname}`
+trait_selection_negative_positive_conflict = 发现堆特征`{$trait_desc}`{$self_desc ->
+    [none] {""}
+    *[default] {" "}对于类型`{$self_desc}`
+    }的肯定或否定实现:
+    .negative_implementation_here = 此处的否定实现
+    .negative_implementation_in_crate = 在箱`{$negative_impl_cname}`中的否定实现
+    .positive_implementation_here = 此处的肯定实现
+    .positive_implementation_in_crate = 在箱`{$positive_impl_cname}`中的肯定实现
 
 trait_selection_no_value_in_rustc_on_unimplemented = 此属性必须具有一个有效的值
     .label = 这里预期一个值
@@ -6963,8 +6968,8 @@ trait_selection_no_value_in_rustc_on_unimplemented = 此属性必须具有一个
 
 trait_selection_trait_has_no_impls = 此特征没有实现, 考虑添加一个
 
-trait_selection_ty_alias_overflow = in case this is a recursive type alias, consider using a struct, enum, or union instead
-trait_selection_unable_to_construct_constant_value = unable to construct a constant value for the unevaluated constant {$unevaluated}
+trait_selection_ty_alias_overflow = 如果这是递归的类型别名, 考虑使用结构体, 枚举或共用体替代
+trait_selection_unable_to_construct_constant_value = 无法为未评估的{$unevaluated}构造常量值
 ty_utils_address_and_deref_not_supported = dereferencing or taking the address is not supported in generic constants
 
 ty_utils_adt_not_supported = struct/enum construction is not supported in generic constants

@@ -204,24 +204,24 @@ parse_expected_fn_path_found_fn_keyword = expected identifier, found keyword `fn
 
 parse_expected_identifier = expected identifier
 
-parse_expected_identifier_found_doc_comment = expected identifier, found doc comment
-parse_expected_identifier_found_doc_comment_str = expected identifier, found doc comment `{$token}`
-parse_expected_identifier_found_keyword = expected identifier, found keyword
-parse_expected_identifier_found_keyword_str = expected identifier, found keyword `{$token}`
-parse_expected_identifier_found_reserved_identifier = expected identifier, found reserved identifier
-parse_expected_identifier_found_reserved_identifier_str = expected identifier, found reserved identifier `{$token}`
-parse_expected_identifier_found_reserved_keyword = expected identifier, found reserved keyword
-parse_expected_identifier_found_reserved_keyword_str = expected identifier, found reserved keyword `{$token}`
-parse_expected_identifier_found_str = expected identifier, found `{$token}`
+parse_expected_identifier_found_doc_comment = 预期是标识符, 得到了文档注释
+parse_expected_identifier_found_doc_comment_str = 预期是标识符, 得到了文档注释 `{$token}`
+parse_expected_identifier_found_keyword = 预期是标识符, 得到了关键字
+parse_expected_identifier_found_keyword_str = 预期是标识符, 得到了关键字`{$token}`
+parse_expected_identifier_found_reserved_identifier = 预期是标识符, 得到了保留标识符
+parse_expected_identifier_found_reserved_identifier_str = 预期是标识符, 得到了保留标识符 `{$token}`
+parse_expected_identifier_found_reserved_keyword = 预期是标识符, 得到了保留关键字
+parse_expected_identifier_found_reserved_keyword_str = 预期是标识符, 得到了保留关键字 `{$token}`
+parse_expected_identifier_found_str = 预期是标识符, 得到了 `{$token}`
 
-parse_expected_mut_or_const_in_raw_pointer_type = expected `mut` or `const` keyword in raw pointer type
-    .suggestion = add `mut` or `const` here
+parse_expected_mut_or_const_in_raw_pointer_type = 原始指针内预期是`mut`或者`const`关键字
+    .suggestion = 在这添加`mut`或者`const`
 
-parse_expected_semi_found_doc_comment_str = expected `;`, found doc comment `{$token}`
-parse_expected_semi_found_keyword_str = expected `;`, found keyword `{$token}`
-parse_expected_semi_found_reserved_identifier_str = expected `;`, found reserved identifier `{$token}`
-parse_expected_semi_found_reserved_keyword_str = expected `;`, found reserved keyword `{$token}`
-parse_expected_semi_found_str = 预期 `;`, 得到 `{$token}`
+parse_expected_semi_found_doc_comment_str = 预期是 `;`, 得到了文档注释 `{$token}`
+parse_expected_semi_found_keyword_str = 预期是 `;`, 得到了关键字 `{$token}`
+parse_expected_semi_found_reserved_identifier_str = 预期是 `;`, 得到了保留标识符 `{$token}`
+parse_expected_semi_found_reserved_keyword_str = 预期是 `;`, 得到了保留关键字 `{$token}`
+parse_expected_semi_found_str = 预期是 `;`, 得到来 `{$token}`
 
 parse_expected_statement_after_outer_attr = 外部属性后应有语句
 
@@ -229,27 +229,27 @@ parse_expected_struct_field = 预期一个 `,`, `:`, 或 `{"}"}`, 得到 `{$toke
     .label = 预期一个 `,`, `:`, 或 `{"}"}`
     .ident_label = 在解析这个结构体字段时
 
-parse_expected_trait_in_trait_impl_found_type = expected a trait, found type
+parse_expected_trait_in_trait_impl_found_type = 预期是一个特征, 得到了一个类型
 
-parse_extern_crate_name_with_dashes = crate name using dashes are not valid in `extern crate` statements
-    .label = dash-separated idents are not valid
-    .suggestion = if the original crate name uses dashes you need to use underscores in the code
+parse_extern_crate_name_with_dashes = 使用`-`的箱名在`extern crate`语句中无效
+    .label = 以`-`分隔的标识无效
+    .suggestion = 如果原始机箱名称使用`-`, 则需要在代码中使用`_`
 
-parse_extern_item_cannot_be_const = extern items cannot be `const`
-    .suggestion = try using a static value
-    .note = for more information, visit https://doc.rust-lang.org/std/keyword.extern.html
+parse_extern_item_cannot_be_const = 外部项不能是`const`
+    .suggestion = 尝试使用静态值
+    .note = 对于更多信息, 查看 <https://doc.rust-lang.org/std/keyword.extern.html>
 
-parse_extra_if_in_let_else = remove the `if` if you meant to write a `let...else` statement
+parse_extra_if_in_let_else = 你想要使用的可能是`let...else`语句, 考虑删除这个`if`
 
-parse_extra_impl_keyword_in_trait_impl = unexpected `impl` keyword
-    .suggestion = remove the extra `impl`
-    .note = this is parsed as an `impl Trait` type, but a trait is expected at this position
+parse_extra_impl_keyword_in_trait_impl = 意外的`impl`关键字
+    .suggestion = 删除这个多余的`impl`
+    .note = 这被解析为`impl Trait`类型, 这里需要一个特征
 
 
-parse_field_expression_with_generic = field expressions cannot have generic arguments
+parse_field_expression_with_generic = 字段表达式不能具有泛型参数
 
-parse_float_literal_requires_integer_part = float literals must have an integer part
-    .suggestion = must have an integer part
+parse_float_literal_requires_integer_part = 浮点字面量必须有一个整数部分
+    .suggestion = 必须有一个整数部分
 
 parse_float_literal_unsupported_base = {$base} float literal is not supported
 
@@ -832,12 +832,12 @@ parse_unmatched_angle = unmatched angle {$plural ->
 
 parse_unmatched_angle_brackets = {$num_extra_brackets ->
         [one] unmatched angle bracket
-       *[other] unmatched angle brackets
+        *[other] unmatched angle brackets
     }
     .suggestion = {$num_extra_brackets ->
-            [one] remove extra angle bracket
-           *[other] remove extra angle brackets
-        }
+        [one] remove extra angle bracket
+        *[other] remove extra angle brackets
+    }
 
 parse_unskipped_whitespace = whitespace symbol '{$ch}' is not skipped
     .label = {parse_unskipped_whitespace}
@@ -861,14 +861,14 @@ parse_where_clause_before_const_body = where clauses are not allowed before cons
     .body_label = the item body
     .suggestion = move the body before the where clause
 
-parse_where_clause_before_tuple_struct_body = where clauses are not allowed before tuple struct bodies
-    .label = unexpected where clause
-    .name_label = while parsing this tuple struct
-    .body_label = the struct body
-    .suggestion = move the body before the where clause
+parse_where_clause_before_tuple_struct_body = 元组结构内容之前不允许有where子句
+    .label = 意外的where子句
+    .name_label = 分析此元组结构体时
+    .body_label = 这个内容
+    .suggestion = 将内容移到where子句之前
 
-parse_where_generics = generic parameters on `where` clauses are reserved for future use
-    .label = currently unsupported
+parse_where_generics = 在`where`子句中的泛型参数保留备用
+    .label = 目前不支持
 
 parse_zero_chars = 字符字面量为空
     .label = {parse_zero_chars}
