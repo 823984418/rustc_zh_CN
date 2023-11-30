@@ -24,11 +24,11 @@ borrowck_cannot_move_when_borrowed =
         [value] 值
         *[other] {$place}
     }因为它被借用
-    .label = 借用 {$borrow_place ->
+    .label = 借用{$borrow_place ->
         [value] 值
         *[other] {$borrow_place}
     }发生在这
-    .move_label = 移动 {$value_place ->
+    .move_label = 移动{$value_place ->
         [value] 值
         *[other] {$value_place}
     }发生在这
@@ -53,7 +53,7 @@ borrowck_closure_moved_twice =
 borrowck_consider_borrow_type_contents =
     帮助: 考虑调用`.as_ref()`或`.as_mut()`类借用该类型的内容
 
-// FIXME: normalize value?
+# FIXME: normalize value?
 borrowck_could_not_normalize =
     无法归一化`{$value}`
 
@@ -234,10 +234,10 @@ borrowck_var_does_not_need_mut =
     .suggestion = 删除这个`mut`
 
 borrowck_var_first_borrow_by_use_place_in_closure =
-    因在闭包的此处 {$place} 使用而发生第一次借用
+    因在闭包的此处{$place}使用而发生第一次借用
 
 borrowck_var_first_borrow_by_use_place_in_coroutine =
-    因在协程的此处 {$place} 使用而发生第一次借用
+    因在协程的此处{$place}使用而发生第一次借用
 
 borrowck_var_here_captured = 变量在这里被捕获
 
@@ -250,10 +250,10 @@ borrowck_var_move_by_use_in_coroutine =
     因在协程中使用而发生移动
 
 borrowck_var_mutable_borrow_by_use_place_in_closure =
-    因在闭包的此处 {$place} 使用而发生可变借用
+    因在闭包的此处{$place}使用而发生可变借用
 
 borrowck_var_second_borrow_by_use_place_in_closure =
-    因在闭包的此处 {$place} 使用而发生第二次可变借用
+    因在闭包的此处{$place}使用而发生第二次可变借用
 
 borrowck_var_second_borrow_by_use_place_in_coroutine =
-    因在协程的此处 {$place} 使用而发生第二次可变借用
+    因在协程的此处{$place}使用而发生第二次可变借用
