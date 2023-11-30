@@ -599,83 +599,83 @@ borrowck_move_unsized =
     .label = `{$ty}`的大小无法静态确定
 
 borrowck_moved_a_fn_once_in_call =
-    this value implements `FnOnce`, which causes it to be moved when called
+    该闭包实现的是`FnOnce`, 导致调用它时发生移动
 
 borrowck_moved_due_to_await =
-    {$place_name} {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to this {$is_loop_message ->
-        [true] await, in previous iteration of loop
+    {$place_name}发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }是由于这个{$is_loop_message ->
+        [true] await, 在循环的上次迭代中
         *[false] await
     }
 
 borrowck_moved_due_to_call =
-    {$place_name} {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to this {$is_loop_message ->
-        [true] call, in previous iteration of loop
-        *[false] call
+    {$place_name}发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }是由于这个{$is_loop_message ->
+        [true] 调用, 在循环的上次迭代中
+        *[false] 调用
     }
 
 borrowck_moved_due_to_implicit_into_iter_call =
-    {$place_name} {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to this implicit call to {$is_loop_message ->
-        [true] `.into_iter()`, in previous iteration of loop
+    {$place_name}发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }是由于隐式调用{$is_loop_message ->
+        [true] `.into_iter()`, 在循环的上次迭代中
         *[false] `.into_iter()`
     }
 
 borrowck_moved_due_to_method_call =
-    {$place_name} {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to this method {$is_loop_message ->
-        [true] call, in previous iteration of loop
-        *[false] call
+    {$place_name}发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }是由于这个方法{$is_loop_message ->
+        [true] 调用, 在循环的上次迭代中
+        *[false] 调用
     }
 
 borrowck_moved_due_to_usage_in_operator =
-    {$place_name} {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to usage in {$is_loop_message ->
-        [true] operator, in previous iteration of loop
-        *[false] operator
+    {$place_name}发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }是由于使用{$is_loop_message ->
+        [true] 运算, 在循环的上次迭代中
+        *[false] 运算
     }
 
 borrowck_opaque_type_non_generic_param =
-    expected generic {$kind} parameter, found `{$ty}`
+    预期泛型{$kind}参数, 得到`{$ty}`
     .label = {STREQ($ty, "'static") ->
-        [true] cannot use static lifetime; use a bound lifetime instead or remove the lifetime parameter from the opaque type
-        *[other] this generic parameter must be used with a generic {$kind} parameter
+        [true] 无法使用静态生命周期; 在这个不透明的类型中使用一个有界生命周期或者删除这个生命周期参数
+        *[other] 此泛型参数必须与泛型{$kind}参数一同使用
     }
 
 borrowck_partial_var_move_by_use_in_closure =
-    variable {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to use in closure
+    变量发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }由于在这个闭包中使用
 
 borrowck_partial_var_move_by_use_in_coroutine =
-    variable {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } due to use in coroutine
+    变量发生{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }由于在这个协程中使用
 
 borrowck_returned_async_block_escaped =
-    returns an `async` block that contains a reference to a captured variable, which then escapes the closure body
+    返回一个包含捕获变量引用的`async`块, 然后脱离这个闭包体
 
 borrowck_returned_closure_escaped =
-    returns a closure that contains a reference to a captured variable, which then escapes the closure body
+    返回一个包含捕获变量引用的闭包, 然后脱离这个闭包体
 
 borrowck_returned_lifetime_short =
-    {$category_desc}requires that `{$free_region_name}` must outlive `{$outlived_fr_name}`
+    {$category_desc}要求`{$free_region_name}`必须活得比`{$outlived_fr_name}`更久
 
 borrowck_returned_lifetime_wrong =
-    {$mir_def_name} was supposed to return data with lifetime `{$outlived_fr_name}` but it is returning data with lifetime `{$fr_name}`
+    {$mir_def_name}应当返回生命周期为`{$outlived_fr_name}`的数据, 但它返回了生命周期为`{$fr_name}`的数据
 
 borrowck_returned_ref_escaped =
     返回对捕获变量的引用会逃逸出闭包体
@@ -683,16 +683,16 @@ borrowck_returned_ref_escaped =
 borrowck_simd_shuffle_last_const = last argument of `simd_shuffle` is required to be a `const` item
 
 borrowck_suggest_create_freash_reborrow =
-    consider reborrowing the `Pin` instead of moving it
+    考虑重新借用`Pin`而不是移动它
 
 borrowck_suggest_iterate_over_slice =
-    consider iterating over a slice of the `{$ty}`'s content to avoid moving into the `for` loop
+    考虑在`{$ty}`内容的一个切片上迭代来避免将其移动到`for`循环中
 
 borrowck_ty_no_impl_copy =
-    {$is_partial_move ->
-        [true] partial move
-        *[false] move
-    } occurs because {$place} has type `{$ty}`, which does not implement the `Copy` trait
+    发生{$is_partial_move ->
+        [true] 部分移动
+        *[false] 移动
+    }因为{$place}具有`{$ty}`类型, 它没有实现`Copy`特征
 
 borrowck_use_due_to_use_closure =
     在闭包中使用而发生使用
