@@ -53,8 +53,8 @@ ast_lowering_extra_double_dot =
     .label = 每个 {$ctx} 模式仅能使用一次
 
 ast_lowering_functional_record_update_destructuring_assignment =
-    functional record updates are not allowed in destructuring assignments
-    .suggestion = consider removing the trailing pattern
+    不允许在解构赋值中使用functional record updates
+    .suggestion = 考虑移除尾随模式
 
 ast_lowering_generic_type_with_parentheses =
     带括号的类型参数只能与`Fn`系列特征一起使用
@@ -120,7 +120,7 @@ ast_lowering_register_conflict =
     寄存器 `{$reg1_name}` 与寄存器 `{$reg2_name}` 冲突
     .help = 使用 `lateout` 代替 `out` 来避免冲突
 
-ast_lowering_remove_parentheses = remove these parentheses
+ast_lowering_remove_parentheses = 删除这些括号
 
 ast_lowering_sub_tuple_binding =
     不允许使用`{$ident_name} @`在{$ctx}

@@ -101,6 +101,6 @@ session_target_stack_protector_not_supported = `-Z stack-protector={$stack_prote
 session_unleashed_feature_help_named = skipping check for `{$gate}` feature
 session_unleashed_feature_help_unnamed = skipping check that does not even have a feature gate
 
-session_unstable_virtual_function_elimination = `-Zvirtual-function-elimination` requires `-Clto`
+session_unstable_virtual_function_elimination = `-Zvirtual-function-elimination`需要`-Clto`
 
-session_unsupported_dwarf_version = requested DWARF version {$dwarf_version} is greater than 5
+session_unsupported_dwarf_version = 需要DWARF版本{$dwarf_version}大于5

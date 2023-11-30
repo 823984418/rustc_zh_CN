@@ -34,57 +34,57 @@ ast_passes_auto_super_lifetime = 自动特征不能有超特征或生命周期�
     .label = {ast_passes_auto_super_lifetime}
     .suggestion = 删除超特征或生命周期边界
 
-ast_passes_bad_c_variadic = only foreign or `unsafe extern "C"` functions may be C-variadic
+ast_passes_bad_c_variadic = 只有外来的`unsafe extern "C"`函数可以是C变长参数
 
-ast_passes_body_in_extern = incorrect `{$kind}` inside `extern` block
-    .cannot_have = cannot have a body
-    .invalid = the invalid body
-    .existing = `extern` blocks define existing foreign {$kind}s and {$kind}s inside of them cannot have a body
+ast_passes_body_in_extern = `extern`块内部的`{$kind}`错误
+    .cannot_have = 不能有体
+    .invalid = 无效的体
+    .existing = `extern`块定义现有的外部{$kind}, {$kind}内部不能有体
 
-ast_passes_bound_in_context = bounds on `type`s in {$ctx} have no effect
+ast_passes_bound_in_context = 在{$ctx}中`type`的边界无效
 
-ast_passes_const_and_async = functions cannot be both `const` and `async`
-    .const = `const` because of this
-    .async = `async` because of this
+ast_passes_const_and_async = 函数不能同时是`const`和`async`
+    .const = `const`因为这里
+    .async = `async`因为这里
     .label = {""}
 
-ast_passes_const_and_c_variadic = functions cannot be both `const` and C-variadic
-    .const = `const` because of this
-    .variadic = C-variadic because of this
+ast_passes_const_and_c_variadic = 函数不能同时是`const`和C变长参数
+    .const = `const`因为这里
+    .variadic = C变长参数因为这里
 
 ast_passes_const_without_body =
-    free constant item without body
-    .suggestion = provide a definition for the constant
+    空的常量项没有体
+    .suggestion = 提供常量的定义
 
 ast_passes_constraint_on_negative_bound =
-    associated type constraints not allowed on negative bounds
+    关联类型约束不允许否定边界
 
 ast_passes_deprecated_where_clause_location =
-    where clause not allowed here
+    这里不允许where子句
 
-ast_passes_equality_in_where = equality constraints are not yet supported in `where` clauses
-    .label = not supported
-    .suggestion = if `{$ident}` is an associated type you're trying to set, use the associated type binding syntax
-    .suggestion_path = if `{$trait_segment}::{$potential_assoc}` is an associated type you're trying to set, use the associated type binding syntax
-    .note = see issue #20041 <https://github.com/rust-lang/rust/issues/20041> for more information
+ast_passes_equality_in_where = `where`子句中还不支持相等约束
+    .label = 不支持
+    .suggestion = 如果`{$ident}`是要设置的关联类型, 使用关联类型的类型绑定语法
+    .suggestion_path = 如果`{$trait_segment}::{$potential_assoc}`是要设置的关联类型, 使用关联类型的类型绑定语法
+    .note = 查看问题 #20041 <https://github.com/rust-lang/rust/issues/20041> 获取更多信息
 
-ast_passes_extern_block_suggestion = if you meant to declare an externally defined function, use an `extern` block
+ast_passes_extern_block_suggestion = 如果你想要声明一个外部定义的函数, 使用一个`extern`块
 
-ast_passes_extern_fn_qualifiers = functions in `extern` blocks cannot have qualifiers
-    .label = in this `extern` block
-    .suggestion = remove the qualifiers
+ast_passes_extern_fn_qualifiers = `extern`块中的函数不能有限定符
+    .label = 在这个`extern`块中
+    .suggestion = 删除这个限定符
 
-ast_passes_extern_item_ascii = items in `extern` blocks cannot use non-ascii identifiers
-    .label = in this `extern` block
-    .note = this limitation may be lifted in the future; see issue #83942 <https://github.com/rust-lang/rust/issues/83942> for more information
+ast_passes_extern_item_ascii = `extern`块中的项不能使用非ascii标识符
+    .label = 在这个`extern`块中
+    .note = 这一限制将来可能会取消; 查看问题 #83942 <https://github.com/rust-lang/rust/issues/83942> 获取更多信息
 
-ast_passes_extern_keyword_link = for more information, visit https://doc.rust-lang.org/std/keyword.extern.html
+ast_passes_extern_keyword_link = 获取更多信息, 参见 <https://doc.rust-lang.org/std/keyword.extern.html>
 
-ast_passes_extern_types_cannot = `type`s inside `extern` blocks cannot have {$descr}
-    .suggestion = remove the {$remove_descr}
-    .label = `extern` block begins here
+ast_passes_extern_types_cannot = `extern`块内部的`type`不能有{$descr}
+    .suggestion = 删除{$remove_descr}
+    .label = `extern`块开始
 
-ast_passes_extern_without_abi = extern declarations without an explicit ABI are deprecated
+ast_passes_extern_without_abi = 无显式ABI的extern声明是废弃的
 
 ast_passes_feature_on_non_nightly = `#![feature]` may not be used on the {$channel} release channel
     .suggestion = remove the attribute
@@ -184,7 +184,7 @@ ast_passes_module_nonascii = trying to load file for module `{$name}` with non-a
     .help = consider using the `#[path]` attribute to specify filesystem path
 
 ast_passes_negative_bound_not_supported =
-    negative bounds are not supported
+    不支持否定边界
 
 ast_passes_nested_impl_trait = nested `impl Trait` is not allowed
     .outer = outer `impl Trait`
@@ -210,49 +210,49 @@ ast_passes_out_of_order_params = {$param_ord} parameters must be declared prior 
 ast_passes_pattern_in_bodiless = patterns aren't allowed in functions without bodies
     .label = pattern not allowed in function without body
 
-ast_passes_pattern_in_fn_pointer = patterns aren't allowed in function pointer types
+ast_passes_pattern_in_fn_pointer = 模式不允许在外部函数指针中使用
 
-ast_passes_pattern_in_foreign = patterns aren't allowed in foreign function declarations
-    .label = pattern not allowed in foreign function
+ast_passes_pattern_in_foreign = 模式不允许在外部函数声明中使用
+    .label = 模式不允许在外部函数中使用
 
 ast_passes_show_span = {$msg}
 
-ast_passes_stability_outside_std = stability attributes may not be used outside of the standard library
+ast_passes_stability_outside_std = 稳定性属性不能在标准库之外使用
 
 ast_passes_static_without_body =
-    free static item without body
-    .suggestion = provide a definition for the static
+    空的静态项没有体
+    .suggestion = 提供静态项的定义
 
-ast_passes_tilde_const_disallowed = `~const` is not allowed here
-    .closure = closures cannot have `~const` trait bounds
-    .function = this function is not `const`, so it cannot have `~const` trait bounds
-    .trait = this trait is not a `#[const_trait]`, so it cannot have `~const` trait bounds
-    .impl = this impl is not `const`, so it cannot have `~const` trait bounds
-    .object = trait objects cannot have `~const` trait bounds
-    .item = this item cannot have `~const` trait bounds
+ast_passes_tilde_const_disallowed = `~const`不能用在这里
+    .closure = 闭包不能有`~const`特征边界
+    .function = 此函数并非`const`, 因此它不能有`~const`特征边界
+    .trait = 此特征并非`#[const_trait]`, 因此它不能有`~const`特征边界
+    .impl = 此实现并非`const`, 因此它不能有`~const`特征边界
+    .object = 特征对象不能有`~const`特征边界
+    .item = 此项不能有`~const`特征边界
 
 ast_passes_trait_fn_const =
-    functions in traits cannot be declared const
-    .label = functions in traits cannot be const
+    特征中的函数不能声明为const
+    .label = 特征中的函数不能是const的
 
-ast_passes_trait_object_single_bound = only a single explicit lifetime bound is permitted
+ast_passes_trait_object_single_bound = 只允许单个显式的生命周期边界
 
 ast_passes_ty_alias_without_body =
-    free type alias without body
-    .suggestion = provide a definition for the type
+    空的类型别名没有体
+    .suggestion = 提供类型的定义
 
-ast_passes_unsafe_item = {$kind} cannot be declared unsafe
+ast_passes_unsafe_item = {$kind}不能声明为不安全
 
-ast_passes_unsafe_negative_impl = negative impls cannot be unsafe
-    .negative = negative because of this
-    .unsafe = unsafe because of this
+ast_passes_unsafe_negative_impl = 否定实现不能是不安全的
+    .negative = 否定实现因为这里
+    .unsafe = 不安全因为这里
 
 ast_passes_visibility_not_permitted =
-    visibility qualifiers are not permitted here
-    .enum_variant = enum variants and their fields always share the visibility of the enum they are in
-    .trait_impl = trait items always share the visibility of their trait
-    .individual_impl_items = place qualifiers on individual impl items instead
-    .individual_foreign_items = place qualifiers on individual foreign items instead
+    此处不允许使用可见性限定符
+    .enum_variant = 枚举变体及其字段始终共享它们所在的枚举的可见性
+    .trait_impl = 特征内项总是共享其所在特征的可见性
+    .individual_impl_items = 将限定符放在单个实现项上
+    .individual_foreign_items = 将限定符放在单个外来项目上
 
 ast_passes_where_clause_after_type_alias = 类型别名的类型后面不允许有where子句
     .note = 查看问题 #112792 <https://github.com/rust-lang/rust/issues/112792> 获取更多信息

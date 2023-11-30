@@ -20,18 +20,18 @@ borrowck_calling_operator_moves_lhs =
     调用此操作会移动左侧
 
 borrowck_cannot_move_when_borrowed =
-    无法移动 {$place ->
-        [value] value
+    无法移动{$place ->
+        [value] 值
         *[other] {$place}
-    } 因为它被借用
+    }因为它被借用
     .label = 借用 {$borrow_place ->
-        [value] value
+        [value] 值
         *[other] {$borrow_place}
-    } 发生在这
+    }发生在这
     .move_label = 移动 {$value_place ->
-        [value] value
+        [value] 值
         *[other] {$value_place}
-    } 发生在这
+    }发生在这
 
 borrowck_capture_immute =
     捕获不可变因为这个使用
@@ -40,30 +40,31 @@ borrowck_capture_move =
     捕获无法移动因为这个使用
 
 borrowck_capture_mut =
-    capture is mutable because of use here
+    因为这里的使用, 捕获是可变的
 
-borrowck_closure_inferred_mut = 推断为 `FnMut` 闭包
+borrowck_closure_inferred_mut = 推断为`FnMut`闭包
 
 borrowck_closure_invoked_twice =
-    closure cannot be invoked more than once because it moves the variable `{$place_name}` out of its environment
+    不能多次调用此闭包因为它将变量`{$place_name}`移出环境
 
 borrowck_closure_moved_twice =
-    closure cannot be moved more than once as it is not `Copy` due to moving the variable `{$place_name}` out of its environment
+    闭包不能移动多次, 没有实现`Copy`, 因为它将变量`{$place_name}`移出环境
 
 borrowck_consider_borrow_type_contents =
-    help: consider calling `.as_ref()` or `.as_mut()` to borrow the type's contents
+    帮助: 考虑调用`.as_ref()`或`.as_mut()`类借用该类型的内容
 
+// FIXME: normalize value?
 borrowck_could_not_normalize =
-    could not normalize `{$value}`
+    无法归一化`{$value}`
 
 borrowck_could_not_prove =
-    could not prove `{$predicate}`
+    无法证明`{$predicate}`
 
 borrowck_func_take_self_moved_place =
-    `{$func}` takes ownership of the receiver `self`, which moves {$place_name}
+    `{$func}`无法取得接收器`self`的所有全, 发生移动{$place_name}
 
 borrowck_generic_does_not_live_long_enough =
-    `{$kind}` 活得不够久
+    `{$kind}`活得不够久
 
 borrowck_higher_ranked_lifetime_error =
     高阶生命周期错误
@@ -75,11 +76,11 @@ borrowck_lifetime_constraints_error =
     生命周期也许活得不够久
 
 borrowck_move_out_place_here =
-    {$place} is moved here
+    移动到这里: {$place}
 
 borrowck_move_unsized =
-    cannot move a value of type `{$ty}`
-    .label = the size of `{$ty}` cannot be statically determined
+    无法移动类型为`{$ty}`的值
+    .label = `{$ty}`的大小无法静态确定
 
 borrowck_moved_a_fn_once_in_call =
     this value implements `FnOnce`, which causes it to be moved when called
@@ -178,46 +179,46 @@ borrowck_ty_no_impl_copy =
     } occurs because {$place} has type `{$ty}`, which does not implement the `Copy` trait
 
 borrowck_use_due_to_use_closure =
-    use occurs due to use in closure
+    在闭包中使用而发生使用
 
 borrowck_use_due_to_use_coroutine =
-    use occurs due to use in coroutine
+    在协程中使用而发生使用
 
 borrowck_used_impl_require_static =
-    the used `impl` has a `'static` requirement
+    使用的`impl`有一个`'static`的要求
 
 borrowck_value_capture_here =
-    value captured {$is_within ->
-        [true] here by coroutine
-        *[false] here
+    值捕获于 {$is_within ->
+        [true] 协程的这里
+        *[false] 这里
     }
 
 borrowck_value_moved_here =
-    value {$is_partial ->
-        [true] partially moved
-        *[false] moved
-    } {$is_move_msg ->
-        [true] into closure here
-        *[false] here
+    值{$is_partial ->
+        [true] 部分移动
+        *[false] 移动
+    }{$is_move_msg ->
+        [true] 到闭包的这
+        *[false] 到这
     }{$is_loop_message ->
-        [true] , in previous iteration of loop
+        [true] , 在循环的上一次迭代中
         *[false] {""}
     }
 
 borrowck_var_borrow_by_use_in_closure =
-    borrow occurs due to use in closure
+    因在闭包中使用而发生借
 
 borrowck_var_borrow_by_use_in_coroutine =
-    borrow occurs due to use in coroutine
+    因在协程中使用而发生借用
 
 borrowck_var_borrow_by_use_place_in_closure =
-    因在闭包的此处 {$place} 使用而发生了{$is_single_var ->
+    因在闭包的此处{$place}使用而发生了{$is_single_var ->
     *[true] 借用
     [false] 些借用
     }
 
 borrowck_var_borrow_by_use_place_in_coroutine =
-    因在协程的此处 {$place} 使用而发生了{$is_single_var ->
+    因在协程的此处{$place}使用而发生了{$is_single_var ->
     *[true] 借用
     [false] 些借用
     }
