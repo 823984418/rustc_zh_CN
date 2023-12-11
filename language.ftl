@@ -229,129 +229,118 @@ ast_passes_extern_types_cannot = `extern`块内部的`type`不能有{$descr}
 
 ast_passes_extern_without_abi = 无显式ABI的extern声明是废弃的
 
-ast_passes_feature_on_non_nightly = `#![feature]` may not be used on the {$channel} release channel
-    .suggestion = remove the attribute
-    .stable_since = the feature `{$name}` has been stable since `{$since}` and no longer requires an attribute to enable
+ast_passes_feature_on_non_nightly = `#![feature]`不能在{$channel}发行通道上使用
+    .suggestion = 删除该属性
+    .stable_since = 自`{$since}`以来`{$name}`特性已经稳定, 不需要通过属性启用
 
-ast_passes_fieldless_union = unions cannot have zero fields
+ast_passes_fieldless_union = 共用体不能有零字段
 
-ast_passes_fn_body_extern = incorrect function inside `extern` block
-    .cannot_have = cannot have a body
-    .suggestion = remove the invalid body
-    .help = you might have meant to write a function accessible through FFI, which can be done by writing `extern fn` outside of the `extern` block
-    .label = `extern` blocks define existing foreign functions and functions inside of them cannot have a body
+ast_passes_fn_body_extern = `extern`块内的函数不正确
+    .cannot_have = 不能有函数体
+    .suggestion = 删除无效的函数体
+    .help = 你可能想要编写一个可以通过FFI调用的函数, 这可以通过在`extern`块外编写`extern fn`来解决
+    .label = `extern`块定义现有的外部函数, 其中的函数不能有函数体
 
 ast_passes_fn_param_c_var_args_not_last =
-    `...` must be the last argument of a C-variadic function
+    `...`必须是C变长参数函数的最后一个参数
 
 ast_passes_fn_param_c_var_args_only =
-    C-variadic function must be declared with at least one named argument
+    C变长参数函数必须声明至少一个命名参数
 
 ast_passes_fn_param_doc_comment =
-    documentation comments cannot be applied to function parameters
-    .label = doc comments are not allowed here
+    文档注释不能应用于函数参数
+    .label = 此处不允许文档注释
 
 ast_passes_fn_param_forbidden_attr =
-    allow, cfg, cfg_attr, deny, expect, forbid, and warn are the only allowed built-in attributes in function parameters
+    allow, cfg, cfg_attr, deny, expect, forbid, 和warn是函数参数中唯一允许的内置属性
 
 ast_passes_fn_param_forbidden_self =
-    `self` parameter is only allowed in associated functions
-    .label = not semantically valid as function parameter
-    .note = associated functions are those in `impl` or `trait` definitions
+    `self`参数只允许在关联函数中使用
+    .label = 作为函数参数在语义上无效
+    .note = 关联函数是指在`impl`或`trait`中定义的函数
 
 ast_passes_fn_param_too_many =
-    function can not have more than {$max_num_args} arguments
+    函数的参数不能超过{$max_num_args}个
 
 ast_passes_fn_without_body =
-    free function without a body
-    .suggestion = provide a definition for the function
+    函数缺少函数体
+    .suggestion = 提供函数的定义
 
 ast_passes_forbidden_default =
-    `default` is only allowed on items in trait impls
-    .label = `default` because of this
+    `default`仅允许用在特征实现上
+    .label = `default`因为这里
 
 ast_passes_forbidden_lifetime_bound =
-    lifetime bounds cannot be used in this context
+    生命周期边界不能在此上下文中使用
 
 ast_passes_forbidden_non_lifetime_param =
-    only lifetime parameters can be used in this context
+    在此上下文中只能使用生命周期参数
 
-ast_passes_generic_before_constraints = generic arguments must come before the first constraint
-    .constraints = {$constraint_len ->
-    [one] constraint
-    *[other] constraints
-    }
-    .args = generic {$args_len ->
-    [one] argument
-    *[other] arguments
-    }
+# $constraint_len $args_len
+ast_passes_generic_before_constraints = 泛型参数必须位于第一个约束之前
+    .constraints = 约束
+    .args = 泛型参数
     .empty_string = {""},
-    .suggestion = move the {$constraint_len ->
-    [one] constraint
-    *[other] constraints
-    } after the generic {$args_len ->
-    [one] argument
-    *[other] arguments
-    }
+    .suggestion = 将约束移动到泛型参数之后
 
-ast_passes_generic_default_trailing = generic parameters with a default must be trailing
+ast_passes_generic_default_trailing = 具有默认值的泛型参数必须尾随其后
 
-ast_passes_impl_trait_path = `impl Trait` is not allowed in path parameters
+ast_passes_impl_trait_path = `impl Trait`不允许使用参数路径
 
-ast_passes_incompatible_features = `{$f1}` and `{$f2}` are incompatible, using them at the same time is not allowed
-    .help = remove one of these features
+ast_passes_incompatible_features = `{$f1}`与`{$f2}`不兼容, 不允许同时使用它们
+    .help = 删除其中一个特性
 
-ast_passes_inherent_cannot_be = inherent impls cannot be {$annotation}
-    .because = {$annotation} because of this
-    .type = inherent impl for this type
-    .only_trait = only trait implementations may be annotated with {$annotation}
+ast_passes_inherent_cannot_be = 固有实现不能是{$annotation}
+    .because = {$annotation}因为这里
+    .type = 此类型的固有实现
+    .only_trait = 只有特征实现可以有{$annotation}修饰
 
 ast_passes_invalid_label =
-    invalid label name `{$name}`
+    无效的标签名称`{$name}`
 
 ast_passes_invalid_unnamed_field =
-    unnamed fields are not allowed outside of structs or unions
-    .label = unnamed field declared here
+    不允许在结构体或共用体之外只有未命名字段
+    .label = 未命名字段声明在这
 
 ast_passes_invalid_unnamed_field_ty =
-    unnamed fields can only have struct or union types
-    .label = not a struct or union
+    未命名字段只能有结构体类型或者共用体类型
+    .label = 不是一个结构体或共用体
 
-ast_passes_item_underscore = `{$kind}` items in this context need a name
-    .label = `_` is not a valid name for this `{$kind}` item
+ast_passes_item_underscore = 此上下文中的`{$kind}`项需要一个名称
+    .label = `_`不是`{$kind}`项的有效名称
 
 ast_passes_keyword_lifetime =
-    lifetimes cannot use keyword names
+    生命周期不能使用关键字名称
 
-ast_passes_module_nonascii = trying to load file for module `{$name}` with non-ascii identifier name
-    .help = consider using the `#[path]` attribute to specify filesystem path
+ast_passes_module_nonascii = 试图加载具有非ascii标识符名称模块`{$name}`的文件
+    .help = 考虑使用`#[path]`属性来指定文件系统路径
 
 ast_passes_negative_bound_not_supported =
     不支持否定边界
 
-ast_passes_nested_impl_trait = nested `impl Trait` is not allowed
-    .outer = outer `impl Trait`
-    .inner = nested `impl Trait` here
+ast_passes_nested_impl_trait = 不允许嵌套`impl Trait`
+    .outer = 外部`impl Trait`
+    .inner = 这里嵌套`impl Trait`
 
-ast_passes_nested_lifetimes = nested quantification of lifetimes
+ast_passes_nested_lifetimes = 生命周期嵌套
 
-ast_passes_nomangle_ascii = `#[no_mangle]` requires ASCII identifier
+ast_passes_nomangle_ascii = `#[no_mangle]`需要ASCII标识符
 
-ast_passes_obsolete_auto = `impl Trait for .. {"{}"}` is an obsolete syntax
-    .help = use `auto trait Trait {"{}"}` instead
+ast_passes_obsolete_auto = `impl Trait for .. {"{}"}`是一种过时的语法
+    .help = 使用`auto trait Trait {"{}"}`代替
 
-ast_passes_optional_const_exclusive = `~const` and `{$modifier}` are mutually exclusive
+ast_passes_optional_const_exclusive = `~const`和`{$modifier}`是互斥的
 
-ast_passes_optional_trait_object = `?Trait` is not permitted in trait object types
+ast_passes_optional_trait_object = 特征对象类型中不允许`?Trait`
 
-ast_passes_optional_trait_supertrait = `?Trait` is not permitted in supertraits
-    .note = traits are `?{$path_str}` by default
+ast_passes_optional_trait_supertrait = 超特征不允许`?Trait
+    .note = 特征默认是`?{$path_str}`的
 
-ast_passes_out_of_order_params = {$param_ord} parameters must be declared prior to {$max_param} parameters
-    .suggestion = reorder the parameters: lifetimes, then consts and types
+ast_passes_out_of_order_params = {$param_ord}参数必须在{$max_param}参数之前声明
+    .suggestion = 重新排序参数: 生命周期, 然后是常量和类型
 
-ast_passes_pattern_in_bodiless = patterns aren't allowed in functions without bodies
-    .label = pattern not allowed in function without body
+ast_passes_pattern_in_bodiless = 不允许在没有函数体的函数中使用模式
+    .label = 模式不允许在没有函数体的函数中使用
 
 ast_passes_pattern_in_fn_pointer = 模式不允许在外部函数指针中使用
 
@@ -434,29 +423,29 @@ attr_incorrect_repr_format_align_one_arg =
     不正确的`repr(align)`属性格式: `align`括号里只有一个参数
 
 attr_incorrect_repr_format_generic =
-    incorrect `repr({$repr_arg})` attribute format
-    .suggestion = use parentheses instead
+    不正确的`repr({$repr_arg})`属性格式
+    .suggestion = 使用括号代替
 
 attr_incorrect_repr_format_packed_one_or_zero_arg =
-    incorrect `repr(packed)` attribute format: `packed` takes exactly one parenthesized argument, or no parentheses at all
+    不正确的`repr(packed)`属性格式: `packed`只接受一个带括号的参数，或者没有括号
 
 attr_invalid_issue_string =
-    `issue` must be a non-zero numeric string or "none"
-    .must_not_be_zero = `issue` must not be "0", use "none" instead
-    .empty = cannot parse integer from empty string
-    .invalid_digit = invalid digit found in string
-    .pos_overflow = number too large to fit in target type
-    .neg_overflow = number too small to fit in target type
+    `issue`必须是非零数字字符串或者"none"
+    .must_not_be_zero = `issue`不能是"0", 使用"none"代替
+    .empty = 无法将空字符串解析为整数
+    .invalid_digit = 在字符串中找到无效数字
+    .pos_overflow = 数字太大, 无法放入目标类型
+    .neg_overflow = 数字太小, 无法放入目标类型
 
 attr_invalid_predicate =
-    invalid predicate `{$predicate}`
+    无效的`{$predicate}`
 
 attr_invalid_repr_align_need_arg =
-    invalid `repr(align)` attribute: `align` needs an argument
-    .suggestion = supply an argument here
+    无效的`repr(align)`属性: `align`需要一个参数
+    .suggestion = 在这里提供一个参数
 
 attr_invalid_repr_generic =
-    invalid `repr({$repr_arg})` attribute: {$error_part}
+    无效的`repr({$repr_arg})`属性: {$error_part}
 
 attr_invalid_repr_hint_no_paren =
     invalid representation hint: `{$name}` does not take a parenthesized argument list
@@ -465,7 +454,7 @@ attr_invalid_repr_hint_no_value =
     invalid representation hint: `{$name}` does not take a value
 
 attr_invalid_since =
-    'since' must be a Rust version number, such as "1.31.0"
+    'since'必须是一个Rust版本号, 例如"1.31.0"
 
 attr_missing_feature =
     缺少 'feature'
@@ -506,14 +495,19 @@ attr_unknown_version_literal =
 
 attr_unsupported_literal_cfg_string =
     literal in `cfg` predicate value must be a string
+
 attr_unsupported_literal_deprecated_kv_pair =
     item in `deprecated` must be a key/value pair
+
 attr_unsupported_literal_deprecated_string =
-    literal in `deprecated` value must be a string
+    `deprecated`中的字面量必须是一个字符串
+
 attr_unsupported_literal_generic =
     不支持的字面量
+
 attr_unsupported_literal_suggestion =
     考虑删除前缀
+
 borrowck_assign_due_to_use_closure =
     因在闭包中使用而发生赋值
 
@@ -773,8 +767,8 @@ borrowck_var_second_borrow_by_use_place_in_closure =
 
 borrowck_var_second_borrow_by_use_place_in_coroutine =
     因在协程的此处{$place}使用而发生第二次可变借用
-builtin_macros_alloc_error_must_be_fn = alloc_error_handler must be a function
-builtin_macros_alloc_must_statics = allocators must be statics
+builtin_macros_alloc_error_must_be_fn = alloc_error_handler必须是一个函数
+builtin_macros_alloc_must_statics = 分配器必须是静态的
 
 builtin_macros_asm_clobber_abi = clobber_abi
 builtin_macros_asm_clobber_no_reg = asm with `clobber_abi` must specify explicit registers for outputs
@@ -935,22 +929,22 @@ builtin_macros_format_string_invalid = invalid format string: {$desc}
     .note = {$note}
     .second_label = {$label}
 
-builtin_macros_format_unknown_trait = unknown format trait `{$ty}`
-    .note = the only appropriate formatting traits are:
-                                            - ``, which uses the `Display` trait
-                                            - `?`, which uses the `Debug` trait
-                                            - `e`, which uses the `LowerExp` trait
-                                            - `E`, which uses the `UpperExp` trait
-                                            - `o`, which uses the `Octal` trait
-                                            - `p`, which uses the `Pointer` trait
-                                            - `b`, which uses the `Binary` trait
-                                            - `x`, which uses the `LowerHex` trait
-                                            - `X`, which uses the `UpperHex` trait
-    .suggestion = use the `{$trait_name}` trait
+builtin_macros_format_unknown_trait = 未知格式特征`{$ty}`
+    .note = 合适的格式化特征是:
+                                            - ``, 这使用`Display`特征
+                                            - `?`, 这使用`Debug` 特征
+                                            - `e`, 这使用`LowerExp`特征
+                                            - `E`, 这使用`UpperExp`特征
+                                            - `o`, 这使用`Octal`特征
+                                            - `p`, 这使用`Pointer`特征
+                                            - `b`, 这使用`Binary`特征
+                                            - `x`, 这使用`LowerHex`特征
+                                            - `X`, 这使用`UpperHex`特征
+    .suggestion = 使用`{$trait_name}`特征
 
 builtin_macros_format_unused_arg = {$named ->
-    [true] named argument
-    *[false] argument
+    [true] 命名参数
+    *[false] 参数
     } 从未使用
 
 builtin_macros_format_unused_args = multiple unused formatting arguments

@@ -28,29 +28,29 @@ attr_incorrect_repr_format_align_one_arg =
     不正确的`repr(align)`属性格式: `align`括号里只有一个参数
 
 attr_incorrect_repr_format_generic =
-    incorrect `repr({$repr_arg})` attribute format
-    .suggestion = use parentheses instead
+    不正确的`repr({$repr_arg})`属性格式
+    .suggestion = 使用括号代替
 
 attr_incorrect_repr_format_packed_one_or_zero_arg =
-    incorrect `repr(packed)` attribute format: `packed` takes exactly one parenthesized argument, or no parentheses at all
+    不正确的`repr(packed)`属性格式: `packed`只接受一个带括号的参数，或者没有括号
 
 attr_invalid_issue_string =
-    `issue` must be a non-zero numeric string or "none"
-    .must_not_be_zero = `issue` must not be "0", use "none" instead
-    .empty = cannot parse integer from empty string
-    .invalid_digit = invalid digit found in string
-    .pos_overflow = number too large to fit in target type
-    .neg_overflow = number too small to fit in target type
+    `issue`必须是非零数字字符串或者"none"
+    .must_not_be_zero = `issue`不能是"0", 使用"none"代替
+    .empty = 无法将空字符串解析为整数
+    .invalid_digit = 在字符串中找到无效数字
+    .pos_overflow = 数字太大, 无法放入目标类型
+    .neg_overflow = 数字太小, 无法放入目标类型
 
 attr_invalid_predicate =
-    invalid predicate `{$predicate}`
+    无效的`{$predicate}`
 
 attr_invalid_repr_align_need_arg =
-    invalid `repr(align)` attribute: `align` needs an argument
-    .suggestion = supply an argument here
+    无效的`repr(align)`属性: `align`需要一个参数
+    .suggestion = 在这里提供一个参数
 
 attr_invalid_repr_generic =
-    invalid `repr({$repr_arg})` attribute: {$error_part}
+    无效的`repr({$repr_arg})`属性: {$error_part}
 
 attr_invalid_repr_hint_no_paren =
     invalid representation hint: `{$name}` does not take a parenthesized argument list
@@ -59,7 +59,7 @@ attr_invalid_repr_hint_no_value =
     invalid representation hint: `{$name}` does not take a value
 
 attr_invalid_since =
-    'since' must be a Rust version number, such as "1.31.0"
+    'since'必须是一个Rust版本号, 例如"1.31.0"
 
 attr_missing_feature =
     缺少 'feature'
@@ -100,11 +100,16 @@ attr_unknown_version_literal =
 
 attr_unsupported_literal_cfg_string =
     literal in `cfg` predicate value must be a string
+
 attr_unsupported_literal_deprecated_kv_pair =
     item in `deprecated` must be a key/value pair
+
 attr_unsupported_literal_deprecated_string =
-    literal in `deprecated` value must be a string
+    `deprecated`中的字面量必须是一个字符串
+
 attr_unsupported_literal_generic =
     不支持的字面量
+
 attr_unsupported_literal_suggestion =
     考虑删除前缀
+

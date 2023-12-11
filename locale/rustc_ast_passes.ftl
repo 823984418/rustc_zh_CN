@@ -86,129 +86,118 @@ ast_passes_extern_types_cannot = `extern`块内部的`type`不能有{$descr}
 
 ast_passes_extern_without_abi = 无显式ABI的extern声明是废弃的
 
-ast_passes_feature_on_non_nightly = `#![feature]` may not be used on the {$channel} release channel
-    .suggestion = remove the attribute
-    .stable_since = the feature `{$name}` has been stable since `{$since}` and no longer requires an attribute to enable
+ast_passes_feature_on_non_nightly = `#![feature]`不能在{$channel}发行通道上使用
+    .suggestion = 删除该属性
+    .stable_since = 自`{$since}`以来`{$name}`特性已经稳定, 不需要通过属性启用
 
-ast_passes_fieldless_union = unions cannot have zero fields
+ast_passes_fieldless_union = 共用体不能有零字段
 
-ast_passes_fn_body_extern = incorrect function inside `extern` block
-    .cannot_have = cannot have a body
-    .suggestion = remove the invalid body
-    .help = you might have meant to write a function accessible through FFI, which can be done by writing `extern fn` outside of the `extern` block
-    .label = `extern` blocks define existing foreign functions and functions inside of them cannot have a body
+ast_passes_fn_body_extern = `extern`块内的函数不正确
+    .cannot_have = 不能有函数体
+    .suggestion = 删除无效的函数体
+    .help = 你可能想要编写一个可以通过FFI调用的函数, 这可以通过在`extern`块外编写`extern fn`来解决
+    .label = `extern`块定义现有的外部函数, 其中的函数不能有函数体
 
 ast_passes_fn_param_c_var_args_not_last =
-    `...` must be the last argument of a C-variadic function
+    `...`必须是C变长参数函数的最后一个参数
 
 ast_passes_fn_param_c_var_args_only =
-    C-variadic function must be declared with at least one named argument
+    C变长参数函数必须声明至少一个命名参数
 
 ast_passes_fn_param_doc_comment =
-    documentation comments cannot be applied to function parameters
-    .label = doc comments are not allowed here
+    文档注释不能应用于函数参数
+    .label = 此处不允许文档注释
 
 ast_passes_fn_param_forbidden_attr =
-    allow, cfg, cfg_attr, deny, expect, forbid, and warn are the only allowed built-in attributes in function parameters
+    allow, cfg, cfg_attr, deny, expect, forbid, 和warn是函数参数中唯一允许的内置属性
 
 ast_passes_fn_param_forbidden_self =
-    `self` parameter is only allowed in associated functions
-    .label = not semantically valid as function parameter
-    .note = associated functions are those in `impl` or `trait` definitions
+    `self`参数只允许在关联函数中使用
+    .label = 作为函数参数在语义上无效
+    .note = 关联函数是指在`impl`或`trait`中定义的函数
 
 ast_passes_fn_param_too_many =
-    function can not have more than {$max_num_args} arguments
+    函数的参数不能超过{$max_num_args}个
 
 ast_passes_fn_without_body =
-    free function without a body
-    .suggestion = provide a definition for the function
+    函数缺少函数体
+    .suggestion = 提供函数的定义
 
 ast_passes_forbidden_default =
-    `default` is only allowed on items in trait impls
-    .label = `default` because of this
+    `default`仅允许用在特征实现上
+    .label = `default`因为这里
 
 ast_passes_forbidden_lifetime_bound =
-    lifetime bounds cannot be used in this context
+    生命周期边界不能在此上下文中使用
 
 ast_passes_forbidden_non_lifetime_param =
-    only lifetime parameters can be used in this context
+    在此上下文中只能使用生命周期参数
 
-ast_passes_generic_before_constraints = generic arguments must come before the first constraint
-    .constraints = {$constraint_len ->
-    [one] constraint
-    *[other] constraints
-    }
-    .args = generic {$args_len ->
-    [one] argument
-    *[other] arguments
-    }
+# $constraint_len $args_len
+ast_passes_generic_before_constraints = 泛型参数必须位于第一个约束之前
+    .constraints = 约束
+    .args = 泛型参数
     .empty_string = {""},
-    .suggestion = move the {$constraint_len ->
-    [one] constraint
-    *[other] constraints
-    } after the generic {$args_len ->
-    [one] argument
-    *[other] arguments
-    }
+    .suggestion = 将约束移动到泛型参数之后
 
-ast_passes_generic_default_trailing = generic parameters with a default must be trailing
+ast_passes_generic_default_trailing = 具有默认值的泛型参数必须尾随其后
 
-ast_passes_impl_trait_path = `impl Trait` is not allowed in path parameters
+ast_passes_impl_trait_path = `impl Trait`不允许使用参数路径
 
-ast_passes_incompatible_features = `{$f1}` and `{$f2}` are incompatible, using them at the same time is not allowed
-    .help = remove one of these features
+ast_passes_incompatible_features = `{$f1}`与`{$f2}`不兼容, 不允许同时使用它们
+    .help = 删除其中一个特性
 
-ast_passes_inherent_cannot_be = inherent impls cannot be {$annotation}
-    .because = {$annotation} because of this
-    .type = inherent impl for this type
-    .only_trait = only trait implementations may be annotated with {$annotation}
+ast_passes_inherent_cannot_be = 固有实现不能是{$annotation}
+    .because = {$annotation}因为这里
+    .type = 此类型的固有实现
+    .only_trait = 只有特征实现可以有{$annotation}修饰
 
 ast_passes_invalid_label =
-    invalid label name `{$name}`
+    无效的标签名称`{$name}`
 
 ast_passes_invalid_unnamed_field =
-    unnamed fields are not allowed outside of structs or unions
-    .label = unnamed field declared here
+    不允许在结构体或共用体之外只有未命名字段
+    .label = 未命名字段声明在这
 
 ast_passes_invalid_unnamed_field_ty =
-    unnamed fields can only have struct or union types
-    .label = not a struct or union
+    未命名字段只能有结构体类型或者共用体类型
+    .label = 不是一个结构体或共用体
 
-ast_passes_item_underscore = `{$kind}` items in this context need a name
-    .label = `_` is not a valid name for this `{$kind}` item
+ast_passes_item_underscore = 此上下文中的`{$kind}`项需要一个名称
+    .label = `_`不是`{$kind}`项的有效名称
 
 ast_passes_keyword_lifetime =
-    lifetimes cannot use keyword names
+    生命周期不能使用关键字名称
 
-ast_passes_module_nonascii = trying to load file for module `{$name}` with non-ascii identifier name
-    .help = consider using the `#[path]` attribute to specify filesystem path
+ast_passes_module_nonascii = 试图加载具有非ascii标识符名称模块`{$name}`的文件
+    .help = 考虑使用`#[path]`属性来指定文件系统路径
 
 ast_passes_negative_bound_not_supported =
     不支持否定边界
 
-ast_passes_nested_impl_trait = nested `impl Trait` is not allowed
-    .outer = outer `impl Trait`
-    .inner = nested `impl Trait` here
+ast_passes_nested_impl_trait = 不允许嵌套`impl Trait`
+    .outer = 外部`impl Trait`
+    .inner = 这里嵌套`impl Trait`
 
-ast_passes_nested_lifetimes = nested quantification of lifetimes
+ast_passes_nested_lifetimes = 生命周期嵌套
 
-ast_passes_nomangle_ascii = `#[no_mangle]` requires ASCII identifier
+ast_passes_nomangle_ascii = `#[no_mangle]`需要ASCII标识符
 
-ast_passes_obsolete_auto = `impl Trait for .. {"{}"}` is an obsolete syntax
-    .help = use `auto trait Trait {"{}"}` instead
+ast_passes_obsolete_auto = `impl Trait for .. {"{}"}`是一种过时的语法
+    .help = 使用`auto trait Trait {"{}"}`代替
 
-ast_passes_optional_const_exclusive = `~const` and `{$modifier}` are mutually exclusive
+ast_passes_optional_const_exclusive = `~const`和`{$modifier}`是互斥的
 
-ast_passes_optional_trait_object = `?Trait` is not permitted in trait object types
+ast_passes_optional_trait_object = 特征对象类型中不允许`?Trait`
 
-ast_passes_optional_trait_supertrait = `?Trait` is not permitted in supertraits
-    .note = traits are `?{$path_str}` by default
+ast_passes_optional_trait_supertrait = 超特征不允许`?Trait
+    .note = 特征默认是`?{$path_str}`的
 
-ast_passes_out_of_order_params = {$param_ord} parameters must be declared prior to {$max_param} parameters
-    .suggestion = reorder the parameters: lifetimes, then consts and types
+ast_passes_out_of_order_params = {$param_ord}参数必须在{$max_param}参数之前声明
+    .suggestion = 重新排序参数: 生命周期, 然后是常量和类型
 
-ast_passes_pattern_in_bodiless = patterns aren't allowed in functions without bodies
-    .label = pattern not allowed in function without body
+ast_passes_pattern_in_bodiless = 不允许在没有函数体的函数中使用模式
+    .label = 模式不允许在没有函数体的函数中使用
 
 ast_passes_pattern_in_fn_pointer = 模式不允许在外部函数指针中使用
 

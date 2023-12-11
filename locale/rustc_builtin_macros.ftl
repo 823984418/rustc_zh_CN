@@ -1,5 +1,5 @@
-builtin_macros_alloc_error_must_be_fn = alloc_error_handler must be a function
-builtin_macros_alloc_must_statics = allocators must be statics
+builtin_macros_alloc_error_must_be_fn = alloc_error_handler必须是一个函数
+builtin_macros_alloc_must_statics = 分配器必须是静态的
 
 builtin_macros_asm_clobber_abi = clobber_abi
 builtin_macros_asm_clobber_no_reg = asm with `clobber_abi` must specify explicit registers for outputs
@@ -160,22 +160,22 @@ builtin_macros_format_string_invalid = invalid format string: {$desc}
     .note = {$note}
     .second_label = {$label}
 
-builtin_macros_format_unknown_trait = unknown format trait `{$ty}`
-    .note = the only appropriate formatting traits are:
-                                            - ``, which uses the `Display` trait
-                                            - `?`, which uses the `Debug` trait
-                                            - `e`, which uses the `LowerExp` trait
-                                            - `E`, which uses the `UpperExp` trait
-                                            - `o`, which uses the `Octal` trait
-                                            - `p`, which uses the `Pointer` trait
-                                            - `b`, which uses the `Binary` trait
-                                            - `x`, which uses the `LowerHex` trait
-                                            - `X`, which uses the `UpperHex` trait
-    .suggestion = use the `{$trait_name}` trait
+builtin_macros_format_unknown_trait = 未知格式特征`{$ty}`
+    .note = 合适的格式化特征是:
+                                            - ``, 这使用`Display`特征
+                                            - `?`, 这使用`Debug` 特征
+                                            - `e`, 这使用`LowerExp`特征
+                                            - `E`, 这使用`UpperExp`特征
+                                            - `o`, 这使用`Octal`特征
+                                            - `p`, 这使用`Pointer`特征
+                                            - `b`, 这使用`Binary`特征
+                                            - `x`, 这使用`LowerHex`特征
+                                            - `X`, 这使用`UpperHex`特征
+    .suggestion = 使用`{$trait_name}`特征
 
 builtin_macros_format_unused_arg = {$named ->
-    [true] named argument
-    *[false] argument
+    [true] 命名参数
+    *[false] 参数
     } 从未使用
 
 builtin_macros_format_unused_args = multiple unused formatting arguments
