@@ -91,6 +91,10 @@ ast_lowering_invalid_register =
 ast_lowering_invalid_register_class =
     无效的寄存器类 `{$reg_class}`: {$error}
 
+ast_lowering_match_arm_with_no_body =
+    `match` arm with no body
+    .suggestion = add a body after the pattern
+
 ast_lowering_misplaced_assoc_ty_binding =
     关联类型边界只允许在where子句和函数签名中使用, 不能用于 {$position}
 
@@ -103,6 +107,15 @@ ast_lowering_misplaced_impl_trait =
 
 ast_lowering_misplaced_relax_trait_bound =
     `?Trait` 边界仅允许用于声明类型参数边界
+
+ast_lowering_never_pattern_with_body =
+    a never pattern is always unreachable
+    .label = this will never be executed
+    .suggestion = remove this expression
+
+ast_lowering_never_pattern_with_guard =
+    a guard on a never pattern will never be run
+    .suggestion = remove this guard
 
 ast_lowering_not_supported_for_lifetime_binder_async_closure =
     还不支持在 `async` 闭包上使用 `for<...>` 绑定

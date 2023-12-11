@@ -49,3 +49,6 @@ trait_selection_trait_has_no_impls = 此特征没有实现, 考虑添加一个
 
 trait_selection_ty_alias_overflow = 如果这是递归的类型别名, 考虑使用结构体, 枚举或共用体替代
 trait_selection_unable_to_construct_constant_value = 无法为未评估的{$unevaluated}构造常量值
+
+trait_selection_unknown_format_parameter_for_on_unimplemented_attr = there is no parameter `{$argument_name}` on trait `{$trait_name}`
+    .help = expect either a generic argument name or {"`{Self}`"} as format argument
